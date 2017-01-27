@@ -1,0 +1,24 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button,
+.fl-builder-content a.fl-button {
+	border: 1px solid;
+	border-radius: 3px;
+	box-shadow: none;
+	line-height: 1;
+	padding: .6em 1em .4em;
+	text-shadow: none;
+
+
+	&:hover {
+		box-shadow: none;
+	}
+
+	&:active,
+	&:focus {
+		box-shadow: none;
+		outline: none;
+	}
+}

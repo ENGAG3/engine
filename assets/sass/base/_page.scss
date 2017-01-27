@@ -1,0 +1,40 @@
+// Post headers
+
+.entry-banner {
+  img {
+    width: 100%;
+  }
+}
+
+.entry-title {
+  margin: 0;
+  text-transform: uppercase;
+
+  a:not(:hover) {
+    color: inherit;
+  }
+}
+
+
+// BB
+
+.sidebar-disabled.fl-builder {
+
+  .site-content,
+  .content-area,
+  .page {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: none !important;
+  }
+
+
+  .entry-header,
+  .entry-footer {
+    display: none;
+  }
+
+  .entry-content {
+    padding: 0 !important;
+  }
+}

@@ -1,0 +1,297 @@
+$padding: 1.5rem;
+$padding-small: 0.75rem;
+
+// Main container
+
+
+/*
+ * Header
+ */
+
+.site-header {
+  .container {
+    padding: 0 $padding;
+  }
+}
+
+
+/*
+ * Content
+ */
+
+ .entry-header-text {
+   padding-top: $padding;
+   padding-bottom: $padding-small;
+ }
+
+ .entry-banner + .entry-header-text {
+    padding-top: $padding-small;
+  }
+
+ .entry-footer {
+   padding-top: $padding-small;
+   padding-bottom: $padding;
+ }
+
+
+.main-sidebar,
+.secondary-sidebar {
+  padding-top: $padding;
+}
+
+
+.site-main > article,
+.main-sidebar > .widget,
+.secondary-sidebar > .widget {
+  margin-bottom: $padding;
+}
+
+
+
+html:not(.small-device) {
+  .content-area {
+    margin-top: $padding;
+  }
+
+  // Page
+  .content-area,
+  .main-sidebar,
+  .secondary-sidebar {
+    padding-bottom: $padding;
+  }
+
+  .site-content.container {
+    padding: 0 $padding;
+  }
+
+  .boxed-layout.content-layout-boxed {
+    .site-content.container {
+      padding: 0;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+/*
+ * Single Content Layout
+ */
+
+html.medium-device {
+
+  .entry-header-text,
+  .entry-content,
+  .entry-footer {
+    padding-left: $padding;
+    padding-right: $padding;
+  }
+
+  .main-sidebar > .widget,
+  .secondary-sidebar > .widget {
+    padding: $padding;
+  }
+
+}
+
+
+
+
+// Border Colors
+
+.content-layout-single {
+  .site-header {
+    border-bottom: solid 1px rgba(175,175,175,0.25);
+  }
+  .site-footer {
+    border-top: solid 1px rgba(175,175,175,0.25);
+  }
+}
+html.large-device {
+
+  .content-layout-single {
+
+    &.boxed-layout {
+      .site {
+        border-left: solid 1px rgba(175,175,175,0.25);
+        border-right: solid 1px rgba(175,175,175,0.25);
+      }
+    }
+
+    &.content-sidebar {
+
+      .content-area {
+        padding-right: $padding;
+      }
+
+      .main-sidebar {
+        padding-left: $padding;
+        border-left: solid 1px rgba(175,175,175,0.25);
+      }
+    }
+
+    &.sidebar-content {
+
+      .content-area {
+        padding-left: $padding;
+      }
+
+      .main-sidebar {
+        padding-right: $padding;
+        border-right: solid 1px rgba(175,175,175,0.25);
+      }
+    }
+
+    &.sidebar-content-sidebar {
+
+      .content-area {
+        padding-left: $padding;
+        padding-right: $padding;
+      }
+
+      .main-sidebar {
+        padding-right: $padding;
+        border-right: solid 1px rgba(175,175,175,0.25);
+      }
+
+      .secondary-sidebar {
+        padding-left: $padding;
+        border-left: solid 1px rgba(175,175,175,0.25);
+      }
+    }
+  }
+}
+
+boxed-layout {
+  .site-header.default-layout {
+    border-bottom: solid 1px rgba(175,175,175,0.25);
+  }
+
+  .site-footer.default-layout {
+    border-top: solid 1px rgba(175,175,175,0.25);
+  }
+}
+
+html.large-device {
+  .content-layout-single {
+    &.boxed-layout {
+      .site {
+        border-left: solid 1px rgba(175,175,175,0.25);
+        border-right: solid 1px rgba(175,175,175,0.25);
+      }
+    }
+
+    &.sidebar-content {
+      .main-sidebar {
+        border-right: solid 1px rgba(175,175,175,0.25);
+      }
+    }
+
+    &.sidebar-content-sidebar {
+
+
+      .main-sidebar {
+        border-right: solid 1px rgba(175,175,175,0.25);
+      }
+
+      .secondary-sidebar {
+        border-left: solid 1px rgba(175,175,175,0.25);
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Boxed Content Layout
+ */
+
+.content-layout-boxed {
+
+  .content-area {
+    margin-top: $padding;
+  }
+
+  .site-main > article {
+    .entry-header-text,
+    .entry-content,
+    .entry-footer {
+      padding-left: $padding;
+      padding-right: $padding;
+    }
+
+  }
+
+  .main-sidebar > .widget,
+  .secondary-sidebar > .widget {
+    padding: $padding;
+  }
+
+  // Page
+  .site-main {
+
+    .content-area {
+      .entry-title {
+        padding-left: $padding;
+        padding-right: $padding;
+      }
+    }
+  }
+}
+
+html.large-device {
+
+  .content-layout-boxed {
+
+    &.content-sidebar {
+      .main-sidebar > .widget {
+        margin-left: $padding;
+      }
+    }
+
+    &.sidebar-content {
+      .main-sidebar > .widget {
+        margin-right: $padding;
+      }
+    }
+
+    &.sidebar-content-sidebar {
+
+      .main-sidebar > .widget {
+        margin-right: $padding;
+      }
+
+      .secondary-sidebar > .widget {
+        margin-left: $padding;
+      }
+    }
+  }
+}
+
+
+
+
+// Footer
+.site-footer {
+  .site-info .container {
+    padding: $padding;
+  }
+}

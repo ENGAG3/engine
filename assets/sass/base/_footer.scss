@@ -1,0 +1,27 @@
+
+
+.site-info {
+}
+
+.engag3_footer {
+  background-color: #040404;
+  padding: 2rem 1rem;
+
+
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .5;
+  }
+
+  a:hover {
+    opacity: 1;
+  }
+
+  img {
+    width: 60%;
+    max-width: 300px;
+  }
+}
