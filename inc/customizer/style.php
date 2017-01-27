@@ -18,8 +18,6 @@ $body_link_color 	 	 	 = get_theme_mod( 'body_link_color', '#2ea3f2' );
 $body_text_color 	 	 	 = get_theme_mod( 'body_text_color', '#666666' );
 $header_text_color 	 	 = get_theme_mod( 'header_text_color', '#555555' );
 
-
-
 // Layout
 $body_background_toggle 			= get_theme_mod( 'body_background_toggle', 0 );
 $body_background_color 	  		= get_theme_mod( 'body_background_color', '#ffffff' );
@@ -27,29 +25,23 @@ $body_background_image    		= get_theme_mod( 'body_background_image', '' );
 $content_background_overlay   = get_theme_mod( 'content_background_overlay', 'rgba(0,0,0,0)' );
 $body_background_repeat   		= get_theme_mod( 'body_background_repeat', 'cover' );
 $body_background_style    		= get_theme_mod( 'body_background_style', 'scroll' );
-
 $content_background_color 	  = get_theme_mod( 'content_background_color', '#ffffff' );
 
-
 // Header
-
 $header_background_color 	= get_theme_mod( 'header_background_color', '#ffffff' );
 $header_link_color 	  		= get_theme_mod( 'header_link_color', '#777777' );
 $header_link_color_active = get_theme_mod( 'header_link_color_active', '#2ea3f2' );
 
 // Slideout
-
 $slideout_background_color 	= get_theme_mod( 'slideout_background_color', '#ffffff' );
 $slideout_link_color 	  		= get_theme_mod( 'slideout_link_color', '#777777' );
 $slideout_link_color_active = get_theme_mod( 'slideout_link_color_active', '#2ea3f2' );
 $slideout_overlay 				  = get_theme_mod( 'slideout_overlay', 'rgba(0,0,0,0.75)' );
 
 // Footer
-
 $footer_background_color 	= get_theme_mod( 'footer_background_color', '#ffffff' );
 $footer_link_color 	  		= get_theme_mod( 'footer_link_color', '#777777' );
 $footer_link_color_active = get_theme_mod( 'footer_link_color_active', '#2ea3f2' );
-
 
 // Get Sticky Header style
 $sticky_header_style = get_theme_mod( 'sticky_header_style', 'fixed' );
@@ -65,28 +57,20 @@ $small_breakpoint =  $small_breakpoint_value . "px";
 $medium_breakpoint = $medium_breakpoint_value . "px";
 ?>
 
-
-
 <style>
 
 	body {
 		color: <?php echo $body_text_color; ?>;
-
 		background-color: <?php echo $body_background_color; ?>;
-
 		<?php if ($body_background_toggle == 1) { ?>
 			background-image: url('<?php echo esc_url( $body_background_image );?>');
-
-
 			<?php if ($body_background_repeat == 'cover') { ?>
 				background-size: <?php echo $body_background_repeat;?>;
 			<?php } else {?>
 				background-repeat: <?php echo $body_background_repeat;?>;
 			<?php } ?>
 		<?php } ?>
-
 		background-attachment: <?php echo $body_background_style;?>;
-
 	}
 
 	.site {
@@ -96,11 +80,7 @@ $medium_breakpoint = $medium_breakpoint_value . "px";
 	}
 
 
-
-
-
 	/* Layout */
-
 	body.content-layout-single .site-content,
 	.content-layout-boxed .main-sidebar>.widget,
 	.content-layout-boxed .secondary-sidebar>.widget,
@@ -110,7 +90,6 @@ $medium_breakpoint = $medium_breakpoint_value . "px";
 
 
 	/* Header */
-
 	.site-header {
 		color: <?php echo $header_link_color; ?>;
 		background-color: <?php echo $header_background_color; ?>;
@@ -131,9 +110,7 @@ $medium_breakpoint = $medium_breakpoint_value . "px";
 		border: solid 1px rgba(175,175,175,0.25);
 	}
 
-
 	/* Footer */
-
 	.site-footer {
 		color: <?php echo $footer_link_color; ?>;
 		background-color: <?php echo $footer_background_color; ?>;
@@ -149,10 +126,7 @@ $medium_breakpoint = $medium_breakpoint_value . "px";
 		color: 	<?php echo $footer_link_color_active; ?>;
 	}
 
-
-
 	/* Slideout Menu */
-
 	.slideout-navigation {
 		color: <?php echo $slideout_link_color; ?>;
 		background-color: <?php echo $slideout_background_color; ?>;
@@ -172,22 +146,15 @@ $medium_breakpoint = $medium_breakpoint_value . "px";
 	  background-color: <?php echo $slideout_overlay; ?>;
 	}
 
-
-
-
-
 	/* contaner */
-
 	.container {
 		max-width: <?php echo $content_width; ?>px;
 	}
 
 	/* Typography */
-
 	a {
 		color: <?php echo $body_link_color; ?>;
 	}
-
 
 	h1, h2, h3, h4, h5, h6 {
 		color: <?php echo $header_text_color; ?>;
@@ -198,7 +165,6 @@ $medium_breakpoint = $medium_breakpoint_value . "px";
 	/*Page styles*/
 
 	<?php
-
 	if ($page_sidebar  == 1 ) {
 		// Get the width of the main sidebar from the customizer
 		$main_sidebar_width = get_theme_mod( 'main_slider_width', '25' );
@@ -208,27 +174,18 @@ $medium_breakpoint = $medium_breakpoint_value . "px";
 			// Then get Langth (this way if the sidebar is not active it's langth will be zero.)
 			$secondary_sidebar_width = get_theme_mod( 'secondary_slider_width', '20' );
 		}
-
 		// add the langth of both sidebars togather
 		$sidebar_total_width = $main_sidebar_width + $secondary_sidebar_width;
-
 		// Generat Content width based off of the siebars total width
 		$content_area_width =  100 - $sidebar_total_width;
 
 	} else {
-
 		$content_area_width = 100;
-
 	} ?>
-
-
 
 	.content-area {
 		flex-basis: <?php echo $content_area_width; ?>%;
 	}
-
-
-
 </style>
 
 
