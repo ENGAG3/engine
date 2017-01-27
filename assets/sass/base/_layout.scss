@@ -1,0 +1,85 @@
+
+
+.site {
+  position: relative;
+}
+
+.container {
+  margin: auto;
+}
+
+// Content Layout
+
+
+// Boxed Layout
+
+.boxed-layout {
+
+
+  .site.container {
+    padding: 0 !important;
+  }
+}
+
+
+html.large-device {
+  .content-area-wrap {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+
+    .content-area {
+      width: 100%;
+    }
+  }
+
+  .content-area-wrap {
+    margin: auto;
+  }
+
+
+  .content-sidebar {
+
+    .content-area {
+      order: 0;
+    }
+
+    .main-sidebar {
+      order: 1;
+
+    }
+
+  }
+
+  .sidebar-content {
+
+    .content-area {
+      order: 1;
+    }
+
+    .main-sidebar {
+      order: 0;
+    }
+
+  }
+
+  .sidebar-content-sidebar {
+
+    .content-area {
+      order: 1;
+    }
+
+    .main-sidebar {
+      order: 0;
+
+    }
+
+    .secondary-sidebar {
+      order: 2;
+
+    }
+
+  }
+}

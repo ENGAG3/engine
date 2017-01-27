@@ -1,0 +1,16 @@
+// Widgets
+
+.widget {
+	// margin: 0 0 1.5em;
+
+  ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+	/* Make sure select elements fit in widgets. */
+	select {
+		max-width: 100%;
+	}
+}
