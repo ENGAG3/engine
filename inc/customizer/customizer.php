@@ -63,11 +63,11 @@ engine_Kirki::add_section( 'colors', array(
 /**
  * Add Advanced Panel
  */
-engine_Kirki::add_panel( 'advanced', array(
-    'priority'    => 200,
-    'title'       => __( 'Advanced', 'engine' ),
-    'description' => __( 'My Description', 'engine' ),
-) );
+// engine_Kirki::add_panel( 'advanced', array(
+//     'priority'    => 200,
+//     'title'       => __( 'Advanced', 'engine' ),
+//     'description' => __( 'My Description', 'engine' ),
+// ) );
 
 /**
  * Add the typography section
@@ -158,7 +158,7 @@ engine_Kirki::add_section( 'footer', array(
  	'label'       => esc_attr__( 'Website Content Width', 'engine' ),
  	'section'     => 'layout',
 	// 'priority'    => 1,
- 	'default'     => 1080,
+ 	'default'     => 1200,
  	'choices'     => array(
  		'min'  => '960',
  		'max'  => '1920',
@@ -224,7 +224,7 @@ engine_Kirki::add_section( 'footer', array(
  engine_Kirki::add_field( 'engine_theme', array(
 	'type'        => 'radio-image',
 	'settings'    => 'page_sidebar_layout',
-	'label'       => __( 'Sidebar Posistion', 'engine' ),
+	'label'       => __( 'Sidebar Position', 'engine' ),
 	'section'     => 'layout',
 	'default'     => 'content-sidebar',
 	// 'priority'    => 10,
@@ -245,7 +245,7 @@ engine_Kirki::add_section( 'footer', array(
 engine_Kirki::add_field( 'engine_theme', array(
 	'type'        => 'slider',
 	'settings'    => 'main_slider_width',
-	'label'       => esc_attr__( 'Side Bar Width', 'engine' ),
+	'label'       => esc_attr__( 'SideBar Width', 'engine' ),
 	'section'     => 'layout',
 	'default'     => 28,
 	'choices'     => array(
@@ -265,7 +265,7 @@ engine_Kirki::add_field( 'engine_theme', array(
 engine_Kirki::add_field( 'engine_theme', array(
 	'type'        => 'slider',
 	'settings'    => 'secondary_slider_width',
-	'label'       => esc_attr__( 'Second Side Bar Width', 'engine' ),
+	'label'       => esc_attr__( 'SideBar Width (Right Side)', 'engine' ),
 	'section'     => 'layout',
 	'default'     => 20,
 	'choices'     => array(
@@ -1225,7 +1225,7 @@ engine_Kirki::add_field( 'engine_theme', array(
 
 
 
-// 
+//
 //
 //  /**
 //   * Add Code section;
@@ -1299,3 +1299,28 @@ engine_Kirki::add_field( 'engine_theme', array(
  function prefix_remove_css_section( $wp_customize ) {
  	$wp_customize->remove_section( 'custom_css' );
  }
+
+
+
+
+ /**
+  * This is a simple function that replaces the preview notice with an image.
+  * This example uses an image from http://domain.com/image.png so please add your own.
+  */
+ function custom_add_logo_to_customizer() { ?>
+ 	<script>
+
+ 	jQuery(document).ready(function($) {
+		jQuery("#accordion-section-themes").append("<div class='customizer-toggle'><div id='toggle-sections'class=''>Sections</div> <div id='toggle-general' class=''>General Settings</div> </div>");
+
+ 	});
+ // 	jQuery(document).ready(function($) {
+ // 		"use strict";
+ // 		$('div#customize-info .preview-notice').replaceWith(
+  //            '<img src="https://www.engag3.media/wp-content/uploads/2016/06/cropped-engag3-logo-copy.png">'
+  //        );
+ // 	});
+ 	</script>
+ 	<?php
+ }
+ add_action( 'customize_controls_print_scripts', 'custom_add_logo_to_customizer' );

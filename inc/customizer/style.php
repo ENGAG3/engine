@@ -3,7 +3,7 @@
 function customizer_css() {
 
 // Get Layout Settings
-$content_width 		 	 	 = get_theme_mod( 'content_width', 1080 );
+$content_width 		 	 	 = get_theme_mod( 'content_width', 1200 );
 
 // Get typography settings
 $body_font_size 		 	 = get_theme_mod( 'body_font_size', 15 );

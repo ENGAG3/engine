@@ -1,18 +1,237 @@
-.customize-pane-parent {
+#customize-controls {
+  // box-shadow: inset 0px 1px 6px rgba(0,0,0,0.25);
+}
+.wp-full-overlay {
+  background-color: #161616;
+}
 
-  > li:not(:first-child) {
-    margin: 0 .5rem;
+.wp-full-overlay.preview-desktop {
+  #customize-preview {
+    transition: all .5s ease;
+    padding: 0;
+    transform: translate3d(0,0,0);
+  }
+
+
+  &.expanded {
+    #customize-preview {
+      padding: 1rem;
+      box-sizing: border-box;
+
+      iframe {
+        box-shadow: 0 0 25px rgba(0,0,0,0.15);
+        left: 1rem;
+        top: 1rem;
+        width: calc(100% - 3em);
+        height: calc(100% - 3em);
+        overflow: hidden;
+        border: solid 1px #ddd;
+      }
+    }
   }
 
 }
 
 
-#customize-theme-controls .accordion-section-content {
-  // background-color: #fff;
+
+
+
+
+
+// Toggle controls
+
+.customizer-toggle {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  text-align: center;
+  background-color: #fff;
+
+  > div {
+    flex-basis: 50%;
+    padding: 1rem;
+  }
+
+  div:not(:last-child) {
+    border-right: solid 1px #f2f2f2;
+  }
+
+  div.is-active {
+    border-bottom: solid 3px #0085ba;
+  }
+}
+
+#toggle-general {
+
 }
 
 
+
+
+
+
+@media only screen and (min-width: 641px) {}
+
+
+
+#customize-controls .customize-info {
+  // margin-bottom: 0;
+  // display: none !important;
+}
+
+#accordion-section-themes {
+  // display: none !important;
+  h3.accordion-section-title {
+    // color: #fff !important;
+    // background-color: #333333 !important;
+  }
+
+  .customize-action {
+    // display: none !important;
+  }
+}
+
+
+// Memu sections
+
+.customize-pane-parent {
+  padding-bottom: 1rem !important;
+
+  > li:not(:first-child) {
+    margin: 0 .5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  #accordion-section-title_tagline,
+  #accordion-section-title_tagline h3 {
+    border-radius: 5px 5px 0 0;
+  }
+
+  > li:last-child,
+  > li:last-child h3 {
+    border-radius: 0 0 5px 5px;
+  }
+
+}
+
+.control-section .accordion-section-title,
+.customize-pane-child .accordion-section-title {
+  padding: 12px 10px;
+}
+
+.control-section .accordion-section-title:after,
+.customize-pane-child .accordion-section-title:after {
+  top: 50%;
+  transform: translate(0,-50%);
+}
+
+.customize-pane-parent > .accordion-section {
+  h3::before {
+    content: "\f159";
+    font-family: dashicons;
+    vertical-align: middle;
+    font-size: 2em;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    margin-right: 0.75rem;
+
+  }
+
+  h3:not(:hover)::before {
+    opacity: .5;
+  }
+}
+
+.accordion-section {
+  h3 {
+    font-weight: 300;
+  }
+}
+
+#accordion-section-title_tagline {
+  h3::before {
+    content: "\f102";
+  }
+}
+
+#accordion-section-layout {
+  h3::before {
+    content: "\f116";
+  }
+}
+
+#accordion-section-colors {
+  h3::before {
+    content: "\f309";
+  }
+}
+
+#accordion-section-typography {
+  h3::before {
+    content: "\f478";
+  }
+}
+
+#accordion-panel-nav_menus {
+  h3::before {
+    content: "\f333";
+  }
+}
+
+#accordion-panel-widgets {
+  h3::before {
+    content: "\f180";
+  }
+}
+
+#accordion-section-static_front_page {
+  h3::before {
+    content: "\f115";
+  }
+}
+
+
+
+// Child panels
+
+#customize-theme-controls .customize-pane-child.accordion-section-content {
+  background-color: #fff;
+}
+
+.customizer-text,
+.customize-control-title {
+  // font-weight: 300;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+// Footer
+
+.expanded .wp-full-overlay-footer,
+.wp-full-overlay-footer .devices {
+  background-color: #fff;
+
+}
+
+.wp-full-overlay-footer .devices {
+  box-shadow: none;
+}
+
 // Controles
+
+
+// Font box
+
+.customize-control-kirki-typography .wrapper {
+  background-color: #f4f4f4;
+}
+
+// Remove box shadow from selcted radio image
+.customize-control-kirki-radio-image input:checked + label img {
+  box-shadow: none !important;
+}
 
 
 #customize-control-boxed_layout,
@@ -21,10 +240,11 @@
 #customize-control-slideout_menu_template_toggle,
 #customize-control-page_sidebar {
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: #f2f2f2;
+  border: solid 1px #ddd;
   padding: .5rem;
   border-radius: 3px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  // box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 
   .customize-control-title {
     margin: 0;
