@@ -93,21 +93,26 @@ jQuery(document).ready(function( $ ) {
   });
 
 
-		$("#masthead").sticky({topSpacing:0});
+		// Make top header sticky
+		$(".header-top #masthead").sticky({topSpacing:0});
 		// simple as this!
 		// NOTE: init() is implicitly called with the plugin
-		$("#masthead").headroom();
+		$(".header-top #masthead").headroom();
+
+
+		// Abar
+		$("#abar.bottom").sticky({topSpacing:0});
+
+		// Make slideout Meny sticky
+		$(".header-left #masthead .site-header-wrap").sticky({topSpacing:0});
+		$(".header-right #masthead .site-header-wrap").sticky({topSpacing:0});
 
     // $(":file").jfilestyle({input: false});
-
-
-
-
 });
 
 
 
-// Add classes to header on crolldown
+// Add classes to header on scrolldown
 
 jQuery(window).scroll(function( ) {
 

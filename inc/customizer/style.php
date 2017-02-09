@@ -27,16 +27,38 @@ $body_background_repeat   		= get_theme_mod( 'body_background_repeat', 'cover' )
 $body_background_style    		= get_theme_mod( 'body_background_style', 'scroll' );
 $content_background_color 	  = get_theme_mod( 'content_background_color', '#ffffff' );
 
+
+// Sidebar
+$main_sidebar_width = get_theme_mod( 'main_slider_width', '20' );
+$secondary_sidebar_width = get_theme_mod( 'secondary_slider_width', '20' );
+
+$main_sidebar_width_s 		 = round($main_sidebar_width * ((80-$amount) / 100), 0);
+$secondary_sidebar_width_s = round($secondary_sidebar_width * ((80-$amount) / 100), 0);
+
+
+
+$sidebar_total_width = $main_sidebar_width + $secondary_sidebar_width;
+$sidebar_total_width_s = $main_sidebar_width_s + $secondary_sidebar_width_s;
+
+
 // Header
+
+
+$header_width_desktop = get_theme_mod( 'header_width_desktop', 28 );
+
 $header_background_color 	= get_theme_mod( 'header_background_color', '#ffffff' );
 $header_link_color 	  		= get_theme_mod( 'header_link_color', '#777777' );
 $header_link_color_active = get_theme_mod( 'header_link_color_active', '#2ea3f2' );
 
 // Slideout
-$slideout_background_color 	= get_theme_mod( 'slideout_background_color', '#ffffff' );
-$slideout_link_color 	  		= get_theme_mod( 'slideout_link_color', '#777777' );
+$slideout_background_color 	= get_theme_mod( 'slideout_background_color', '#222222' );
+$slideout_link_color 	  		= get_theme_mod( 'slideout_link_color', '#ffffff' );
 $slideout_link_color_active = get_theme_mod( 'slideout_link_color_active', '#2ea3f2' );
 $slideout_overlay 				  = get_theme_mod( 'slideout_overlay', 'rgba(0,0,0,0.75)' );
+
+// Abar
+$abar_background_color = get_theme_mod( 'abar_background_color', '#2ea3f2' );
+$abar_text_color 			 = get_theme_mod( 'abar_text_color', '#ffffff' );
 
 // Footer
 $footer_background_color 	= get_theme_mod( 'footer_background_color', '#ffffff' );
@@ -93,6 +115,24 @@ $medium_breakpoint = $medium_breakpoint_value . "px";
 	.site-header {
 		color: <?php echo $header_link_color; ?>;
 		background-color: <?php echo $header_background_color; ?>;
+	}
+
+	/*Abar*/
+	.abar {
+		color: <?php echo $abar_text_color ?>;
+		background-color: <?php echo $abar_background_color ?>;
+	}
+
+	/*Side header styles*/
+
+	html:not(.small-device) .header-left .site-header,
+	html:not(.small-device) .header-right .site-header {
+		width: <?php echo $header_width_desktop; ?>0px;
+	}
+
+	html:not(.small-device) .header-left .site-content-wrap,
+	html:not(.small-device) .header-right .site-content-wrap {
+		width: calc(100% - <?php echo $header_width_desktop; ?>0px);
 	}
 
 	.site-header a {
@@ -162,30 +202,61 @@ $medium_breakpoint = $medium_breakpoint_value . "px";
 		letter-spacing: <?php echo $header_letter_spacing; ?>px;
 	}
 
-	/*Page styles*/
 
-	<?php
-	if ($page_sidebar  == 1 ) {
-		// Get the width of the main sidebar from the customizer
-		$main_sidebar_width = get_theme_mod( 'main_slider_width', '25' );
 
-		// Check if second sidebar is active
-		if ( $sidebar_layout == 'sidebar-content-sidebar') {
-			// Then get Langth (this way if the sidebar is not active it's langth will be zero.)
-			$secondary_sidebar_width = get_theme_mod( 'secondary_slider_width', '20' );
-		}
-		// add the langth of both sidebars togather
-		$sidebar_total_width = $main_sidebar_width + $secondary_sidebar_width;
-		// Generat Content width based off of the siebars total width
-		$content_area_width =  100 - $sidebar_total_width;
+	/*Sidebar settings*/
+  .content-area {
+  	width: 100%;
+  }
 
-	} else {
-		$content_area_width = 100;
-	} ?>
-
-	.content-area {
-		flex-basis: <?php echo $content_area_width; ?>%;
+	html.large-device .content-sidebar .main-sidebar,
+	html.large-device .sidebar-content .main-sidebar {
+		flex-basis: <?php echo $main_sidebar_width_s; ?>0px;
 	}
+
+	html.large-device .header-top.content-sidebar .content-area,
+	html.large-device .header-top.sidebar-content .content-area {
+		width: calc(100% - <?php echo $main_sidebar_width_s; ?>0px)
+	}
+
+	html.large-device .header-top.sidebar-content-sidebar .main-sidebar {
+		flex-basis: <?php echo $main_sidebar_width_s; ?>0px;
+	}
+
+	html.large-device .header-top.sidebar-content-sidebar .secondary-sidebar {
+		flex-basis: <?php echo $secondary_sidebar_width_s; ?>0px;
+	}
+
+	html.large-device .header-top.sidebar-content-sidebar .content-area {
+		width: calc(100% - <?php echo $sidebar_total_width_s; ?>0px)
+	}
+
+	@media (min-width: 1200px) {
+
+		html.large-device .header-top.content-sidebar .main-sidebar,
+		html.large-device .header-top.sidebar-content .main-sidebar {
+			flex-basis: <?php echo $main_sidebar_width; ?>0px;
+		}
+
+		html.large-device .header-top.content-sidebar .content-area,
+		html.large-device .header-top.sidebar-content .content-area {
+			width: calc(100% - <?php echo $main_sidebar_width; ?>0px)
+		}
+
+		html.large-device .header-top.sidebar-content-sidebar .main-sidebar {
+			flex-basis: <?php echo $main_sidebar_width; ?>0px;
+		}
+
+		html.large-device .header-top.sidebar-content-sidebar .secondary-sidebar {
+			flex-basis: <?php echo $secondary_sidebar_width; ?>0px;
+		}
+
+		html.large-device .header-top.sidebar-content-sidebar .content-area {
+			width: calc(100% - <?php echo $sidebar_total_width; ?>0px)
+		}
+
+	}
+
 </style>
 
 

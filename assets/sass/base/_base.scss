@@ -211,3 +211,13 @@
 .gallery-caption {
 	display: block;
 }
+
+
+// Sticky
+
+.admin-bar .is-sticky > * {
+
+	@media (min-width: 783px) {
+		top: 32px !important;
+	}
+}

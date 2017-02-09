@@ -14,8 +14,6 @@
 // Boxed Layout
 
 .boxed-layout {
-
-
   .site.container {
     padding: 0 !important;
   }
@@ -31,7 +29,7 @@ html.large-device {
     display: flex;
 
     .content-area {
-      width: 100%;
+      // width: 100%;
     }
   }
 
@@ -78,8 +76,6 @@ html.large-device {
 
     .secondary-sidebar {
       order: 2;
-
     }
-
   }
 }

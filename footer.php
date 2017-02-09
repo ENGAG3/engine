@@ -8,22 +8,18 @@
  *
  * @package engine
  */
-
 	// Get customzer info
 	$footer_template = get_theme_mod( 'footer_template_toggle', 0);
 	$template = get_theme_mod( 'footer_template', 'Select' );
-
-
 ?>
 
 	</div><!-- #content -->
 
-	<?php if ( $footer_template == 1 ) { ?>
+	<?php if ( $footer_template == 1 && class_exists('flbuilder') ) { ?>
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
 
 			<?php echo do_shortcode( "[fl_builder_insert_layout id=\"$template\"]" );
-
 		} else { ?>
 
 		<footer id="colophon" class="site-footer default-layout" role="contentinfo">
@@ -31,9 +27,8 @@
 			<div class="site-info">
 
 				<div class="container">
-					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'engine' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'engine' ), 'WordPress' ); ?></a>
-					<span class="sep"> | </span>
-					<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'engine' ), 'engine', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
+
+					<?php bloginfo('name'); ?> &copy;<?php echo date('Y'); ?> - All Rights Reserved.
 				</div>
 
 			</div>
@@ -57,6 +52,24 @@
 	<div id="slideout-overlay" class="slideout-overlay"></div>
 
 	</div>
+
+	<?php
+
+		do_action( 'engine_after_footer' );
+
+		// Announcement Bar
+		$abar_toggle  = get_theme_mod( 'abar_toggle', 0 );
+		$abar_positon = get_theme_mod( 'abar_positon', 'top' );
+
+		// Check if abar is innabled
+		if ( $abar_toggle == 1 && $abar_positon == "bottom") {
+
+			do_action( 'engine_abar' );
+
+		}
+	?>
+
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

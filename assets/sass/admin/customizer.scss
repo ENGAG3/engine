@@ -1,7 +1,4 @@
-#customize-controls {
-  // box-shadow: inset 0px 1px 6px rgba(0,0,0,0.25);
-}
-.wp-full-overlay {
+ .wp-full-overlay {
   background-color: #161616;
 }
 
@@ -29,12 +26,11 @@
       }
     }
   }
-
 }
 
-
-
-
+.wp-full-overlay-sidebar {
+  border-right: 0;
+}
 
 
 
@@ -48,51 +44,96 @@
   display: flex;
   text-align: center;
   background-color: #fff;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
 
-  > div {
+  div {
     flex-basis: 50%;
-    padding: 1rem;
+    padding: 0.75rem;
+    transform: all .3s;
+    border-bottom: solid 3px transparent;
   }
 
   div:not(:last-child) {
-    border-right: solid 1px #f2f2f2;
+    border-right: solid 1px #e0e0e0;
   }
 
+  div:not(.is-active):hover {
+    cursor: pointer;
+    color: #0085ba;
+  }
+
+
   div.is-active {
+    font-weight: bold;
     border-bottom: solid 3px #0085ba;
   }
 }
 
-#toggle-general {
 
+.customize-pane-parent > .accordion-section {
+  display: none !important;
 }
 
 
-
-
-
-
-@media only screen and (min-width: 641px) {}
-
-
-
-#customize-controls .customize-info {
-  // margin-bottom: 0;
-  // display: none !important;
+#customize-theme-controls .control-section-themes > .accordion-section-title {
+  margin-bottom: 0;
 }
+
+.wp-full-overlay-sidebar-content > .customize-info {
+  display: none !important;
+}
+
+
 
 #accordion-section-themes {
-  // display: none !important;
-  h3.accordion-section-title {
-    // color: #fff !important;
-    // background-color: #333333 !important;
-  }
+  display: block !important;
 
-  .customize-action {
-    // display: none !important;
+  .accordion-section-title {
+    margin-bottom: 0 !important;
   }
 }
 
+.show-sections {
+  #accordion-section-layout,
+  #accordion-section-header,
+  #accordion-panel-nav_menus,
+  #accordion-section-footer,
+  #accordion-panel-widgets,
+  #accordion-section-announcement_bar,
+  #accordion-section-slideout {
+    display: block !important;
+  }
+}
+
+// Show / Hide sections
+.show-general {
+  #accordion-section-title_tagline,
+  #accordion-section-typography,
+  #accordion-section-social,
+  #accordion-section-static_front_page,
+  #accordion-section-static_front_page,
+  #accordion-panel-colors {
+    display: block !important;
+  }
+}
+
+
+.show-advanced {
+  #accordion-section-error_page,
+  #accordion-section-cookie_notice,
+  #accordion-section-code_injection,
+  #accordion-section-injection {
+    display: block !important;
+  }
+}
+
+
+.accordion-section {
+  h3 {
+    font-weight: 300;
+  }
+}
 
 // Memu sections
 
@@ -102,16 +143,6 @@
   > li:not(:first-child) {
     margin: 0 .5rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-
-  #accordion-section-title_tagline,
-  #accordion-section-title_tagline h3 {
-    border-radius: 5px 5px 0 0;
-  }
-
-  > li:last-child,
-  > li:last-child h3 {
-    border-radius: 0 0 5px 5px;
   }
 
 }
@@ -129,68 +160,146 @@
 
 .customize-pane-parent > .accordion-section {
   h3::before {
-    content: "\f159";
-    font-family: dashicons;
+    display: inline-block;
+    content: "\f1db";
+    font-family: fontawesome;
     vertical-align: middle;
     font-size: 2em;
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     margin-right: 0.75rem;
-
+    width: 2.5rem;
+    text-align: center;
   }
 
   h3:not(:hover)::before {
-    opacity: .5;
+    opacity: .75;
   }
 }
 
-.accordion-section {
-  h3 {
-    font-weight: 300;
-  }
-}
 
-#accordion-section-title_tagline {
-  h3::before {
-    content: "\f102";
-  }
-}
+/*
+ * Sections toggle
+ */
 
-#accordion-section-layout {
-  h3::before {
-    content: "\f116";
-  }
-}
+ #accordion-section-layout {
+   h3::before {
+     content: "\f547";
+     font-family: dashicons;
+   }
+ }
 
-#accordion-section-colors {
-  h3::before {
-    content: "\f309";
-  }
-}
+ #accordion-section-header {
+   h3::before {
+     content: "\f116";
+     font-family: dashicons;
+   }
+ }
 
-#accordion-section-typography {
-  h3::before {
-    content: "\f478";
-  }
-}
+ #accordion-section-announcement_bar {
+   h3::before {
+     content: "\f181";
+     font-family: dashicons;
+   }
+ }
 
-#accordion-panel-nav_menus {
-  h3::before {
-    content: "\f333";
-  }
-}
+ #accordion-section-slideout {
+   h3::before {
+     content: "\f135";
+     font-family: dashicons;
+   }
+ }
 
-#accordion-panel-widgets {
-  h3::before {
-    content: "\f180";
-  }
-}
+ #accordion-panel-nav_menus {
+   h3::before {
+     content: "\f0c9";
+     font-size: 1.9em;
+   }
+ }
 
-#accordion-section-static_front_page {
-  h3::before {
-    content: "\f115";
-  }
-}
+ #accordion-panel-widgets {
+   h3::before {
+     content: "\f164";
+     font-size: 1.8em;
+     font-family: dashicons;
+   }
+ }
+
+ #accordion-section-footer {
+   h3::before {
+     content: "\f116";
+     font-family: dashicons;
+     transform: rotate(180deg);
+   }
+ }
+
+/*
+ * General toggle
+ */
+
+ #accordion-section-title_tagline {
+   h3::before {
+     content: "\f102";
+     font-family: dashicons;
+   }
+ }
+
+ #accordion-panel-colors {
+   h3::before {
+     content: "\f309";
+     font-family: dashicons;
+   }
+ }
+
+ #accordion-section-typography {
+   h3::before {
+     content: "\f031";
+   }
+ }
+
+ #accordion-section-social {
+   h3::before {
+     content: "\f237";
+     font-family: dashicons;
+   }
+ }
+
+ #accordion-section-static_front_page {
+   h3::before {
+     content: "\f115";
+     font-family: dashicons;
+   }
+ }
+
+
+/*
+ * Advanced toggle
+ */
+ #accordion-section-error_page {
+   h3::before {
+     content: "\f127";
+   }
+ }
+
+ #accordion-section-cookie_notice {
+   h3::before {
+     content: "\f27b";
+   }
+ }
+
+ #accordion-section-code_injection {
+   h3::before {
+     content: "\f121";
+   }
+ }
+
+ #accordion-section-custom_css {
+   h3::before {
+     content: "\f13c";
+   }
+ }
+
+
 
 
 
@@ -205,6 +314,13 @@
   // font-weight: 300;
   text-transform: uppercase;
   font-size: 13px;
+
+  .fa {
+    font-size: 1.75em;
+    margin-right: .25rem;
+    vertical-align: middle;
+    opacity: .5;
+  }
 }
 
 // Footer
@@ -218,6 +334,23 @@
 .wp-full-overlay-footer .devices {
   box-shadow: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Controles
 

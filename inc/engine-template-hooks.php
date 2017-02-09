@@ -97,3 +97,6 @@ add_action( 'engine_single_post_bottom',  'engine_display_comments',     20 );
 // add_action( 'engine_page',       'engine_page_content',         20 );
 // add_action( 'engine_page',       'engine_init_structured_data', 30 );
 add_action( 'engine_page_after', 'engine_display_comments',     10 );
+
+
+add_action( 'engine_abar', 'engine_get_abar',     10 );

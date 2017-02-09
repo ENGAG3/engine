@@ -8,7 +8,7 @@ $padding-small: 0.75rem;
  * Header
  */
 
-.site-header {
+.header-top .site-header {
   .container {
     padding: 0 $padding;
   }
@@ -49,7 +49,7 @@ $padding-small: 0.75rem;
 
 
 html:not(.small-device) {
-  .content-area {
+  .header-top .content-area {
     margin-top: $padding;
   }
 

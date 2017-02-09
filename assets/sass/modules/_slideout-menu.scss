@@ -59,15 +59,11 @@ body:not(.slideout-menu-dropdown) {
 .slideout-menu-is-active {
   .slideout-overlay {
       opacity: .5;
-
-      z-index: 998;
+      z-index: 991;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      // height: 100vh;
-
-      // background-color: #000;
   }
 }
 
@@ -83,13 +79,26 @@ body:not(.slideout-menu-dropdown) {
   }
 }
 
+// Add gap for WordPress admin Bar
+.admin-bar.slideout-menu-off-canvas-left,
+.admin-bar.slideout-menu-off-canvas-right,
+.admin-bar.slideout-menu-overlay {
+  .slideout-navigation {
+    @media (min-width: 783px) {
+  		top: 32px !important;
+  	}
+  }
+}
+
+
 
 /*
  * Off canvas
 */
 
 .slideout-menu-off-canvas-left,
-.slideout-menu-off-canvas-right {
+.slideout-menu-off-canvas-right,
+.slideout-menu-dropdown {
   .slideout-navigation {
     width: 256px;
     transition: 0.2s ease;
@@ -132,7 +141,6 @@ body:not(.slideout-menu-dropdown) {
  * Overlay
  */
 
-
 .slideout-menu-overlay {
   .slideout-navigation {
     left: -100%;
@@ -143,10 +151,10 @@ body:not(.slideout-menu-dropdown) {
 
 .slideout-menu-overlay.slideout-menu-is-active {
   .slideout-navigation {
-      left: 0;
-      opacity: 1;
-      width: 100%;
-      height: 100%;
+    left: 0;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -163,6 +171,11 @@ html.medium-device .dropdown-menu-wrap {
 }
 
 .slideout-menu-dropdown {
+
+  .slideout-overlay {
+    z-index: 1;
+    opacity: 0;
+  }
 
   .menu-close {
     display: none;
@@ -186,13 +199,11 @@ html.medium-device .dropdown-menu-wrap {
     &.is-active {
       opacity: 1;
       height: auto;
-      // bottom: 0;
       visibility: visible;
     }
   }
 
   .slideout-inner {
-    // max-height: 85vh;
     overflow: auto;
   }
 }
@@ -201,18 +212,10 @@ html.medium-device .dropdown-menu-wrap {
   .slideout-navigation {
     opacity: 1;
     height: auto;
-    // bottom: 0;
     visibility: visible;
   }
 }
 
-.sticky-header-enabled.slideout-menu-dropdown {
-
-  .slideout-navigation {
-    // position: fixed;
-  }
-
-}
 
 
 /*

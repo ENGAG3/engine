@@ -26,12 +26,12 @@ if ( ! function_exists( 'engine_get_main_sidebar' ) ) {
 	 */
 	function engine_get_main_sidebar() {
 
+	 $header_layout        = get_theme_mod( 'header_layout', 'header-top');
    $page_sidebar       = get_theme_mod( 'page_sidebar', 1 );
-   $main_sidebar_width = get_theme_mod( 'main_slider_width', '20' );
 
-     if ($page_sidebar  == 1 ) { ?>
+     if ($page_sidebar  == 1 && $header_layout == 'header-top') { ?>
 
-       <aside id="secondary" class="main-sidebar widget-area" role="complementary" style="flex-basis: <?php echo $main_sidebar_width;?>%">
+       <aside id="secondary" class="main-sidebar widget-area" role="complementary">
          <?php dynamic_sidebar( 'main' ); ?>
        </aside><!-- #secondary -->
 
@@ -50,21 +50,68 @@ if ( ! function_exists( 'engine_get_secondary_sidebar' ) ) {
 	 */
 	function engine_get_secondary_sidebar() {
 
+	$header_layout        = get_theme_mod( 'header_layout', 'header-top');
   $page_sidebar            = get_theme_mod( 'page_sidebar', 1 );
   $sidebar_layout          = get_theme_mod( 'page_sidebar_layout', 'content-sidebar' );
-  $secondary_sidebar_width = get_theme_mod( 'secondary_slider_width', '20' );
 
-   if ($page_sidebar  == 1 ) {
+   if ($page_sidebar  == 1 && $header_layout == 'header-top') {
 
       if ( $sidebar_layout == 'sidebar-content-sidebar') { ?>
 
-        <aside id="secondary" class="secondary-sidebar widget-area" role="complementary" style="flex-basis: <?php echo $secondary_sidebar_width;?>%">
+        <aside id="secondary" class="secondary-sidebar widget-area" role="complementary" >
           <?php dynamic_sidebar( 'secondary' ); ?>
         </aside><!-- #secondary -->
 
       <?php }
     }
 	}
+}
+
+if ( ! function_exists( 'engine_get_abar' ) ) {
+	/**
+	 * Display engine sidebar
+	 *
+	 * @uses get_sidebar()
+	 * @since 1.0.0
+	 */
+	function engine_get_abar () {
+		$abar_template_toggle	= get_theme_mod( 'abar_template_toggle', 0 );
+		$abar_template				= get_theme_mod( 'abar_template');
+		$abar_positon 		 		= get_theme_mod( 'abar_positon', 'top' );
+		$abar_link 				 		= get_theme_mod( 'abar_link' );
+		$abar_button_title 		= get_theme_mod( 'abar_button_title', "Shop Now" );
+		$abar_message 		 		= get_theme_mod( 'abar_message', 'Free Shipping on all orders over $00' );
+
+		if ( $abar_template_toggle == 0 ) {
+			$abar_template_status = "default";
+		} else {
+			$abar_template_status = "custom-template";
+		}
+
+		?>
+
+
+		<div id="abar" class="abar <?php echo $abar_positon . ' ' . $abar_template_status;?>">
+			<div class="abar-content-wrap">
+
+				<?php  if ( $abar_template_toggle == 0 ) {
+
+					echo $abar_message;
+
+					if ($abar_link != "") {
+						echo "<a class='abar-link button' href='" . $abar_link . "'>" . $abar_button_title . "</a>";
+					}
+
+				} else {
+
+					echo do_shortcode( "[fl_builder_insert_layout id=\"$abar_template\"]" );
+
+				} ?>
+
+			</div>
+		</div>
+
+	<?php }
 }
 
 

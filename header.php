@@ -11,21 +11,24 @@
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
-<link rel="profile" href="http://gmpg.org/xfn/11">
 
-<?php wp_head(); ?>
+<head>
+  <meta charset="<?php bloginfo( 'charset' ); ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+  <link rel="profile" href="http://gmpg.org/xfn/11">
+
+  <?php wp_head(); ?>
 </head>
 
 
 <?php
+  // Check if beaver builder is active
+  if (class_exists('flbuilder')) {
+    $header_template_toggle = get_theme_mod( 'header_template_toggle', 0 );
+    $header_template        = get_theme_mod( 'header_template', 0 );
+  }
 
-  $header_template_toggle = get_theme_mod( 'header_template_toggle', 0 );
-  $header_template        = get_theme_mod( 'header_template', 0 );
-
-// Check if boxed layout is enabled
+  // Check if boxed layout is enabled
   $boxed_layout         = get_theme_mod( 'boxed_layout', 0);
   $content_layout_style = get_theme_mod( 'content_layout_style', 'content-layout-single');
   $header_layout        = get_theme_mod( 'header_layout', 'header-top');
@@ -68,25 +71,30 @@
   $body_classes = $site_layout . ' ' . $content_layout_style . ' ' . $header_layout . ' sticky-header-' . $sticky_header . ' sticky-header-style-' . $sticky_header_style . ' slideout-menu-' . $slideout_menu . ' slideout-menu-' . $slideout_menu_style . ' ' . $sidebar_layout;
 ?>
 
-
 <body <?php body_class($body_classes); ?>>
-
-
-
-<!-- Swipe Menu -->
-
-<?php  if (  $slideout_menu != 'disabled' && $slideout_menu_style == 'swipe-left' ) {
-
-  do_action( 'engine_slideout_menu' );
-
-} ?>
-
 
 <div id="page" class="site <?php echo $site_layout_container; ?>">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'engine' ); ?></a>
 
+  <?php
+
+  // Announcement Bar
+  $abar_toggle  = get_theme_mod( 'abar_toggle', 0 );
+  $abar_positon = get_theme_mod( 'abar_positon', 'top' );
+
+  // Check if abar is innabled
+  if ( $abar_toggle == 1 && $abar_positon == "top") {
+
+    do_action( 'engine_abar' );
+
+  }
+
+  do_action( 'engine_before_header' );
+
+  ?>
+
 		<?php  // Check if "use template for header" is set in the customizer
-			if ( $header_template_toggle == 1 ) { ?>
+			if ( $header_template_toggle == 1 && class_exists('flbuilder') ) { ?>
 
       <header id="masthead" class="site-header custom-layout" role="banner">
 
@@ -117,8 +125,6 @@
               </a>
             </h1>
 
-
-
           </div><!-- .site-branding -->
 
           <nav id="site-navigation" class="main-navigation" role="navigation">
@@ -133,9 +139,7 @@
 
             </button>
           </nav><!-- #site-navigation -->
-
         </div>
-
 			<?php };?>
 
       <!-- Check if raguler (not swipe) Menu is enabled -->
@@ -148,17 +152,34 @@
     	</header><!-- #masthead -->
 
       <!-- Check if raguler (not swipe) Menu is enabled -->
-      <?php  if (  $slideout_menu != 'disabled' && $slideout_menu_style != 'swipe-left' && $slideout_menu_style != 'dropdown') {
+      <?php  if (  $slideout_menu != 'disabled' && $slideout_menu_style != 'dropdown') {
 
         do_action( 'engine_slideout_menu' );
 
       } ?>
 
+      <?php
+
+      do_action( 'engine_before_content' );
 
 
+      // Announcement Bar
+      $abar_toggle  = get_theme_mod( 'abar_toggle', 0 );
 
+
+      ?>
 
 	<div id="content-wrap" class="site-content-wrap">
+
+    <?php
+    $abar_positon = get_theme_mod( 'abar_positon', 'top' );
+
+    // Check if abar is innabled
+    if ( $abar_toggle == 1 && $abar_positon == "menu") {
+
+      do_action( 'engine_abar' );
+
+    } ?>
 
 
 		<div id="content" class="site-content container">
