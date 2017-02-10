@@ -15,7 +15,7 @@
 
 	</div><!-- #content -->
 
-	<?php if ( $footer_template == 1 && class_exists('flbuilder') ) { ?>
+	<?php if ( $footer_template == 1 && class_exists('Element_Base') ) { ?>
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
 

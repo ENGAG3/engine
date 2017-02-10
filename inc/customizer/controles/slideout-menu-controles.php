@@ -22,7 +22,7 @@ engine_Kirki::add_field( 'engine_theme', array(
 
 
 
-if (class_exists('flbuilder')) {
+if (class_exists('Element_Base')) {
 
 
 /**

@@ -23,7 +23,7 @@
 
 <?php
   // Check if beaver builder is active
-  if (class_exists('flbuilder')) {
+  if (class_exists('Element_Base')) {
     $header_template_toggle = get_theme_mod( 'header_template_toggle', 0 );
     $header_template        = get_theme_mod( 'header_template', 0 );
   }
@@ -94,7 +94,7 @@
   ?>
 
 		<?php  // Check if "use template for header" is set in the customizer
-			if ( $header_template_toggle == 1 && class_exists('flbuilder') ) { ?>
+			if ( $header_template_toggle == 1 && class_exists('Element_Base') ) { ?>
 
       <header id="masthead" class="site-header custom-layout" role="banner">
 

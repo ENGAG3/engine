@@ -82,7 +82,7 @@ add_action( 'engine_slideout_menu', 'engine_get_slideout_menu', 0 );
 // add_action( 'engine_single_post',         'engine_post_content',         30 );
 // add_action( 'engine_single_post',         'engine_init_structured_data', 40 );
 // add_action( 'engine_single_post_bottom',  'engine_post_nav',             10 );
-add_action( 'engine_single_post_bottom',  'engine_display_comments',     20 );
+add_action( 'engine_single_post_after',  'engine_display_comments',     20 );
 // add_action( 'engine_post_content_before', 'engine_post_thumbnail',       10 );
 //
 // /**

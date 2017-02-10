@@ -2,7 +2,7 @@
 // 404 page
 
 // Check if beaver builder is active
-if (class_exists('flbuilder')) {
+if (class_exists('Element_Base')) {
 
    /**
     * Add error template toggle

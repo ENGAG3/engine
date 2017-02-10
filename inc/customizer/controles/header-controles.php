@@ -3,7 +3,7 @@
 
 
   // Check if beaver builder is active
- if (class_exists('flbuilder')) {
+ // if (class_exists('Element_Base')) {
 
    /**
     * Add header template toggle
@@ -43,7 +43,7 @@
   	)
    ) );
 
-  }
+  // }
 
 
  engine_Kirki::add_field( 'engine_theme', array(

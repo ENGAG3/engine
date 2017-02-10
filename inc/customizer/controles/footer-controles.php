@@ -2,7 +2,7 @@
 
 // Footer
 
- if (class_exists('flbuilder')) {
+ if (class_exists('Element_Base')) {
 
 /**
  * Add header template toggle

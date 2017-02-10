@@ -95,10 +95,12 @@
 }
 
 .show-sections {
-  #accordion-section-layout,
   #accordion-section-header,
   #accordion-panel-nav_menus,
   #accordion-section-footer,
+  #accordion-section-blog,
+  #accordion-section-store,
+  #accordion-section-buddypress,
   #accordion-panel-widgets,
   #accordion-section-announcement_bar,
   #accordion-section-slideout {
@@ -108,6 +110,7 @@
 
 // Show / Hide sections
 .show-general {
+  #accordion-section-layout,
   #accordion-section-title_tagline,
   #accordion-section-typography,
   #accordion-section-social,
@@ -214,6 +217,30 @@
    h3::before {
      content: "\f0c9";
      font-size: 1.9em;
+   }
+ }
+
+ #accordion-section-blog {
+   h3::before {
+     content: "\f1ea";
+    //  font-size: 1.8em;
+    //  font-family: dashicons;
+   }
+ }
+
+ #accordion-section-store {
+   h3::before {
+     content: "\f513";
+    //  font-size: 1.8em;
+     font-family: dashicons;
+   }
+ }
+
+ #accordion-section-buddypress {
+   h3::before {
+     content: "\f2bd";
+    //  font-size: 1.8em;
+    //  font-family: dashicons;
    }
  }
 
