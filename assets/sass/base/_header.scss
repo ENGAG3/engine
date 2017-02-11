@@ -228,6 +228,8 @@ html.medium-device body.sticky-header-mobile.header-top {
 
 
 
+
+
 /*
  * Defult header layout
  */
@@ -357,6 +359,7 @@ html:not(.small-device) {
         }
 
         ul {
+          display: none;
           top: 0;
           right: -100%;
         }

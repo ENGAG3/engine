@@ -22,13 +22,13 @@
 
 			<?php  the_title( '<h1 class="entry-title">', '</h1>' );
 
-			if ( 'post' === get_post_type() ) : ?>
+			// if ( 'post' == get_post_type() ) : ?>
 
 			<div class="entry-meta">
 				<?php engine_posted_on(); ?>
 			</div><!-- .entry-meta -->
 
-			<?php endif; ?>
+			<?php // endif; ?>
 
 		</div>
 

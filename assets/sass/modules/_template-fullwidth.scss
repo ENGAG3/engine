@@ -1,0 +1,35 @@
+.page-template-fullwidth .content-area {
+  width: 100% !important;
+}
+
+// Add elementor support for full width template
+html .page-template-fullwidth.elementor-body,
+html .page-template-fullwidth.elementor-page {
+
+  .content-area,
+  .entry-content,
+  .site-content.container,
+  .site-main>article {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .entry-header,
+  .entry-footer{
+    display: none !important;
+  }
+}
+// Add elementor support for full width template
+html .elementor-body,
+html .elementor-page {
+
+  .entry-content {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .entry-header,
+  .entry-footer{
+    display: none !important;
+  }
+}

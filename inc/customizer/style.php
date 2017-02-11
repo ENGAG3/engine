@@ -32,8 +32,8 @@ $content_background_color 	  = get_theme_mod( 'content_background_color', '#ffff
 $main_sidebar_width = get_theme_mod( 'main_slider_width', '20' );
 $secondary_sidebar_width = get_theme_mod( 'secondary_slider_width', '20' );
 
-$main_sidebar_width_s 		 = round($main_sidebar_width * ((80-$amount) / 100), 0);
-$secondary_sidebar_width_s = round($secondary_sidebar_width * ((80-$amount) / 100), 0);
+$main_sidebar_width_s 		 = round($main_sidebar_width * ((85-$amount) / 100), 0);
+$secondary_sidebar_width_s = round($secondary_sidebar_width * ((85-$amount) / 100), 0);
 
 
 
@@ -48,12 +48,12 @@ $header_width_desktop = get_theme_mod( 'header_width_desktop', 28 );
 
 $header_background_color 	= get_theme_mod( 'header_background_color', '#ffffff' );
 $header_link_color 	  		= get_theme_mod( 'header_link_color', '#777777' );
-$header_link_color_active = get_theme_mod( 'header_link_color_active', '#2ea3f2' );
+$header_link_color_active = get_theme_mod( 'header_link_color_active', '' );
 
 // Slideout
 $slideout_background_color 	= get_theme_mod( 'slideout_background_color', '#222222' );
 $slideout_link_color 	  		= get_theme_mod( 'slideout_link_color', '#ffffff' );
-$slideout_link_color_active = get_theme_mod( 'slideout_link_color_active', '#2ea3f2' );
+$slideout_link_color_active = get_theme_mod( 'slideout_link_color_active', '' );
 $slideout_overlay 				  = get_theme_mod( 'slideout_overlay', 'rgba(0,0,0,0.75)' );
 
 // Abar
@@ -63,7 +63,7 @@ $abar_text_color 			 = get_theme_mod( 'abar_text_color', '#ffffff' );
 // Footer
 $footer_background_color 	= get_theme_mod( 'footer_background_color', '#ffffff' );
 $footer_link_color 	  		= get_theme_mod( 'footer_link_color', '#777777' );
-$footer_link_color_active = get_theme_mod( 'footer_link_color_active', '#2ea3f2' );
+$footer_link_color_active = get_theme_mod( 'footer_link_color_active', '' );
 
 // Get Sticky Header style
 $sticky_header_style = get_theme_mod( 'sticky_header_style', 'fixed' );
@@ -142,6 +142,7 @@ $medium_breakpoint = $medium_breakpoint_value . "px";
 	.site-header a:hover,
 	.current-menu-item > a,
 	.current-menu-ancestor > a {
+		color: <?php echo $body_link_color; ?>;
 		color: 	<?php echo $header_link_color_active; ?>;
 	}
 

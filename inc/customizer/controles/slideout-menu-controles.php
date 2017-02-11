@@ -22,7 +22,7 @@ engine_Kirki::add_field( 'engine_theme', array(
 
 
 
-if (class_exists('Element_Base')) {
+if (class_exists('elementor')) {
 
 
 /**
@@ -143,7 +143,7 @@ engine_Kirki::add_field( 'engine_theme', array(
 	'settings'    => 'slideout_link_color_active',
 	'label'       => __( 'Slideout Link Color', 'engine' ),
 	'section'     => 'slideout',
-	'default'     => '#2ea3f2',
+	'default'     => '',
 	'choices'     => array(
 		'alpha' => false,
 	),

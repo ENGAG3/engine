@@ -191,3 +191,31 @@ function edit_upload_types($existing_mimes = array()) {
     return $existing_mimes;
 }
 add_filter('upload_mimes', 'edit_upload_types');
+
+
+
+// Diable admin access to raguler users
+function splen_remove_admin_bar() {
+	if( !is_super_admin() )
+		add_filter( 'show_admin_bar', '__return_false' );
+}
+add_action('wp', 'splen_remove_admin_bar');
+
+
+
+// Commnets form
+
+// Remove website field
+function crunchify_disable_comment_url($fields) {
+    unset($fields['url']);
+    return $fields;
+}
+add_filter('comment_form_default_fields','crunchify_disable_comment_url');
+
+// 
+//
+//
+// add_action("gform_user_registered", "autologin", 10, 4);
+// function autologin($user_id, $config, $entry, $password) {
+//         wp_set_auth_cookie($user_id, false, '');
+// }

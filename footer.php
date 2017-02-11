@@ -11,15 +11,26 @@
 	// Get customzer info
 	$footer_template = get_theme_mod( 'footer_template_toggle', 0);
 	$template = get_theme_mod( 'footer_template', 'Select' );
+
+	// Announcement Bar
+	$abar_toggle  = get_theme_mod( 'abar_toggle', 0 );
+	$abar_positon = get_theme_mod( 'abar_positon', 'top' );
+
+	// Check if beaver builder is active
+	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+	$builder_is_active = is_plugin_active( 'elementor/elementor.php' );
+
+
 ?>
 
 	</div><!-- #content -->
 
-	<?php if ( $footer_template == 1 && class_exists('Element_Base') ) { ?>
+	<?php if ( $footer_template == 1 && $builder_is_active ) { ?>
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
 
 			<?php echo do_shortcode( "[fl_builder_insert_layout id=\"$template\"]" );
+
 		} else { ?>
 
 		<footer id="colophon" class="site-footer default-layout" role="contentinfo">
@@ -57,9 +68,6 @@
 
 		do_action( 'engine_after_footer' );
 
-		// Announcement Bar
-		$abar_toggle  = get_theme_mod( 'abar_toggle', 0 );
-		$abar_positon = get_theme_mod( 'abar_positon', 'top' );
 
 		// Check if abar is innabled
 		if ( $abar_toggle == 1 && $abar_positon == "bottom") {

@@ -3,7 +3,7 @@
 
 
   // Check if beaver builder is active
- // if (class_exists('Element_Base')) {
+ // if (class_exists('elementor')) {
 
    /**
     * Add header template toggle
@@ -162,7 +162,7 @@ engine_Kirki::add_field( 'engine_theme', array(
 	'settings'    => 'header_link_color_active',
 	'label'       => __( 'Header Link Color', 'engine' ),
 	'section'     => 'header',
-	'default'     => '#2ea3f2',
+	'default'     => '',
 	'choices'     => array(
 		'alpha' => false,
 	),

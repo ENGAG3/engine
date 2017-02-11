@@ -72,6 +72,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "base/padding";
 
 /*--------------------------------------------------------------
+# Templates
+--------------------------------------------------------------*/
+
+@import "modules/template-fullwidth";
+
+
+/*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
 @import "elements/elements";
@@ -81,6 +88,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
+@import "modules/default-header";
+
 @import "modules/slideout-menu";
 
 @import "modules/abar";
@@ -88,6 +97,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "modules/widgets";
 
 @import "modules/bb";
+
+@import "modules/elementor";
+
+@import "modules/buddypress";
 
 // /*--------------------------------------------------------------
 // # Media

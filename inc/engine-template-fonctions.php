@@ -17,6 +17,12 @@ if ( ! function_exists( 'engine_display_comments' ) ) {
 }
 
 
+
+
+
+
+
+
 if ( ! function_exists( 'engine_get_main_sidebar' ) ) {
 	/**
 	 * Display engine sidebar
@@ -39,6 +45,82 @@ if ( ! function_exists( 'engine_get_main_sidebar' ) ) {
 
 	}
 }
+
+
+
+
+
+
+
+
+if ( ! function_exists( 'engine_get_default_header' ) ) {
+	/**
+	 * Display engine sidebar
+	 *
+	 * @uses get_sidebar()
+	 * @since 1.0.0
+	 */
+	function engine_get_default_header() {
+
+		// Check if beaver builder is active
+		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		$builder_is_active = is_plugin_active( 'elementor/elementor.php' );
+
+	  if ( class_exists('flbuilder')) {
+	    $header_template_toggle = get_theme_mod( 'header_template_toggle', 0 );
+	    $header_template        = get_theme_mod( 'header_template', 0 );
+	  } ?>
+
+		<?php // Check if "use template for header" is set in the customizer
+		if ( $header_template_toggle == 1 && class_exists('flbuilder') ) { ?>
+
+      <?php echo do_shortcode( "[fl_builder_insert_layout id=\"$header_template\"]" );
+
+		} else { ?>
+
+			<div class="site-header-wrap container">
+
+				<div class="site-branding">
+
+					<h1 class="site-title h2">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+
+							<?php // No Custom Logo, just display the site's name
+							if ( !has_custom_logo() ) { ?>
+								<?php bloginfo('name'); ?>
+							<?php } else {
+								the_custom_logo();
+							} ?>
+
+						</a>
+					</h1>
+
+				</div><!-- .site-branding -->
+
+				<nav id="site-navigation" class="main-navigation" role="navigation">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+					<button id="menu-toggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+						Menu
+						<div class="menu-icon">
+							<span class="bar-1"></span>
+							<span class="bar-2"></span>
+							<span class="bar-3"></span>
+						</div>
+
+					</button>
+				</nav><!-- #site-navigation -->
+			</div>
+
+	<?php }
+	}
+}
+
+
+
+
+
+
+
 
 
 if ( ! function_exists( 'engine_get_secondary_sidebar' ) ) {
@@ -66,6 +148,13 @@ if ( ! function_exists( 'engine_get_secondary_sidebar' ) ) {
     }
 	}
 }
+
+
+
+
+
+
+
 
 if ( ! function_exists( 'engine_get_abar' ) ) {
 	/**
@@ -113,6 +202,12 @@ if ( ! function_exists( 'engine_get_abar' ) ) {
 
 	<?php }
 }
+
+
+
+
+
+
 
 
 if ( ! function_exists( 'engine_get_slideout_menu' ) ) {

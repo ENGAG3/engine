@@ -1,0 +1,35 @@
+.single-elementor_library {
+
+}
+
+// Add elementor support for full width template
+html .single-elementor_library,
+html .single-elementor_library {
+
+  .site-content {
+    max-width: none;
+  }
+
+  .content-area {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 3rem auto !important;
+  }
+
+  .entry-header,
+  .entry-footer{
+    display: none !important;
+  }
+
+  #secondary {
+    display: none !important;
+  }
+}
+
+
+// Elementor Widget
+
+.widget_elementor-library {
+  padding: 0 !important;
+}

@@ -10,7 +10,7 @@ engine_Kirki::add_field( 'abar_toggle', array(
 ) );
 
 
-if (class_exists('Element_Base')) {
+if (class_exists('elementor')) {
   /**
    * Add header template toggle
    */
