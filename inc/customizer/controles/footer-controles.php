@@ -2,7 +2,11 @@
 
 // Footer
 
- if (class_exists('elementor')) {
+// Check if beaver builder is active
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+$builder_is_active = is_plugin_active( 'elementor/elementor.php' );
+
+if ( $builder_is_active ) {
 
 /**
  * Add header template toggle
@@ -31,7 +35,7 @@ engine_Kirki::add_field( 'engine_theme', array(
  'default'     => '',
  // 'priority'    => 10,
  'multiple'    => 1,
- 'choices'     =>  Kirki_Helper::get_posts( array( 'posts_per_page' => 10, 'post_type' => 'fl-builder-template' ) ),
+ 'choices'     =>  Kirki_Helper::get_posts( array( 'posts_per_page' => 10, 'post_type' => 'elementor_library' ) ),
  'active_callback'  => array(
 		array(
 			'setting'  => 'footer_template_toggle',

@@ -30,9 +30,16 @@
   $slideout_menu        = get_theme_mod( 'slideout_menu', 'mobile');
   $slideout_menu_style  = get_theme_mod( 'slideout_menu_style', 'off-canvas-left');
   $site_logo        = get_theme_mod( 'site_logo', '');
+  $header_template_toggle = get_theme_mod( 'header_template_toggle', 0 );
+
+  if ($header_template_toggle == 0) {
+    $header_template_is = "default-layout";
+  } else {
+    $header_template_is = "custom-layout";
+  }
+
   // Page
   $page_sidebar = get_theme_mod( 'page_sidebar', 1 );
-
   $abar_toggle  = get_theme_mod( 'abar_toggle', 0 );
   $abar_positon = get_theme_mod( 'abar_positon', 'top' );
 
@@ -41,7 +48,6 @@
   } else {
     $sidebar_layout = 'sidebar-disabled';
   }
-
   if ($boxed_layout == 1) {
     $site_layout = 'boxed-layout';
     $site_layout_container = 'container';
@@ -65,7 +71,7 @@
 
   <?php do_action( 'engine_before_header' ); ?>
 
-    <header id="masthead" class="site-header" role="banner">
+    <header id="masthead" class="site-header <?php echo $header_template_is; ?>" role="banner">
 
       <?php do_action( 'engine_header' ); ?>
 

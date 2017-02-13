@@ -25,11 +25,16 @@
 
 	</div><!-- #content -->
 
-	<?php if ( $footer_template == 1 && $builder_is_active ) { ?>
+	<?php
+		// Check if beaver builder is active
+		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		$builder_is_active = is_plugin_active( 'elementor/elementor.php' );
+
+		if ( $footer_template == 1 ) { ?>
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
 
-			<?php echo do_shortcode( "[fl_builder_insert_layout id=\"$template\"]" );
+			<?php echo do_shortcode( "[elementor-template id=\"$template\"]" );
 
 		} else { ?>
 

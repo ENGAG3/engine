@@ -3,8 +3,9 @@
 }
 
 // Add elementor support for full width template
-html .page-template-fullwidth.elementor-body,
-html .page-template-fullwidth.elementor-page {
+html .page-template-fullwidth.elementor-page,
+html .page-template-fullwidth.elementor-editor-active,
+html .page-template-fullwidth.elementor-editor-preview {
 
   .content-area,
   .entry-content,
@@ -20,8 +21,9 @@ html .page-template-fullwidth.elementor-page {
   }
 }
 // Add elementor support for full width template
-html .elementor-body,
-html .elementor-page {
+html .elementor-page,
+html .elementor-editor-active,
+html .elementor-editor-preview {
 
   .entry-content {
     max-width: none !important;

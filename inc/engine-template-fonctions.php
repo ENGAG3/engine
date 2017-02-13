@@ -66,15 +66,15 @@ if ( ! function_exists( 'engine_get_default_header' ) ) {
 		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		$builder_is_active = is_plugin_active( 'elementor/elementor.php' );
 
-	  if ( class_exists('flbuilder')) {
+	  if ( $builder_is_active) {
 	    $header_template_toggle = get_theme_mod( 'header_template_toggle', 0 );
 	    $header_template        = get_theme_mod( 'header_template', 0 );
 	  } ?>
 
 		<?php // Check if "use template for header" is set in the customizer
-		if ( $header_template_toggle == 1 && class_exists('flbuilder') ) { ?>
+		if ( $header_template_toggle == 1 && $builder_is_active ) { ?>
 
-      <?php echo do_shortcode( "[fl_builder_insert_layout id=\"$header_template\"]" );
+      <?php echo do_shortcode( "[elementor-template id=\"$header_template\"]" );
 
 		} else { ?>
 
@@ -193,7 +193,7 @@ if ( ! function_exists( 'engine_get_abar' ) ) {
 
 				} else {
 
-					echo do_shortcode( "[fl_builder_insert_layout id=\"$abar_template\"]" );
+					echo do_shortcode( "[elementor-template id=\"$abar_template\"]" );
 
 				} ?>
 
@@ -230,7 +230,7 @@ if ( ! function_exists( 'engine_get_slideout_menu' ) ) {
 
 						$template = get_theme_mod( 'slideout_menu_template', 'Select' );
 
-						echo do_shortcode( "[fl_builder_insert_layout id=\"$template\"]" );
+						echo do_shortcode( "[elementor-template id=\"$template\"]" );
 
 					} else { ?>
 

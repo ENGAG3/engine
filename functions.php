@@ -212,10 +212,42 @@ function crunchify_disable_comment_url($fields) {
 }
 add_filter('comment_form_default_fields','crunchify_disable_comment_url');
 
-// 
+//
 //
 //
 // add_action("gform_user_registered", "autologin", 10, 4);
 // function autologin($user_id, $config, $entry, $password) {
 //         wp_set_auth_cookie($user_id, false, '');
 // }
+
+
+
+
+
+
+
+// Add Image Sizes
+
+if ( function_exists( 'add_image_size' ) ) {
+	add_image_size( 'blog_thumbnail', 450, 250, true ); //(cropped)
+	add_image_size( 'blog_featured', 950, 500, true ); //(cropped)
+}
+add_filter('image_size_names_choose', 'my_image_sizes');
+
+function my_image_sizes($sizes) {
+$addsizes = array(
+	"blog_thumbnail" => __( "Blog Thumbnail"),
+	"blog_featured" => __( "Blog Featured")
+);
+$newsizes = array_merge($sizes, $addsizes);
+	return $newsizes;
+}
+
+
+// UAB
+add_filter('uabb_blog_posts_featured_image_sizes', 'myfilter');
+
+function myfilter( $arr ){
+    $arr['blog_thumbnail'] = __('Blog Thumbnail', 'uabb');
+    return $arr;
+}
