@@ -40,6 +40,7 @@ function engine_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'engine' ),
+		'slideout' => esc_html__( 'Slideout Menu', 'engine' ),
 	) );
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -122,11 +123,17 @@ function engine_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'engine_scripts' );
+
 require get_template_directory() . '/inc/customizer/font-styles.php';
 add_action( 'wp_enqueue_scripts', 'engine_font_styles' );
+
 require get_template_directory() . '/inc/customizer/field-styles.php';
 add_action( 'wp_enqueue_scripts', 'engine_field_styles' );
+
+require get_template_directory() . '/inc/customizer/blog-styles.php';
+
 function engine_custom_css() {
   $custom_css  = get_theme_mod( 'css_code', '');
   wp_add_inline_style( 'engine-style', $custom_css );

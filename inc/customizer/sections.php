@@ -5,15 +5,23 @@ if ( class_exists( 'kirki' ) ) {
 
 
 
-  // Sections
+
+   /*
+    * Sections
+    *
+    *
+    *
+    */
+
 
   /**
-   * Add the layout section
+   * Add the header section
    */
-  engine_Kirki::add_section( 'layout', array(
-  	'title'      => esc_attr__( 'Layout', 'engine' ),
-  	'priority'   => 30,
-  	'capability' => 'edit_theme_options',
+  engine_Kirki::add_section( 'topbar', array(
+    'title'      => esc_attr__( 'Top Bar', 'engine' ),
+    'priority'   => 10,
+    // 'panel'      => 'colors',
+    'capability' => 'edit_theme_options',
   ) );
 
   /**
@@ -42,7 +50,7 @@ if ( class_exists( 'kirki' ) ) {
    */
    engine_Kirki::add_panel( 'nav_menus', array(
        'priority'    => 50,
-       'title'       => __( 'Navigation', 'engine' ),
+       'title'       => __( 'Menus', 'engine' ),
       //  'description' => __( 'My Description', 'engine' ),
    ) );
 
@@ -70,8 +78,6 @@ if ( class_exists( 'kirki' ) ) {
 
    }
 
-
-
    /**
     * Add the footer section
     */
@@ -80,24 +86,6 @@ if ( class_exists( 'kirki' ) ) {
    	'priority'   => 80,
    	'capability' => 'edit_theme_options',
    ) );
-
-
-
-
- /* Only load code that needs BuddyPress to run once BP is loaded and initialized. */
- function engine_buddypress_panel() {
-
-   /**
-    * Add the footer section
-    */
-   engine_Kirki::add_section( 'buddypress', array(
-   	'title'      => esc_attr__( 'Social Network', 'engine' ),
-   	'priority'   => 90,
-   	'capability' => 'edit_theme_options',
-   ) );
-
- }
- add_action( 'bp_include', 'engine_buddypress_panel' );
 
 
 
@@ -122,22 +110,46 @@ if ( class_exists( 'kirki' ) ) {
 
  /*
   * General
+  *
+  *
+  *
   */
 
   /**
    * Add Color Panel
    */
   engine_Kirki::add_section( 'title_tagline', array(
-      'priority'    => 110,
+      'priority'    => 10,
       'title'    => __( 'Site Identity' ),
       // 'description' => __( 'My Description', 'engine' ),
   ) );
 
   /**
+   * Add the layout section
+   */
+  engine_Kirki::add_section( 'layout', array(
+    'title'      => esc_attr__( 'Layout', 'engine' ),
+    'priority'   => 20,
+    'capability' => 'edit_theme_options',
+  ) );
+
+  /**
+   * Add the typography section
+   */
+  engine_Kirki::add_section( 'typography', array(
+  	'title'      => esc_attr__( 'Typography', 'engine' ),
+  	'priority'   => 30,
+  	// 'panel'      => 'menus',
+  	'capability' => 'edit_theme_options',
+  ) );
+
+
+
+  /**
    * Add Color Panel
    */
   engine_Kirki::add_panel( 'colors', array(
-      'priority'    => 120,
+      'priority'    => 40,
       'title'       => __( 'Colors & Styles', 'engine' ),
       'description' => __( 'My Description', 'engine' ),
   ) );
@@ -174,22 +186,11 @@ if ( class_exists( 'kirki' ) ) {
 
 
   /**
-   * Add the typography section
-   */
-  engine_Kirki::add_section( 'typography', array(
-  	'title'      => esc_attr__( 'Typography', 'engine' ),
-  	'priority'   => 130,
-  	// 'panel'      => 'menus',
-  	'capability' => 'edit_theme_options',
-  ) );
-
-
-  /**
    * Add the Social Media section
    */
   engine_Kirki::add_section( 'social', array(
   	'title'      => esc_attr__( 'Social Media', 'engine' ),
-  	'priority'   => 140,
+  	'priority'   => 50,
   	// 'panel'      => 'menus',
   	'capability' => 'edit_theme_options',
   ) );
@@ -197,6 +198,9 @@ if ( class_exists( 'kirki' ) ) {
 
   /*
    *  Advanced
+   *
+   *
+   *
    */
 
   /**
@@ -204,7 +208,7 @@ if ( class_exists( 'kirki' ) ) {
    */
   engine_Kirki::add_section( 'error_page', array(
   	'title'      => esc_attr__( '404 / Page Not Found', 'engine' ),
-  	'priority'   => 150,
+  	'priority'   => 10,
   	// 'panel'      => 'menus',
   	'capability' => 'edit_theme_options',
   ) );
@@ -214,7 +218,7 @@ if ( class_exists( 'kirki' ) ) {
    */
   engine_Kirki::add_section( 'cookie_notice', array(
     'title'      => esc_attr__( 'EU Cookie Notice', 'engine' ),
-    'priority'   => 160,
+    'priority'   => 20,
     // 'panel'      => 'menus',
     'capability' => 'edit_theme_options',
   ) );
@@ -224,7 +228,7 @@ if ( class_exists( 'kirki' ) ) {
    */
   engine_Kirki::add_section( 'code_injection', array(
   	'title'      => esc_attr__( 'Code Injection', 'engine' ),
-  	'priority'   => 170,
+  	'priority'   => 30,
   	// 'panel'      => 'menus',
   	'capability' => 'edit_theme_options',
   ) );

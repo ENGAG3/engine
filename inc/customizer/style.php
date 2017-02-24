@@ -3,7 +3,7 @@
 function customizer_css() {
 
 // Get Layout Settings
-$content_width 		 	 	 = get_theme_mod( 'content_width', 1200 );
+$content_width 		 	 	 = get_theme_mod( 'content_width', 1140 );
 
 // Get typography settings
 $body_font_size 		 	 = get_theme_mod( 'body_font_size', 15 );
@@ -43,12 +43,17 @@ $sidebar_total_width_s = $main_sidebar_width_s + $secondary_sidebar_width_s;
 
 // Header
 
-
 $header_width_desktop = get_theme_mod( 'header_width_desktop', 28 );
 
 $header_background_color 	= get_theme_mod( 'header_background_color', '#ffffff' );
 $header_link_color 	  		= get_theme_mod( 'header_link_color', '#777777' );
 $header_link_color_active = get_theme_mod( 'header_link_color_active', '' );
+
+// Top Bar
+$topbar_background_color 	= get_theme_mod( 'topbar_background_color', '#080808' );
+$topbar_link_color	  		= get_theme_mod( 'topbar_link_color', '#ffffff' );
+$topbar_link_color_active = get_theme_mod( 'topbar_link_color_active', '' );
+
 
 // Slideout
 $slideout_background_color 	= get_theme_mod( 'slideout_background_color', '#222222' );
@@ -117,6 +122,34 @@ $medium_breakpoint = $medium_breakpoint_value . "px";
 		background-color: <?php echo $header_background_color; ?>;
 	}
 
+	.site-header a {
+		color: <?php echo $header_link_color; ?>;
+	}
+
+	.site-header a:hover,
+	.current-menu-item > a,
+	.current-menu-ancestor > a {
+		color: <?php echo $body_link_color; ?>;
+		color: 	<?php echo $header_link_color_active; ?>;
+	}
+
+	/*Top Bar*/
+
+	.topbar {
+		color: <?php echo $topbar_link_color ?>;
+		background-color: <?php echo $topbar_background_color ?>;
+	}
+
+	.topbar a {
+		color: <?php echo $topbar_link_color ?>;
+	}
+
+	.topbar a:hover {
+		color: <?php echo $body_link_color; ?>;
+		color: 	<?php echo $header_link_color_active; ?>;
+		color: <?php echo $topbar_link_color_active ?>;
+	}
+
 	/*Abar*/
 	.abar {
 		color: <?php echo $abar_text_color ?>;
@@ -133,17 +166,6 @@ $medium_breakpoint = $medium_breakpoint_value . "px";
 	html:not(.small-device) .header-left .site-content-wrap,
 	html:not(.small-device) .header-right .site-content-wrap {
 		width: calc(100% - <?php echo $header_width_desktop; ?>0px);
-	}
-
-	.site-header a {
-		color: <?php echo $header_link_color; ?>;
-	}
-
-	.site-header a:hover,
-	.current-menu-item > a,
-	.current-menu-ancestor > a {
-		color: <?php echo $body_link_color; ?>;
-		color: 	<?php echo $header_link_color_active; ?>;
 	}
 
 	html:not(.small-device) .site-header.default-layout .main-navigation .sub-menu {

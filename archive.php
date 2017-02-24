@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<div class="content-area-wrap">
+<div class="content-area-wrap archive container">
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">

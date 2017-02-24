@@ -95,10 +95,11 @@
 }
 
 .show-sections {
+  #accordion-section-topbar,
   #accordion-section-header,
   #accordion-panel-nav_menus,
   #accordion-section-footer,
-  #accordion-section-blog,
+  // #accordion-section-blog,
   #accordion-section-store,
   #accordion-section-buddypress,
   #accordion-panel-widgets,
@@ -114,8 +115,6 @@
   #accordion-section-title_tagline,
   #accordion-section-typography,
   #accordion-section-social,
-  #accordion-section-static_front_page,
-  #accordion-section-static_front_page,
   #accordion-panel-colors {
     display: block !important;
   }
@@ -127,6 +126,7 @@
   #accordion-section-cookie_notice,
   #accordion-section-code_injection,
   #accordion-section-injection,
+  #accordion-section-static_front_page,
   #accordion-section-custom_css {
     display: block !important;
   }
@@ -185,6 +185,13 @@
 /*
  * Sections toggle
  */
+
+ #accordion-section-topbar {
+   h3::before {
+     content: "\f181";
+     font-family: dashicons;
+   }
+ }
 
  #accordion-section-layout {
    h3::before {

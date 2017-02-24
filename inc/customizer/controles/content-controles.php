@@ -17,7 +17,7 @@ engine_Kirki::add_field( 'engine_theme', array(
  'label'       => esc_attr__( 'Website Content Width', 'engine' ),
  'section'     => 'layout',
  // 'priority'    => 1,
- 'default'     => 1200,
+ 'default'     => 1140,
  'choices'     => array(
    'min'  => '960',
    'max'  => '1920',

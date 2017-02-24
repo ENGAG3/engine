@@ -10,8 +10,8 @@
 get_header(); ?>
 
 
-<div class="content-area-wrap">
-	
+<div class="content-area-wrap container">
+
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 

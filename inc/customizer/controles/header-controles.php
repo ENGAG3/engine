@@ -117,7 +117,7 @@ engine_Kirki::add_field( 'engine_theme', array(
 engine_Kirki::add_field( 'engine_theme', array(
   'type'        => 'slider',
 	'settings'    => 'header_width_desktop',
-	'label'       => esc_attr__( 'Header Width (desktop)', 'my_textdomain' ),
+	'label'       => esc_attr__( 'Header Width (desktop)', 'engine' ),
 	'section'     => 'header',
 	'default'     => 28,
 	'choices'     => array(

@@ -9,20 +9,16 @@
 
 get_header(); ?>
 
-<div class="content-area-wrap">
+<?php do_action( 'engine_single_post_before' ); ?>
 
-	<div id="primary" class="content-area">
+<div class="content-area-wrap container">
+
+	<div id="primary" class="content-area  container">
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post();
 
-				do_action( 'engine_single_post_before' );
-
 				get_template_part( 'template-parts/content', 'single', get_post_format() );
-
-				the_post_navigation();
-
-				do_action( 'engine_single_post_after' );
 
 			endwhile; // End of the loop. ?>
 
@@ -32,5 +28,7 @@ get_header(); ?>
 	<?php do_action( 'engine_sidebar' ); ?>
 
 </div>
+
+<?php do_action( 'engine_single_post_after' ); ?>
 
 <?php get_footer(); // Get the Footer

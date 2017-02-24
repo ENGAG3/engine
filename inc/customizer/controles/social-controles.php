@@ -76,3 +76,12 @@ engine_Kirki::add_field( 'engine_theme', array(
   'default'  => esc_attr__( '', 'engine' ),
 	// 'description' => esc_attr__( 'https://instagram.com/_u/engag3/', 'engine' ),
 ) );
+
+engine_Kirki::add_field( 'engine_theme', array(
+  'type'     => 'text',
+  'settings' => 'email',
+  'label'    => __( '<i class="fa fa-envelope" aria-hidden="true"></i> Email', 'engine' ),
+  'section'  => 'social',
+  'default'  => esc_attr__( '', 'engine' ),
+	// 'description' => esc_attr__( 'https://instagram.com/_u/engag3/', 'engine' ),
+) );

@@ -85,7 +85,7 @@ engine_Kirki::add_field( 'engine_theme', array(
 	'label'       => esc_attr__( 'Button Font', 'engine' ),
 	'section'     => 'forms',
 	'default'     => array(
-		'font-family'    => 'Roboto',
+		'font-family'    => 'select',
 		'variant'        => '400',
 	),
 	'output' => array(
@@ -137,7 +137,7 @@ engine_Kirki::add_field( 'engine_theme', array(
 	'settings'    => 'field_background_color',
 	'label'       => __( 'Field Background', 'engine' ),
 	'section'     => 'forms',
-	'default'     => 'rgba(50,50,50,1)',
+	'default'     => 'rgba(240,240,240,1)',
 	'choices'     => array(
 		'alpha' => true,
 	),

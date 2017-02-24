@@ -30,6 +30,7 @@ add_action( 'engine_sidebar',        'engine_get_secondary_sidebar',          20
 // add_action( 'engine_header', 'engine_primary_navigation_wrapper',       42 );
 // add_action( 'engine_header', 'engine_primary_navigation',               50 );
 // add_action( 'engine_header', 'engine_primary_navigation_wrapper_close', 68 );
+add_action( 'engine_before_header', 'engine_get_tobar', 0 );
 add_action( 'engine_header', 'engine_get_default_header', 0 );
 add_action( 'engine_slideout_menu', 'engine_get_slideout_menu', 0 );
 
@@ -84,6 +85,7 @@ add_action( 'engine_slideout_menu', 'engine_get_slideout_menu', 0 );
 // add_action( 'engine_single_post',         'engine_init_structured_data', 40 );
 // add_action( 'engine_single_post_bottom',  'engine_post_nav',             10 );
 add_action( 'engine_single_post_after',  'engine_display_comments',     20 );
+add_action( 'engine_single_post_after',  'engine_get_post_nav',     30 );
 // add_action( 'engine_post_content_before', 'engine_post_thumbnail',       10 );
 //
 // /**

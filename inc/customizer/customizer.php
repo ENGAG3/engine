@@ -48,6 +48,7 @@ if ( class_exists( 'kirki' ) ) {
 	require get_template_directory() . '/inc/customizer/controles/typography-controles.php';
 	require get_template_directory() . '/inc/customizer/controles/color-controles.php';
 	require get_template_directory() . '/inc/customizer/controles/abar-controles.php';
+	require get_template_directory() . '/inc/customizer/controles/topbar-controles.php';
 	require get_template_directory() . '/inc/customizer/controles/social-controles.php';
 	require get_template_directory() . '/inc/customizer/controles/blog-controles.php';
 	require get_template_directory() . '/inc/customizer/controles/buddypress-controles.php';

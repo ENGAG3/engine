@@ -16,6 +16,7 @@ input[type="datetime-local"],
 input[type="color"],
 input[type="file"],
 textarea,
+select,
 .input {
 	box-sizing: border-box;
 	// color: $color__text-input;
@@ -30,6 +31,7 @@ textarea,
 }
 
 select {
+	 -webkit-appearance: none;
 	// border: 1px solid $color__border-input;
 }
 

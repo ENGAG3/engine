@@ -9,10 +9,11 @@ if ( ! function_exists( 'engine_display_comments' ) ) {
 	function engine_display_comments() {
 
     // If comments are open or we have at least one comment, load up the comment template.
-    if ( comments_open() || get_comments_number() ) :
+    if ( comments_open() || get_comments_number() ) {
+			echo '<div class="comments-wrap container">';
       comments_template();
-    endif;
-
+			echo '</div>';
+    }
 	}
 }
 
@@ -112,6 +113,77 @@ if ( ! function_exists( 'engine_get_default_header' ) ) {
 			</div>
 
 	<?php }
+	}
+}
+
+
+if ( ! function_exists( 'engine_get_tobar' ) ) {
+	/**
+	 * Display engine sidebar
+	 *
+	 * @uses get_sidebar()
+	 * @since 1.0.0
+	 */
+	function engine_get_tobar() {
+
+		$topbar_toggle 						= get_theme_mod( 'topbar_toggle', 0 );
+		$topbar_template_toggle 	= get_theme_mod( 'topbar_template_toggle', 0 );
+		$topbar_template 					= get_theme_mod( 'topbar_template' );
+		$topbar_content 					= get_theme_mod( 'topbar_content' );
+		$topbar_social 						= get_theme_mod( 'topbar_social', 1 );
+
+		$topbar_desktop 					= get_theme_mod( 'topbar_desktop', '1' );
+		$topbar_tablet 						= get_theme_mod( 'topbar_tablet', '1' );
+		$topbar_phone 						= get_theme_mod( 'topbar_phone', '1' );
+
+		if ( $topbar_desktop ) {
+			$topbar_desktop_display = "display-desktop";
+		}
+		if ( $topbar_tablet ) {
+			$topbar_tablet_display = "display-tablet";
+		}
+		if ( $topbar_phone ) {
+			$topbar_phone_display = "display-phone";
+		}
+
+		if ($topbar_template_toggle == 0 ) {
+			$topbar_class = "default-layout";
+		} else {
+			$topbar_class = "custom-layout";
+		}
+
+
+		if ( $topbar_toggle == 1) { ?>
+
+			<div class="topbar <?php echo $topbar_class . ' ' . $topbar_desktop_display . ' ' . $topbar_tablet_display . ' ' . $topbar_phone_display ?>">
+
+				<?php if ( $topbar_template_toggle  == 1 ) {
+
+					echo do_shortcode( "[elementor-template id=\"$topbar_template\"]" );
+
+				} else { ?>
+
+					<div class="container">
+
+						<div class="tapbar-content">
+							<?php echo $topbar_content; ?>
+						</div>
+
+						<?php if ($topbar_social == 1 ) { ?>
+
+							<div class="tapbar-icons">
+								<?php echo do_shortcode( "[social_links]" ); ?>
+							</div>
+
+						<?php } ?>
+
+					</div>
+
+				<?php } ?>
+
+			</div>
+
+		<?php }
 	}
 }
 
@@ -245,7 +317,7 @@ if ( ! function_exists( 'engine_get_slideout_menu' ) ) {
 							</button>
 
 							<nav>
-								<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+								<?php wp_nav_menu( array( 'theme_location' => 'slideout', 'menu_id' => 'slideout-menu' ) ); ?>
 							</nav>
 						</div>
 
@@ -258,4 +330,19 @@ if ( ! function_exists( 'engine_get_slideout_menu' ) ) {
 		</div>
 
 	<?php }
+}
+
+
+if ( ! function_exists( 'engine_get_post_nav' ) ) {
+	/**
+	 * Display engine Slideout Menu
+	 *
+	 * @uses get_sidebar()
+	 * @since 1.0.0
+	 */
+	function engine_get_post_nav() {
+		echo '<div class="comments-wrap container">';
+			the_post_navigation();
+		echo "</div>";
+	}
 }

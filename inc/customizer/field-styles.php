@@ -13,7 +13,7 @@ function engine_field_styles() {
   $button_border_color 	 	 				= get_theme_mod( 'button_border_color', 'rgba(0,0,0,1)');
   $button_padding 	 	 		 				= get_theme_mod( 'button_padding', 14);
 
-  $field_background_color 	 	 		= get_theme_mod( 'field_background_color', 'rgba(50,50,50,1)');
+  $field_background_color 	 	 		= get_theme_mod( 'field_background_color', 'rgba(240,240,240,1)');
 
   // Setup header font styles
 

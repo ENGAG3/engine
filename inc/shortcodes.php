@@ -1,54 +1,97 @@
 <?php
 
+  function engine_social_icons(){
 
-//this callback function performs many actions depending on which shortcode ($tag) calls it
-function display_my_shortcode($atts, $content, $tag){
+    $facebook_link   = get_theme_mod( 'facebook');
+    $instagram_link  = get_theme_mod( 'instagram');
+    $twitter_link    = get_theme_mod( 'twitter');
+    $pinterest_link  = get_theme_mod( 'pinterest');
+    $youtube_link    = get_theme_mod( 'youtube');
+    $tumblr_link     = get_theme_mod( 'tumblr');
+    $px500_link      = get_theme_mod( 'px500');
+    $flickr_link     = get_theme_mod( 'flickr');
+    $email_link     = get_theme_mod( 'email');
+
+    echo "<div class='engine-social-icons'>";
+
+      if ( $facebook_link ) {
+        echo '
+        <a href="' . $facebook_link . '" target="_blank">
+          <i class="fa fa-facebook-official" aria-hidden="true"></i>
+        </a>
+        ';
+      }
+      if ( $instagram_link ) {
+        echo '
+        <a href="' . $instagram_link . '" target="_blank">
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+        </a>
+        ';
+      }
+      if ( $twitter_link ) {
+        echo '
+        <a href="' . $twitter_link . '" target="_blank">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        </a>
+        ';
+      }
+      if ( $pinterest_link ) {
+        echo '
+        <a href="' . $pinterest_link . '" target="_blank">
+          <i class="fa fa-pinterest" aria-hidden="true"></i>
+        </a>
+        ';
+      }
+      if ( $youtube_link ) {
+        echo '
+        <a href="' . $youtube_link . '" target="_blank">
+          <i class="fa fa-youtube-play" aria-hidden="true"></i>
+        </a>
+        ';
+      }
+      if ( $tumblr_link ) {
+        echo '
+        <a href="' . $tumblr_link . '" target="_blank">
+          <i class="fa fa-tumblr" aria-hidden="true"></i>
+        </a>
+        ';
+      }
+      if ( $px500_link ) {
+        echo '
+        <a href="' . $px500_link . '" target="_blank">
+          <i class="fa fa-500px" aria-hidden="true"></i>
+        </a>
+        ';
+      }
+      if ( $flickr_link  ) {
+        echo '
+        <a href="' . $flickr_link . '">
+          <i class="fa fa-flickr" aria-hidden="true"></i>
+        </a>
+        ';
+      }
+      if ( $email_link  ) {
+        echo '
+        <a href="mailto:' . $email_link . '">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+        </a>
+        ';
+      }
+
+    echo "</div>";
+  }
+
+  add_shortcode('social_links', 'engine_social_icons');
 
 
-  // Social Links
-  $facebook_link   = get_theme_mod( 'facebook');
-  $instagram_link  = get_theme_mod( 'instagram');
-  $twitter_link    = get_theme_mod( 'twitter');
-  $pinterest_link  = get_theme_mod( 'pinterest');
-  $youtube_link    = get_theme_mod( 'youtube');
-  $tumblr_link     = get_theme_mod( 'tumblr');
-  $px500_link      = get_theme_mod( 'px500');
-  $flickr_link     = get_theme_mod( 'flickr');
 
-	if($tag == 'facebook_link'){
-		echo $facebook_link;
-	}
-	else if($tag == 'instagram_link'){
-		echo $instagram_link;
-	}
-	else if($tag == 'twitter_link'){
-		echo $twitter_link;
-	}
-	else if($tag == 'pinterest_link'){
-		echo $pinterest_link;
-	}
-	else if($tag == 'youtube_link'){
-		echo $youtube_link;
-	}
-	else if($tag == 'tumblr_link'){
-		echo $tumblr_link;
-	}
-	else if($tag == 'px500_link'){
-		echo $px500_link;
-	}
-	else if($tag == 'flickr_link'){
-		echo $flickr_link;
-	}
-	//default
-	else{
 
-	}
-}
-add_shortcode('facebook_link','display_my_shortcode');
-add_shortcode('instagram_link','display_my_shortcode');
-add_shortcode('twitter_link','display_my_shortcode');
-add_shortcode('pinterest_link','display_my_shortcode');
-add_shortcode('youtube_link','display_my_shortcode');
-add_shortcode('tumblr_link','display_my_shortcode');
-add_shortcode('px500_link','display_my_shortcode');
-add_shortcode('flickr_link','display_my_shortcode');
+
+
+
+
+function engine_logo_image(){
+
+  the_custom_logo();
+
+} add_shortcode('site-logo', 'engine_logo_image');

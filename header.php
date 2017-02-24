@@ -43,11 +43,32 @@
   $abar_toggle  = get_theme_mod( 'abar_toggle', 0 );
   $abar_positon = get_theme_mod( 'abar_positon', 'top' );
 
+
+  // Blog
+
+  $blog_desktop_columns = get_theme_mod( 'blog_desktop_columns', 'column-1' );
+  $blog_tablet_columns  = get_theme_mod( 'blog_tablet_columns', 'column-1' );
+  $blog_phone_columns   = get_theme_mod( 'blog_phone_columns', 'column-1' );
+
+  $blog_sidebar = get_theme_mod( 'blog_sidebar', 0 );
+
+  // Main Sidebar
   if ($page_sidebar == 1) {
     $sidebar_layout = get_theme_mod( 'page_sidebar_layout', 'content-sidebar' );
   } else {
     $sidebar_layout = 'sidebar-disabled';
   }
+
+
+  // Blog Sidebar
+  if ($blog_sidebar == 1) {
+    $blog_sidebar_layout = get_theme_mod( 'blog_sidebar_layout', 'content-sidebar' );
+  } else {
+    $blog_sidebar_layout = 'sidebar-disabled';
+  }
+
+
+
   if ($boxed_layout == 1) {
     $site_layout = 'boxed-layout';
     $site_layout_container = 'container';
@@ -56,8 +77,9 @@
     $site_layout_container = '';
   }
   // Add all classes to single string
-  $body_classes = $site_layout . ' ' . $content_layout_style . ' ' . $header_layout . ' sticky-header-' . $sticky_header . ' sticky-header-style-' . $sticky_header_style . ' slideout-menu-' . $slideout_menu . ' slideout-menu-' . $slideout_menu_style . ' ' . $sidebar_layout;
+  $body_classes = $site_layout . ' ' . $content_layout_style . ' ' . $header_layout . ' sticky-header-' . $sticky_header . ' sticky-header-style-' . $sticky_header_style . ' slideout-menu-' . $slideout_menu . ' slideout-menu-' . $slideout_menu_style . ' ' . $sidebar_layout . ' blog-desktop-' . $blog_desktop_columns . ' blog-tablet-' . $blog_tablet_columns . ' blog-phone-' . $blog_phone_columns . ' blog-' . $blog_sidebar_layout;
 ?>
+
 
 <body <?php body_class($body_classes); ?>>
 
@@ -101,4 +123,4 @@
       do_action( 'engine_abar' );
     } ?>
 
-		<div id="content" class="site-content container">
+		<div id="content" class="site-content">

@@ -1,0 +1,44 @@
+.topbar.default-layout {
+  padding: 0 1em;
+
+  .container {
+    padding: 1rem 0;
+  }
+}
+
+html.small-device {
+  .topbar.default-layout {
+    text-align: center;
+  }
+}
+
+html:not(.small-device) {
+  .topbar.default-layout {
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+
+      .tapbar-icons {
+        margin-left: 1em;
+      }
+    }
+  }
+}
+
+.topbar {
+  display: none;
+}
+
+html.large-device .topbar.display-desktop {
+  display: block;
+}
+
+html:not(.small-device).medium-device .topbar.display-tablet {
+  display: block;
+}
+
+html.small-device .topbar.display-phone {
+  display: block;
+}

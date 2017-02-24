@@ -171,3 +171,92 @@ engine_Kirki::add_field( 'engine_theme', array(
 		'alpha' => false,
 	),
 ) );
+
+
+
+
+
+
+
+engine_Kirki::add_field( 'engine_theme', array(
+	'type'        => 'toggle',
+	'settings'    => 'extra_font_toggle',
+	'label'       => __( 'Load Extra Fonts', 'engine' ),
+	'section'     => 'typography',
+	'default'     => '0',
+	'priority'    => 90,
+) );
+
+
+
+/**
+ * Add the body-typography control
+ */
+engine_Kirki::add_field( 'engine_theme', array(
+	'type'        => 'typography',
+	'settings'    => 'extra_font_1',
+	'label'       => esc_attr__( 'Extra Font', 'engine' ),
+	'description' => esc_attr__( 'Select the main typography options for your site.', 'engine' ),
+	'help'        => esc_attr__( 'The typography options you set here apply to all content on your site.', 'engine' ),
+	'section'     => 'typography',
+	'priority'    => 95,
+	'default'     => array(
+		'font-family'    => 'Sans Serif',
+		'variant'        => '400',
+	),
+	'active_callback'  => array(
+		array(
+			'setting'  => 'extra_font_toggle',
+			'operator' => '==',
+			'value'    => 1,
+		)
+	)
+) );
+
+/**
+ * Add the body-typography control
+ */
+engine_Kirki::add_field( 'engine_theme', array(
+	'type'        => 'typography',
+	'settings'    => 'extra_font_2',
+	'label'       => esc_attr__( 'Extra Font', 'engine' ),
+	'description' => esc_attr__( 'Select the main typography options for your site.', 'engine' ),
+	'help'        => esc_attr__( 'The typography options you set here apply to all content on your site.', 'engine' ),
+	'section'     => 'typography',
+	'priority'    => 96,
+	'default'     => array(
+		'font-family'    => 'Sans Serif',
+		'variant'        => '400',
+	),
+	'active_callback'  => array(
+		array(
+			'setting'  => 'extra_font_toggle',
+			'operator' => '==',
+			'value'    => 1,
+		)
+	)
+) );
+
+/**
+ * Add the body-typography control
+ */
+engine_Kirki::add_field( 'engine_theme', array(
+	'type'        => 'typography',
+	'settings'    => 'extra_font_3',
+	'label'       => esc_attr__( 'Extra Font', 'engine' ),
+	'description' => esc_attr__( 'Select the main typography options for your site.', 'engine' ),
+	'help'        => esc_attr__( 'The typography options you set here apply to all content on your site.', 'engine' ),
+	'section'     => 'typography',
+	'priority'    => 97,
+	'default'     => array(
+		'font-family'    => 'Sans Serif',
+		'variant'        => '400',
+	),
+	'active_callback'  => array(
+		array(
+			'setting'  => 'extra_font_toggle',
+			'operator' => '==',
+			'value'    => 1,
+		)
+	)
+) );

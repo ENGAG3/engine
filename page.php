@@ -14,18 +14,16 @@
 
 get_header(); ?>
 
-<div class="content-area-wrap">
+<?php do_action( 'engine_page_before' ); ?>
+
+<div class="content-area-wrap container">
 
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
 
 				<?php while ( have_posts() ) : the_post();
 
-					do_action( 'engine_page_before' );
-
 					get_template_part( 'template-parts/content', 'page' );
-
-					do_action( 'engine_page_after' );
 
 				endwhile; // End of the loop. ?>
 
@@ -35,5 +33,7 @@ get_header(); ?>
 	<?php do_action( 'engine_sidebar' ); ?>
 
 </div>
+
+<?php do_action( 'engine_page_after' ); ?>
 
 <?php get_footer(); // Get the Footer
