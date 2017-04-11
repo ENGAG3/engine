@@ -11,9 +11,8 @@ get_header(); ?>
 
 <?php do_action( 'engine_single_post_before' ); ?>
 
-<div class="content-area-wrap container">
 
-	<div id="primary" class="content-area  container">
+	<div id="primary" class="content-area container">
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post();
@@ -24,10 +23,6 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
-	<?php do_action( 'engine_sidebar' ); ?>
-
-</div>
 
 <?php do_action( 'engine_single_post_after' ); ?>
 

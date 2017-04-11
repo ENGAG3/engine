@@ -1,7 +1,16 @@
-.fl-rich-text {
+body.fl-builder {
+
+  .site-content.container,
+  .site-content .content-area,
+  .site-main > article,
+  .site-main > article .entry-content {
+    width: 100%;
+    max-width: none;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 
 }
-
 
 .no-padding {
   p:first-child {

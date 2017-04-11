@@ -10,29 +10,34 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
 
-		<?php if ( has_post_thumbnail() ) : ?>
-			<div class="entry-banner">
-				<?php the_post_thumbnail(); ?>
+	<?php  if ( ! FLBuilderModel::is_builder_enabled() ) { //Check if BB is inabled ?>
+
+		<header class="entry-header fl-post-header">
+
+			<?php if ( has_post_thumbnail() ) : ?>
+				<div class="entry-banner">
+					<?php the_post_thumbnail(); ?>
+				</div>
+			<?php endif; ?>
+
+			<div class="entry-header-text">
+
+				<?php  the_title( '<h1 class="entry-title">', '</h1>' );
+
+				// if ( 'post' == get_post_type() ) : ?>
+
+				<div class="entry-meta">
+					<?php engine_posted_on(); ?>
+				</div><!-- .entry-meta -->
+
+				<?php // endif; ?>
+
 			</div>
-		<?php endif; ?>
 
-		<div class="entry-header-text">
+		</header><!-- .entry-header -->
 
-			<?php  the_title( '<h1 class="entry-title">', '</h1>' );
-
-			// if ( 'post' == get_post_type() ) : ?>
-
-			<div class="entry-meta">
-				<?php engine_posted_on(); ?>
-			</div><!-- .entry-meta -->
-
-			<?php // endif; ?>
-
-		</div>
-
-	</header><!-- .entry-header -->
+	<?php } ?>
 
 	<div class="entry-content">
 		<?php
@@ -49,7 +54,12 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php engine_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<?php  if ( ! FLBuilderModel::is_builder_enabled() ) { //Check if BB is inabled ?>
+
+		<footer class="entry-footer">
+			<?php engine_entry_footer(); ?>
+		</footer><!-- .entry-footer -->
+
+	<?php } ?>
+
 </article><!-- #post-## -->

@@ -9,11 +9,18 @@ $padding-small: 0.75rem;
  */
 
 .header-top .site-header {
+
+}
+
+.container {
+  padding: 0 $padding-small;
+}
+
+html.large-device {
   .container {
     padding: 0 $padding;
   }
 }
-
 
 /*
  * Content
@@ -34,15 +41,7 @@ $padding-small: 0.75rem;
  }
 
 
-.main-sidebar,
-.secondary-sidebar {
-  padding-top: $padding;
-}
-
-
-.site-main > article,
-.main-sidebar > .widget,
-.secondary-sidebar > .widget {
+.site-main > article {
   margin-bottom: $padding;
 }
 
@@ -54,9 +53,7 @@ html:not(.small-device) {
   }
 
   // Page
-  .content-area,
-  .main-sidebar,
-  .secondary-sidebar {
+  .content-area {
     padding-bottom: $padding;
   }
 
@@ -83,21 +80,6 @@ html:not(.small-device) {
  * Single Content Layout
  */
 
-html.medium-device {
-
-  .entry-header-text,
-  .entry-content,
-  .entry-footer {
-    padding-left: $padding;
-    padding-right: $padding;
-  }
-
-  .main-sidebar > .widget,
-  .secondary-sidebar > .widget {
-    padding: $padding;
-  }
-
-}
 
 
 
@@ -112,56 +94,14 @@ html.medium-device {
     border-top: solid 1px rgba(175,175,175,0.25);
   }
 }
-html.large-device {
 
+html.large-device {
   .content-layout-single {
 
     &.boxed-layout {
       .site {
         border-left: solid 1px rgba(175,175,175,0.25);
         border-right: solid 1px rgba(175,175,175,0.25);
-      }
-    }
-
-    &.content-sidebar {
-
-      .content-area {
-        padding-right: $padding;
-      }
-
-      .main-sidebar {
-        padding-left: $padding;
-        border-left: solid 1px rgba(175,175,175,0.25);
-      }
-    }
-
-    &.sidebar-content {
-
-      .content-area {
-        padding-left: $padding;
-      }
-
-      .main-sidebar {
-        padding-right: $padding;
-        border-right: solid 1px rgba(175,175,175,0.25);
-      }
-    }
-
-    &.sidebar-content-sidebar {
-
-      .content-area {
-        padding-left: $padding;
-        padding-right: $padding;
-      }
-
-      .main-sidebar {
-        padding-right: $padding;
-        border-right: solid 1px rgba(175,175,175,0.25);
-      }
-
-      .secondary-sidebar {
-        padding-left: $padding;
-        border-left: solid 1px rgba(175,175,175,0.25);
       }
     }
   }
@@ -185,34 +125,8 @@ html.large-device {
         border-right: solid 1px rgba(175,175,175,0.25);
       }
     }
-
-    &.sidebar-content {
-      .main-sidebar {
-        border-right: solid 1px rgba(175,175,175,0.25);
-      }
-    }
-
-    &.sidebar-content-sidebar {
-
-
-      .main-sidebar {
-        border-right: solid 1px rgba(175,175,175,0.25);
-      }
-
-      .secondary-sidebar {
-        border-left: solid 1px rgba(175,175,175,0.25);
-      }
-    }
   }
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -240,10 +154,6 @@ html.large-device {
 
   }
 
-  .main-sidebar > .widget,
-  .secondary-sidebar > .widget {
-    padding: $padding;
-  }
 
   // Page
   .site-main {
@@ -252,35 +162,6 @@ html.large-device {
       .entry-title {
         padding-left: $padding;
         padding-right: $padding;
-      }
-    }
-  }
-}
-
-html.large-device {
-
-  .content-layout-boxed {
-
-    &.content-sidebar {
-      .main-sidebar > .widget {
-        margin-left: $padding;
-      }
-    }
-
-    &.sidebar-content {
-      .main-sidebar > .widget {
-        margin-right: $padding;
-      }
-    }
-
-    &.sidebar-content-sidebar {
-
-      .main-sidebar > .widget {
-        margin-right: $padding;
-      }
-
-      .secondary-sidebar > .widget {
-        margin-left: $padding;
       }
     }
   }

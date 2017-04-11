@@ -10,9 +10,7 @@
 get_header(); ?>
 
 
-<div class="content-area-wrap container">
-
-	<section id="primary" class="content-area">
+	<section id="primary" class="content-area container">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -46,8 +44,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-	<?php do_action( 'engine_sidebar' ); ?>
-
-</div>
 
 <?php get_footer(); // Get the Footer

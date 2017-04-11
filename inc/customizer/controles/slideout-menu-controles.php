@@ -21,12 +21,6 @@ engine_Kirki::add_field( 'engine_theme', array(
 ) );
 
 
-// // Check if beaver builder is active
-// include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-// $builder_is_active = is_plugin_active( 'elementor/elementor.php' );
-//
-// if (class_exists( $builder_is_active )) {
-
 
 /**
  * Add header template toggle
@@ -58,7 +52,7 @@ engine_Kirki::add_field( 'engine_theme', array(
 	'default'     => '',
 	// 'priority'    => 100,
 	'multiple'    => 1,
-	'choices'     =>  Kirki_Helper::get_posts( array( 'posts_per_page' => 10, 'post_type' => 'elementor_library' ) ),
+	'choices'     =>  Kirki_Helper::get_posts( array( 'posts_per_page' => 10, 'post_type' => 'fl-theme-layout' ) ),
 	'active_callback'  => array(
 		array(
 			'setting'  => 'slideout_menu_template_toggle',

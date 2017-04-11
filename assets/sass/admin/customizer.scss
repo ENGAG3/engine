@@ -34,6 +34,19 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Toggle controls
 
 .customizer-toggle {
@@ -102,7 +115,7 @@
   // #accordion-section-blog,
   #accordion-section-store,
   #accordion-section-buddypress,
-  #accordion-panel-widgets,
+  // #accordion-panel-widgets,
   #accordion-section-announcement_bar,
   #accordion-section-slideout {
     display: block !important;
@@ -130,7 +143,16 @@
   #accordion-section-custom_css {
     display: block !important;
   }
+
+
+  // Sporat Apps
+  #accordion-section-si_custommizer_section {
+    display: block !important;
+  }
+
 }
+
+
 
 
 .accordion-section {
@@ -180,6 +202,19 @@
     opacity: .75;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
@@ -375,7 +410,22 @@
 
 
 
+// Template Controles
 
+.edit-template {
+  margin: auto;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.template-library {
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin-top: .5em;
+  margin-bottom: 1em;
+}
 
 
 
@@ -405,8 +455,7 @@
 #customize-control-boxed_layout,
 #customize-control-header_template_toggle,
 #customize-control-footer_template_toggle,
-#customize-control-slideout_menu_template_toggle,
-#customize-control-page_sidebar {
+#customize-control-slideout_menu_template_toggle {
   box-sizing: border-box;
   background-color: #f2f2f2;
   border: solid 1px #ddd;

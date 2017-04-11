@@ -36,46 +36,4 @@ html.large-device {
   .content-area-wrap {
     margin: auto;
   }
-
-
-  .content-sidebar {
-
-    .content-area {
-      order: 0;
-    }
-
-    .main-sidebar {
-      order: 1;
-
-    }
-
-  }
-
-  .sidebar-content {
-
-    .content-area {
-      order: 1;
-    }
-
-    .main-sidebar {
-      order: 0;
-    }
-
-  }
-
-  .sidebar-content-sidebar {
-
-    .content-area {
-      order: 1;
-    }
-
-    .main-sidebar {
-      order: 0;
-
-    }
-
-    .secondary-sidebar {
-      order: 2;
-    }
-  }
 }

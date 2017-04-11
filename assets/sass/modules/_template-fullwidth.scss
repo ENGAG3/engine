@@ -1,37 +1,39 @@
-.page-template-fullwidth .content-area {
-  width: 100% !important;
-}
-
-// Add elementor support for full width template
-html .page-template-fullwidth.elementor-page,
-html .page-template-fullwidth.elementor-editor-active,
-html .page-template-fullwidth.elementor-editor-preview {
-
-  .content-area,
-  .entry-content,
-  .site-content.container,
-  .site-main>article {
-    max-width: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-  .entry-header,
-  .entry-footer{
-    display: none !important;
-  }
-}
-// Add elementor support for full width template
-html .elementor-page,
-html .elementor-editor-active,
-html .elementor-editor-preview {
-
-  .entry-content {
-    max-width: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-  .entry-header,
-  .entry-footer{
-    display: none !important;
-  }
-}
+// .fl-builder .content-area {
+//   width: 100% !important;
+// }
+//
+// // Add elementor support for full width template
+//
+// .fl-builder {
+//
+//
+//   .content-area-wrap.container,
+//   .entry-content,
+//   .content-area,
+//   .site-content.container,
+//   .site-main>article {
+//     max-width: none !important;
+//     padding: 0 !important;
+//     margin: 0 !important;
+//   }
+//
+//   .entry-header,
+//   .entry-footer{
+//     display: none !important;
+//   }
+//
+//   article {
+//     background-color: transparent !important;
+//   }
+//
+//
+//   .entry-content {
+//     max-width: none !important;
+//     padding: 0 !important;
+//     margin: 0 !important;
+//   }
+//   .entry-header,
+//   .entry-footer{
+//     display: none !important;
+//   }
+// }

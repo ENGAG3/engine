@@ -5,15 +5,6 @@
  * @package engine
  */
 
-/**
- * General
- *
- * @see  engine_get_sidebar()
- */
-// add_action( 'engine_before_content', 'engine_header_widget_region', 10 );
-add_action( 'engine_sidebar',        'engine_get_main_sidebar',          10 );
-add_action( 'engine_sidebar',        'engine_get_secondary_sidebar',          20 );
-
 
 
 /**
@@ -30,9 +21,9 @@ add_action( 'engine_sidebar',        'engine_get_secondary_sidebar',          20
 // add_action( 'engine_header', 'engine_primary_navigation_wrapper',       42 );
 // add_action( 'engine_header', 'engine_primary_navigation',               50 );
 // add_action( 'engine_header', 'engine_primary_navigation_wrapper_close', 68 );
-add_action( 'engine_before_header', 'engine_get_tobar', 0 );
-add_action( 'engine_header', 'engine_get_default_header', 0 );
-add_action( 'engine_slideout_menu', 'engine_get_slideout_menu', 0 );
+add_action( 'engine_before_header', 'engine_get_tobar', 10 );
+add_action( 'engine_header', 'engine_do_header', 10 );
+add_action( 'engine_slideout_menu', 'engine_get_slideout_menu', 10 );
 
 // /**
 //  * Footer
@@ -40,7 +31,8 @@ add_action( 'engine_slideout_menu', 'engine_get_slideout_menu', 0 );
 //  * @see  engine_footer_widgets()
 //  * @see  engine_credit()
 //  */
-// add_action( 'engine_footer', 'engine_footer_widgets', 10 );
+add_action( 'engine_footer', 'engine_do_footer', 10 );
+add_action( 'engine_footer', 'engine_do_engag3_link', 999 );
 // add_action( 'engine_footer', 'engine_credit',         20 );
 //
 // /**

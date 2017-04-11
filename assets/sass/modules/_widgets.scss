@@ -15,18 +15,16 @@
 	}
 }
 
-#secondary {
 
-	.widget_search {
-		padding: 0 !important;
 
-		.search-field {
-			width: 100%;
-		}
+.widget_search {
+	padding: 0 !important;
 
-		.search-submit {
-			display: none;
-		}
+	.search-field {
+		width: 100%;
 	}
 
+	.search-submit {
+		display: none;
+	}
 }

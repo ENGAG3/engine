@@ -1,10 +1,14 @@
-/**
+/*!
  * File skip-link-focus-fix.js.
  *
  * Helps with accessibility for keyboard only users.
  *
  * Learn more: https://git.io/vWdr2
  */
+
+//@prepros-append jquery.sticky.js
+//@prepros-append headroom.min.js
+
 ( function() {
 	var isWebkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
 	    isOpera  = navigator.userAgent.toLowerCase().indexOf( 'opera' )  > -1,

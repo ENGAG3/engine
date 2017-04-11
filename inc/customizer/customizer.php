@@ -50,10 +50,9 @@ if ( class_exists( 'kirki' ) ) {
 	require get_template_directory() . '/inc/customizer/controles/abar-controles.php';
 	require get_template_directory() . '/inc/customizer/controles/topbar-controles.php';
 	require get_template_directory() . '/inc/customizer/controles/social-controles.php';
-	require get_template_directory() . '/inc/customizer/controles/blog-controles.php';
-	require get_template_directory() . '/inc/customizer/controles/buddypress-controles.php';
 	require get_template_directory() . '/inc/customizer/controles/footer-controles.php';
 	require get_template_directory() . '/inc/customizer/controles/advanced-controles.php';
+	require get_template_directory() . '/inc/customizer/controles/custom-controles.php';
 
 }
  /**
@@ -69,10 +68,6 @@ if ( class_exists( 'kirki' ) ) {
 
  }
  add_action( 'customize_controls_print_styles', 'my_enqueue_customizer_stylesheet' );
-
-
-
-
 
 
 

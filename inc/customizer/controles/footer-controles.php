@@ -2,96 +2,6 @@
 
 // Footer
 
-// Check if beaver builder is active
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-$builder_is_active = is_plugin_active( 'elementor/elementor.php' );
-
-if ( $builder_is_active ) {
-
-/**
- * Add header template toggle
- */
-
- engine_Kirki::add_field( 'engine_theme', array(
-	'type'        => 'toggle',
-	'settings'    => 'footer_template_toggle',
-	'label'       => __( 'Us a template for footer layout', 'engine' ),
-	'section'     => 'footer',
-	'default'     => '0',
-	// 'priority'    => 10,
-) );
-
-
-/**
- * Add header template select
- */
-
-engine_Kirki::add_field( 'engine_theme', array(
- 'type'        => 'select',
- 'settings'    => 'footer_template',
- 'label'       => __( 'Template', 'engine' ),
- 'description' => esc_attr__( 'Select the a template to display.', 'engine' ),
- 'section'     => 'footer',
- 'default'     => '',
- // 'priority'    => 10,
- 'multiple'    => 1,
- 'choices'     =>  Kirki_Helper::get_posts( array( 'posts_per_page' => 10, 'post_type' => 'elementor_library' ) ),
- 'active_callback'  => array(
-		array(
-			'setting'  => 'footer_template_toggle',
-			'operator' => '==',
-			'value'    => 1,
-		)
-	)
-) );
-
-
- engine_Kirki::add_field( 'engine_theme', array(
-	'type'        => 'radio-image',
-	'settings'    => 'footer_widget_layout',
-	'label'       => __( 'Footer Columns', 'engine' ),
-	'section'     => 'footer',
-	'default'     => 'sidebar-content',
-	// 'priority'    => 50,
-	'choices'     => array(
-		'column-0'		=> get_template_directory_uri() . '/assets/images/icons/0-column.svg',
-		'column-1'		=> get_template_directory_uri() . '/assets/images/icons/1-column.svg',
-		'column-2'		=> get_template_directory_uri() . '/assets/images/icons/2-column.svg',
-		'column-3'		=> get_template_directory_uri() . '/assets/images/icons/3-column.svg',
-		'column-4'		=> get_template_directory_uri() . '/assets/images/icons/4-column.svg',
-		'column-4'		=> get_template_directory_uri() . '/assets/images/icons/4-column.svg',
-		'column-5'		=> get_template_directory_uri() . '/assets/images/icons/5-column.svg',
-	),
-	'active_callback'  => array(
- 		array(
- 			'setting'  => 'footer_template_toggle',
- 			'operator' => '==',
- 			'value'    => 0,
- 		)
- 	)
-) );
-
-} else {
-
-  engine_Kirki::add_field( 'engine_theme', array(
-   'type'        => 'radio-image',
-   'settings'    => 'footer_widget_layout',
-   'label'       => __( 'Footer Columns', 'engine' ),
-   'section'     => 'footer',
-   'default'     => 'sidebar-content',
-   // 'priority'    => 50,
-   'choices'     => array(
-     'column-0'		=> get_template_directory_uri() . '/assets/images/icons/0-column.svg',
-     'column-1'		=> get_template_directory_uri() . '/assets/images/icons/1-column.svg',
-     'column-2'		=> get_template_directory_uri() . '/assets/images/icons/2-column.svg',
-     'column-3'		=> get_template_directory_uri() . '/assets/images/icons/3-column.svg',
-     'column-4'		=> get_template_directory_uri() . '/assets/images/icons/4-column.svg',
-     'column-4'		=> get_template_directory_uri() . '/assets/images/icons/4-column.svg',
-     'column-5'		=> get_template_directory_uri() . '/assets/images/icons/5-column.svg',
-   )
-  ) );
-
-}
 
 
 engine_Kirki::add_field( 'engine_theme', array(
@@ -128,6 +38,72 @@ engine_Kirki::add_field( 'engine_theme', array(
 		'alpha' => false,
 	),
 ) );
+
+
+
+
+if ( class_exists( 'flbuilder' ) ) {
+
+  /**
+   * Add header template toggle
+   */
+
+   engine_Kirki::add_field( 'engine_theme', array(
+  	'type'        => 'toggle',
+  	'settings'    => 'footer_template_toggle',
+  	'label'       => __( 'Enable Template Layout', 'engine' ),
+  	'section'     => 'footer',
+  	'default'     => '0',
+  	'priority'    => 97,
+  ) );
+
+
+  /**
+   * Add header template select
+   */
+
+  engine_Kirki::add_field( 'engine_theme', array(
+   'type'        => 'select',
+   'settings'    => 'footer_template',
+   'label'       => __( 'Select Template', 'engine' ),
+   'description' => esc_attr__( 'Select the a template to display as the site Footer.', 'engine' ),
+   'section'     => 'footer',
+   'default'     => '',
+   'priority'    => 98,
+   'multiple'    => 1,
+   'choices'     =>  Kirki_Helper::get_posts( array( 'posts_per_page' => 999, 'post_type' => 'fl-theme-layout' ) ),
+   'active_callback'  => array(
+  		array(
+  			'setting'  => 'footer_template_toggle',
+  			'operator' => '==',
+  			'value'    => 1,
+  		)
+  	)
+  ) );
+
+
+
+  engine_Kirki::add_field( 'engine_theme', array(
+    'type'        => 'footer_template_link',
+    'section'     => 'footer',
+    'priority'    => 99,
+    'active_callback'  => array(
+       array(
+         'setting'  => 'footer_template_toggle',
+         'operator' => '==',
+         'value'    => 1,
+       )
+     )
+  ) );
+
+
+
+
+}
+
+
+
+
 
 
  /**

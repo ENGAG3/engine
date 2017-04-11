@@ -22,60 +22,25 @@ if ( ! function_exists( 'engine_display_comments' ) ) {
 
 
 
-
-
-if ( ! function_exists( 'engine_get_main_sidebar' ) ) {
+if ( ! function_exists( 'engine_do_header' ) ) {
 	/**
 	 * Display engine sidebar
 	 *
 	 * @uses get_sidebar()
 	 * @since 1.0.0
 	 */
-	function engine_get_main_sidebar() {
-
-	 $header_layout        = get_theme_mod( 'header_layout', 'header-top');
-   $page_sidebar       = get_theme_mod( 'page_sidebar', 1 );
-
-     if ($page_sidebar  == 1 && $header_layout == 'header-top') { ?>
-
-       <aside id="secondary" class="main-sidebar widget-area" role="complementary">
-         <?php dynamic_sidebar( 'main' ); ?>
-       </aside><!-- #secondary -->
-
-     <?php }
-
-	}
-}
+	function engine_do_header() {
 
 
-
-
-
-
-
-
-if ( ! function_exists( 'engine_get_default_header' ) ) {
-	/**
-	 * Display engine sidebar
-	 *
-	 * @uses get_sidebar()
-	 * @since 1.0.0
-	 */
-	function engine_get_default_header() {
-
-		// Check if beaver builder is active
-		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-		$builder_is_active = is_plugin_active( 'elementor/elementor.php' );
-
-	  if ( $builder_is_active) {
+	  if ( class_exists( 'flbuilder' )) {
 	    $header_template_toggle = get_theme_mod( 'header_template_toggle', 0 );
 	    $header_template        = get_theme_mod( 'header_template', 0 );
 	  } ?>
 
 		<?php // Check if "use template for header" is set in the customizer
-		if ( $header_template_toggle == 1 && $builder_is_active ) { ?>
+		if ( $header_template_toggle == 1 && class_exists( 'flbuilder' ) ) { ?>
 
-      <?php echo do_shortcode( "[elementor-template id=\"$header_template\"]" );
+      <?php echo do_shortcode( "[fl_builder_insert_layout id=\"$header_template\"]" );
 
 		} else { ?>
 
@@ -111,6 +76,81 @@ if ( ! function_exists( 'engine_get_default_header' ) ) {
 					</button>
 				</nav><!-- #site-navigation -->
 			</div>
+
+	<?php }
+	}
+}
+
+
+// Footer
+if ( ! function_exists( 'engine_do_footer' ) ) {
+	/**
+	 * Display engine sidebar
+	 *
+	 * @uses get_sidebar()
+	 * @since 1.0.0
+	 */
+	function engine_do_footer() {
+
+	// Get customzer info
+	$footer_template = get_theme_mod( 'footer_template_toggle', 0);
+	$template = get_theme_mod( 'footer_template', 'Select' );
+
+	// Announcement Bar
+	$abar_toggle  = get_theme_mod( 'abar_toggle', 0 );
+	$abar_positon = get_theme_mod( 'abar_positon', 'top' );
+
+
+	if ( $footer_template == 1 ) { ?>
+
+		<?php echo do_shortcode( "[fl_builder_insert_layout id=\"$template\"]" );
+
+	} else { ?>
+
+		<div class="site-info">
+
+			<div class="container">
+
+				<?php bloginfo('name'); ?> &copy;<?php echo date('Y'); ?> - All Rights Reserved.
+			</div>
+
+		</div>
+
+	<?php }
+	}
+}
+
+// Footer ENGAG#
+if ( ! function_exists( 'engine_do_engag3_link' ) ) {
+	/**
+	 * Display engine sidebar
+	 *
+	 * @uses get_sidebar()
+	 * @since 1.0.0
+	 */
+	function engine_do_engag3_link() {
+
+	// Get customzer info
+	$footer_template = get_theme_mod( 'footer_template_toggle', 0);
+	$template = get_theme_mod( 'footer_template', 'Select' );
+
+	// Announcement Bar
+	$abar_toggle  = get_theme_mod( 'abar_toggle', 0 );
+	$abar_positon = get_theme_mod( 'abar_positon', 'top' );
+
+
+
+	if ( true == get_theme_mod( 'e3_footer_link', true ) ) { ?>
+
+		<div class="engag3_footer">
+			<div class="container">
+
+				<a href="https://www.engag3.media/" target="_blank">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/engag3_logo_white.svg" alt="powered By ENGAG#">
+				</a>
+
+			</div>
+		</div>
 
 	<?php }
 	}
@@ -159,7 +199,6 @@ if ( ! function_exists( 'engine_get_tobar' ) ) {
 
 				<?php if ( $topbar_template_toggle  == 1 ) {
 
-					echo do_shortcode( "[elementor-template id=\"$topbar_template\"]" );
 
 				} else { ?>
 
@@ -186,43 +225,6 @@ if ( ! function_exists( 'engine_get_tobar' ) ) {
 		<?php }
 	}
 }
-
-
-
-
-
-
-
-
-
-if ( ! function_exists( 'engine_get_secondary_sidebar' ) ) {
-	/**
-	 * Display engine sidebar
-	 *
-	 * @uses get_sidebar()
-	 * @since 1.0.0
-	 */
-	function engine_get_secondary_sidebar() {
-
-	$header_layout        = get_theme_mod( 'header_layout', 'header-top');
-  $page_sidebar            = get_theme_mod( 'page_sidebar', 1 );
-  $sidebar_layout          = get_theme_mod( 'page_sidebar_layout', 'content-sidebar' );
-
-   if ($page_sidebar  == 1 && $header_layout == 'header-top') {
-
-      if ( $sidebar_layout == 'sidebar-content-sidebar') { ?>
-
-        <aside id="secondary" class="secondary-sidebar widget-area" role="complementary" >
-          <?php dynamic_sidebar( 'secondary' ); ?>
-        </aside><!-- #secondary -->
-
-      <?php }
-    }
-	}
-}
-
-
-
 
 
 
@@ -265,7 +267,7 @@ if ( ! function_exists( 'engine_get_abar' ) ) {
 
 				} else {
 
-					echo do_shortcode( "[elementor-template id=\"$abar_template\"]" );
+					echo do_shortcode( "[fl_builder_insert_layout id=\"$abar_template\"]" );
 
 				} ?>
 
@@ -302,7 +304,7 @@ if ( ! function_exists( 'engine_get_slideout_menu' ) ) {
 
 						$template = get_theme_mod( 'slideout_menu_template', 'Select' );
 
-						echo do_shortcode( "[elementor-template id=\"$template\"]" );
+						echo do_shortcode( "[fl_builder_insert_layout id=\"$template\"]" );
 
 					} else { ?>
 

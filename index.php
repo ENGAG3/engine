@@ -14,9 +14,8 @@
 
 get_header(); ?>
 
-<div class="content-area-wrap post-archive container">
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area container">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -53,21 +52,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<?php
-
-	$blog_sidebar         = get_theme_mod( 'blog_sidebar', 0 );
-	$blog_sidebar_layout  = get_theme_mod( 'blog_sidebar_layout', 'content-sidebar' );
-
-	 if ($blog_sidebar == 1 && $blog_sidebar_layout == 'no-sidebar') {
-
-	 } else {
-
-		 do_action( 'engine_sidebar' );
-
-	 }
-
-	 ?>
-
-</div>
 
 <?php get_footer(); // Get the Footer

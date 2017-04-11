@@ -10,13 +10,14 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+
+	<header class="entry-header fl-post-header">
 
 		<?php if ( has_post_thumbnail() ) : ?>
 			<div class="entry-banner">
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 					 <?php the_post_thumbnail(); ?>
-			 	</a>
+				</a>
 			</div>
 		<?php endif; ?>
 
@@ -32,6 +33,7 @@
 
 		</div>
 	</header><!-- .entry-header -->
+
 
 	<div class="entry-content">
 
