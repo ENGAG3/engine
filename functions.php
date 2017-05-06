@@ -164,24 +164,33 @@ function edit_upload_types($existing_mimes = array()) {
 add_filter('upload_mimes', 'edit_upload_types');
 
 
+function engine_setup() {
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
+}
+add_action( 'after_setup_theme', 'engine_setup' );
+
+
+
 
 // Disable admin access to raguler users
-function splen_remove_admin_bar() {
+function engine_remove_admin_bar() {
 	if( !is_super_admin() )
 		add_filter( 'show_admin_bar', '__return_false' );
 }
-add_action('wp', 'splen_remove_admin_bar');
+add_action('wp', 'engine_remove_admin_bar');
 
 
 
 // Commnets form
 
 // Remove website field
-function crunchify_disable_comment_url($fields) {
+function engine_disable_comment_url($fields) {
     unset($fields['url']);
     return $fields;
 }
-add_filter('comment_form_default_fields','crunchify_disable_comment_url');
+add_filter('comment_form_default_fields','engine_disable_comment_url');
 
 
 

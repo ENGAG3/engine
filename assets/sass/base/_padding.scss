@@ -86,47 +86,47 @@ html:not(.small-device) {
 
 // Border Colors
 
-.content-layout-single {
-  .site-header {
-    border-bottom: solid 1px rgba(175,175,175,0.25);
-  }
-  .site-footer {
-    border-top: solid 1px rgba(175,175,175,0.25);
-  }
-}
+// .content-layout-single {
+//   .site-header {
+//     border-bottom: solid 1px rgba(175,175,175,0.25);
+//   }
+//   .site-footer {
+//     border-top: solid 1px rgba(175,175,175,0.25);
+//   }
+// }
 
-html.large-device {
-  .content-layout-single {
+// html.large-device {
+//   .content-layout-single {
 
-    &.boxed-layout {
-      .site {
-        border-left: solid 1px rgba(175,175,175,0.25);
-        border-right: solid 1px rgba(175,175,175,0.25);
-      }
-    }
-  }
-}
+//     &.boxed-layout {
+//       .site {
+//         border-left: solid 1px rgba(175,175,175,0.25);
+//         border-right: solid 1px rgba(175,175,175,0.25);
+//       }
+//     }
+//   }
+// }
 
-boxed-layout {
-  .site-header.default-layout {
-    border-bottom: solid 1px rgba(175,175,175,0.25);
-  }
+// boxed-layout {
+//   .site-header.default-layout {
+//     border-bottom: solid 1px rgba(175,175,175,0.25);
+//   }
 
-  .site-footer.default-layout {
-    border-top: solid 1px rgba(175,175,175,0.25);
-  }
-}
+//   .site-footer.default-layout {
+//     border-top: solid 1px rgba(175,175,175,0.25);
+//   }
+// }
 
-html.large-device {
-  .content-layout-single {
-    &.boxed-layout {
-      .site {
-        border-left: solid 1px rgba(175,175,175,0.25);
-        border-right: solid 1px rgba(175,175,175,0.25);
-      }
-    }
-  }
-}
+// html.large-device {
+//   .content-layout-single {
+//     &.boxed-layout {
+//       .site {
+//         border-left: solid 1px rgba(175,175,175,0.25);
+//         border-right: solid 1px rgba(175,175,175,0.25);
+//       }
+//     }
+//   }
+// }
 
 
 

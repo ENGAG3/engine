@@ -20,3 +20,8 @@ body.fl-builder {
     margin: 0;
   }
 }
+
+.uppercase:not(.fl-module),
+.uppercase.fl-module .fl-module-content {
+  text-transform: uppercase;
+}

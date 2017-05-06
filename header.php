@@ -14,7 +14,7 @@
 
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <?php wp_head(); ?>
 </head>
@@ -25,12 +25,6 @@
   $slideout_menu        = get_theme_mod( 'slideout_menu', 'mobile');
   $slideout_menu_style  = get_theme_mod( 'slideout_menu_style', 'off-canvas-left');
   $header_template_toggle = get_theme_mod( 'header_template_toggle', 0 );
-
-  if ($header_template_toggle == 0) {
-    $header_template_is = "default-layout";
-  } else {
-    $header_template_is = "custom-layout";
-  }
 
   // Page
   $abar_toggle  = get_theme_mod( 'abar_toggle', 0 );
@@ -60,7 +54,7 @@
 
     <?php do_action( 'engine_before_header' ); ?>
 
-    <header id="masthead" class="site-header <?php echo $header_template_is; ?>" role="banner">
+    <header id="masthead" class="site-header" role="banner">
 
       <?php do_action( 'engine_header' ); ?>
 
