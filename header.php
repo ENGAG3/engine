@@ -20,23 +20,19 @@
 </head>
 
 <?php
-  // Check if boxed layout is enabled
-  $boxed_layout         = get_theme_mod( 'boxed_layout', 0);
-  $slideout_menu        = get_theme_mod( 'slideout_menu', 'mobile');
-  $slideout_menu_style  = get_theme_mod( 'slideout_menu_style', 'off-canvas-left');
-  $header_template_toggle = get_theme_mod( 'header_template_toggle', 0 );
+// Check if boxed layout is enabled
+$boxed_layout         = get_theme_mod( 'boxed_layout', 0);
+$slideout_menu        = get_theme_mod( 'slideout_menu', 'mobile');
+$slideout_menu_style  = get_theme_mod( 'slideout_menu_style', 'off-canvas-left');
+$header_template_toggle = get_theme_mod( 'header_template_toggle', 0 );
 
-  // Page
-  $abar_toggle  = get_theme_mod( 'abar_toggle', 0 );
-  $abar_positon = get_theme_mod( 'abar_positon', 'top' );
-
-  if ($boxed_layout == 1) {
-    $site_layout = 'boxed-layout';
-    $site_layout_container = 'container';
-  } else {
-    $site_layout = 'full-layout';
-    $site_layout_container = '';
-  }
+if ($boxed_layout == 1) {
+  $site_layout = 'boxed-layout';
+  $site_layout_container = 'container';
+} else {
+  $site_layout = 'full-layout';
+  $site_layout_container = '';
+}
 ?>
 
 
@@ -46,11 +42,6 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'engine' ); ?></a>
 
   <?php if ( !is_page_template( 'templates/blank.php' ) ) { ?>
-
-    <?php
-    if ( $abar_toggle == 1 && $abar_positon == "top") {
-      do_action( 'engine_abar' );
-    } ?>
 
     <?php do_action( 'engine_before_header' ); ?>
 
@@ -81,9 +72,5 @@
 
 
 	<div id="content-wrap" class="site-content-wrap">
-
-    <?php if ( $abar_toggle == 1 && $abar_positon == "menu") {
-      do_action( 'engine_abar' );
-    } ?>
 
 		<div id="content" class="site-content">

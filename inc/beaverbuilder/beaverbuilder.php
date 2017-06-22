@@ -37,7 +37,6 @@ if ( class_exists( 'flbuilder' )) {
 
 
 	// Parts
-	add_filter( 'fl_theme_builder_part_hooks', 'engine_register_part_hooks' );
 
 	function engine_register_part_hooks() {
 
@@ -46,29 +45,22 @@ if ( class_exists( 'flbuilder' )) {
 				'label' => 'Header',
 				'hooks' => array(
 					'engine_before_header' => 'Before Header',
-					'engine_header' => 'Header',
 					'engine_after_header'  => 'After Header',
 				)
 			),
 			array(
-				'label' => 'Pages',
+				'label' => 'Menu',
 				'hooks' => array(
-					'engine_page_before' => 'Before Content',
-					'engine_page_after'  => 'After Content',
-				)
-			),
-			array(
-				'label' => 'Posts',
-				'hooks' => array(
-					'engine_single_post_before' => 'Before Content',
-					'engine_single_post_after'  => 'After Content',
+					// 'engine_sidebar_before' => 'Before Sidebar',
+					'engine_sidebar' => 'Sidebar',
+					// 'engine_sidebar_after' => 'After Sidebar',
 				)
 			),
 			array(
 				'label' => 'Footer',
 				'hooks' => array(
 					'engine_before_footer' => 'Before Footer',
-					'engine_footer' => 'Footer',
+					// 'engine_footer' => 'Footer',
 					'engine_after_footer'  => 'After Footer',
 				)
 			),
@@ -80,5 +72,7 @@ if ( class_exists( 'flbuilder' )) {
 			)
 		);
 	}
+	add_filter( 'fl_theme_builder_part_hooks', 'engine_register_part_hooks' );
+
 
 }

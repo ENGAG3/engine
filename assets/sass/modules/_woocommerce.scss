@@ -103,25 +103,25 @@ html .woocommerce-page {
   }
 }
 
-html.small-device .woocommerce-page {
-
-  #content table.cart .product-thumbnail,
-  table.cart .product-thumbnail {
-    display: block;
-    text-align: center !important;
-
-    &::before {
-      display: none;
-    }
-  }
-
-  .woocommerce-cart table.cart img {
-    margin: auto;
-    display: block;
-  }
-}
-
-
+// html.small-device .woocommerce-page {
+//
+//   #content table.cart .product-thumbnail,
+//   table.cart .product-thumbnail {
+//     display: block;
+//     text-align: center !important;
+//
+//     &::before {
+//       display: none;
+//     }
+//   }
+//
+//   .woocommerce-cart table.cart img {
+//     margin: auto;
+//     display: block;
+//   }
+// }
+//
+//
 
 /**
  *  Checkout
@@ -139,10 +139,10 @@ html.small-device .woocommerce-page {
   #order_review {
     position: sticky;
 
-    &::before {
-      content: 'Your order';
-      font-size: 1.8em;
-    }
+    // &::before {
+    //   content: 'Your order';
+    //   font-size: 1.8em;
+    // }
   }
 
   #order_review_heading {
@@ -152,8 +152,8 @@ html.small-device .woocommerce-page {
 
 html.large-device .woocommerce-checkout {
   form.woocommerce-checkout {
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
 
     > div {
       flex-basis: 49%

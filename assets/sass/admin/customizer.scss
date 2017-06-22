@@ -85,7 +85,7 @@
 
 
 .customize-pane-parent > .accordion-section {
-  display: none !important;
+  // display: none !important;
 }
 
 
@@ -94,63 +94,63 @@
 }
 
 .wp-full-overlay-sidebar-content > .customize-info {
-  display: none !important;
+  // display: none !important;
 }
 
 
 
-#accordion-section-themes {
-  display: block !important;
+// #accordion-section-themes {
+//   display: block !important;
+//
+//   .accordion-section-title {
+//     margin-bottom: 0 !important;
+//   }
+// }
 
-  .accordion-section-title {
-    margin-bottom: 0 !important;
-  }
-}
-
-.show-sections {
-  #accordion-section-topbar,
-  #accordion-section-header,
-  #accordion-panel-nav_menus,
-  #accordion-section-footer,
-  // #accordion-section-blog,
-  #accordion-section-store,
-  #accordion-section-buddypress,
-  // #accordion-panel-widgets,
-  #accordion-section-announcement_bar,
-  #accordion-section-slideout {
-    display: block !important;
-  }
-}
-
-// Show / Hide sections
-.show-general {
-  #accordion-section-layout,
-  #accordion-section-title_tagline,
-  #accordion-section-typography,
-  #accordion-section-social,
-  #accordion-panel-colors {
-    display: block !important;
-  }
-}
-
-
-.show-advanced {
-  #accordion-section-error_page,
-  #accordion-section-cookie_notice,
-  #accordion-section-code_injection,
-  #accordion-section-injection,
-  #accordion-section-static_front_page,
-  #accordion-section-custom_css {
-    display: block !important;
-  }
-
-
-  // Sporat Apps
-  #accordion-section-si_custommizer_section {
-    display: block !important;
-  }
-
-}
+// .show-sections {
+//   #accordion-section-topbar,
+//   #accordion-section-header,
+//   #accordion-panel-nav_menus,
+//   #accordion-section-footer,
+//   // #accordion-section-blog,
+//   #accordion-section-store,
+//   #accordion-section-buddypress,
+//   // #accordion-panel-widgets,
+//   #accordion-section-announcement_bar,
+//   #accordion-section-slideout {
+//     display: block !important;
+//   }
+// }
+//
+// // Show / Hide sections
+// .show-general {
+//   #accordion-section-layout,
+//   #accordion-section-title_tagline,
+//   #accordion-section-typography,
+//   #accordion-section-social,
+//   #accordion-panel-colors {
+//     display: block !important;
+//   }
+// }
+//
+//
+// .show-advanced {
+//   #accordion-section-error_page,
+//   #accordion-section-cookie_notice,
+//   #accordion-section-code_injection,
+//   #accordion-section-injection,
+//   #accordion-section-static_front_page,
+//   #accordion-section-custom_css {
+//     display: block !important;
+//   }
+//
+//
+//   // Sporat Apps
+//   #accordion-section-si_custommizer_section {
+//     display: block !important;
+//   }
+//
+// }
 
 
 
@@ -314,7 +314,7 @@
    }
  }
 
- #accordion-panel-colors {
+ #accordion-section-forms {
    h3::before {
      content: "\f309";
      font-family: dashicons;

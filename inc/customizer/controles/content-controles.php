@@ -56,25 +56,6 @@ engine_Kirki::add_field( 'engine_theme', array(
 ) );
 
 
-engine_Kirki::add_field( 'engine_theme', array(
-  'type'        => 'radio-image',
-  'settings'    => 'content_layout_style',
-  'label'       => __( 'Content Layout Style', 'engine' ),
-  'section'     => 'layout',
-  'default'     => 'content-layout-single',
-  // 'priority'    => 10,
-  'choices'     => array(
-    'content-layout-single' => get_template_directory_uri() . '/assets/images/icons/lined-containers.svg',
-    'content-layout-boxed'  => get_template_directory_uri() . '/assets/images/icons/boxed-containers.svg',
-  ),
-  'active_callback'  => array(
-    array(
-      'setting'  => 'header_layout',
-      'operator' => '==',
-      'value'    => 'header-top',
-    )
-  )
-) );
 
 
 
@@ -89,16 +70,6 @@ engine_Kirki::add_field( 'engine_theme', array(
  ),
 ) );
 
-engine_Kirki::add_field( 'engine_theme', array(
- 'type'        => 'color',
- 'settings'    => 'content_background_color',
- 'label'       => __( 'Content Background Color', 'engine' ),
- 'section'     => 'layout',
- 'default'     => '#ffffff',
- 'choices'     => array(
-   'alpha' => false,
- ),
-) );
 
 engine_Kirki::add_field( 'engine_theme', array(
  'type'        => 'checkbox',

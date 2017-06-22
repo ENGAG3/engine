@@ -47,8 +47,8 @@ if ( class_exists( 'kirki' ) ) {
 	require get_template_directory() . '/inc/customizer/controles/content-controles.php';
 	require get_template_directory() . '/inc/customizer/controles/typography-controles.php';
 	require get_template_directory() . '/inc/customizer/controles/color-controles.php';
-	require get_template_directory() . '/inc/customizer/controles/abar-controles.php';
-	require get_template_directory() . '/inc/customizer/controles/topbar-controles.php';
+	// require get_template_directory() . '/inc/customizer/controles/abar-controles.php';
+	// require get_template_directory() . '/inc/customizer/controles/topbar-controles.php';
 	require get_template_directory() . '/inc/customizer/controles/social-controles.php';
 	require get_template_directory() . '/inc/customizer/controles/footer-controles.php';
 	require get_template_directory() . '/inc/customizer/controles/advanced-controles.php';
@@ -70,61 +70,10 @@ if ( class_exists( 'kirki' ) ) {
  add_action( 'customize_controls_print_styles', 'my_enqueue_customizer_stylesheet' );
 
 
-
  /**
-  * This is a simple function that replaces the preview notice with an image.
-  * This example uses an image from http://domain.com/image.png so please add your own.
+  * Remove the additional CSS section, introduced in 4.7, from the Customizer.
+  * @param $wp_customize WP_Customize_Manager
   */
- function custom_add_logo_to_customizer() { ?>
- 	<script>
-	jQuery(document).ready(function( $ ) {
-
-		jQuery("#accordion-section-themes").append("<div class='customizer-toggle'><div id='toggle-sections'class='is-active'>Sections</div> <div id='toggle-general'>General</div> <div id='toggle-advanced'>Advanced</div></div>");
-
-		$('#customize-theme-controls').addClass("show-sections"); //you can list several class names
-
-		// Slideout Menu toggle(s)
-		$('#toggle-sections').on('click', function(e) {
-	      $('#toggle-sections').addClass("is-active"); //you can list several class names
-	      $('#toggle-general').removeClass("is-active"); //you can list several class names
-				$('#toggle-advanced').removeClass("is-active"); //you can list several class names
-	      $('#customize-theme-controls').addClass("show-sections"); //you can list several class names
-	      $('#customize-theme-controls').removeClass("show-general"); //you can list several class names
-	      $('#customize-theme-controls').removeClass("show-advanced"); //you can list several class names
-	      e.preventDefault();
-	  });
-
-		// Slideout Menu toggle(s)
-		$('#toggle-general').on('click', function(e) {
-	      $('#toggle-general').addClass("is-active"); //you can list several class names
-	      $('#toggle-sections').removeClass("is-active"); //you can list several class names
-				$('#toggle-advanced').removeClass("is-active"); //you can list several class names
-				$('#customize-theme-controls').removeClass("show-sections"); //you can list several class names
-				$('#customize-theme-controls').addClass("show-general"); //you can list several class names
-				$('#customize-theme-controls').removeClass("show-advanced"); //you can list several class names
-
-	      e.preventDefault();
-	  });
-
-		// Slideout Menu toggle(s)
-		$('#toggle-advanced').on('click', function(e) {
-	      $('#toggle-advanced').addClass("is-active"); //you can list several class names
-	      $('#toggle-sections').removeClass("is-active"); //you can list several class names
-				$('#toggle-general').removeClass("is-active"); //you can list several class names
-				$('#customize-theme-controls').removeClass("show-sections"); //you can list several class names
-				$('#customize-theme-controls').removeClass("show-general"); //you can list several class names
-				$('#customize-theme-controls').addClass("show-advanced"); //you can list several class names
-
-	      e.preventDefault();
-	  });
-
-	});
- // 	jQuery(document).ready(function($) {
- // 		"use strict";
- // 		$('div#customize-info .preview-notice').replaceWith(
-  //            '<img src="https://www.engag3.media/wp-content/uploads/2016/06/cropped-engag3-logo-copy.png">'
-  //        );
- // 	});
- 	</script>
-<?php }
-add_action( 'customize_controls_print_scripts', 'custom_add_logo_to_customizer' );
+ function prefix_remove_css_section( $wp_customize ) {
+ 	$wp_customize->remove_section( 'custom_css' );
+ }  add_action( 'customize_register', 'prefix_remove_css_section', 15 );

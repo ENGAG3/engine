@@ -15,6 +15,8 @@
 
   <?php if ( !is_page_template( 'templates/blank.php' ) ) { ?>
 
+		<?php do_action( 'engine_before_footer' ); ?>
+
 		<footer id="colophon" class="site-footer" role="contentinfo">
 
 				<?php do_action( 'engine_footer' );  ?>
@@ -23,16 +25,9 @@
 
 		<div id="slideout-overlay" class="slideout-overlay"></div>
 
-		</div>
 
-		<?php do_action( 'engine_after_footer' );
 
-			// Check if abar is innabled
-			if ( $abar_toggle == 1 && $abar_positon == "bottom") {
-
-				do_action( 'engine_abar' );
-
-			} ?>
+		<?php do_action( 'engine_after_footer' ); ?>
 
 	<?php } ?>
 

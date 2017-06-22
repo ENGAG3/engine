@@ -22,50 +22,7 @@ engine_Kirki::add_field( 'engine_theme', array(
 
 
 
-/**
- * Add header template toggle
- */
 
- engine_Kirki::add_field( 'engine_theme', array(
-	'type'        => 'toggle',
-	'settings'    => 'slideout_menu_template_toggle',
-	'label'       => __( 'Us template for Slideout Menu', 'engine' ),
-	'section'     => 'slideout',
-	'default'     => '0',
-	// 'priority'    => 90,
-	'active_callback'  => array(
-		array(
-			'setting'  => 'slideout_menu',
-			'operator' => '!=',
-			'value'    => 'disabled',
-		)
-	)
-) );
-
-
-engine_Kirki::add_field( 'engine_theme', array(
-	'type'        => 'select',
-	'settings'    => 'slideout_menu_template',
-	'label'       => __( 'Template', 'engine' ),
-	'description' => esc_attr__( 'Select the a template to display.', 'engine' ),
-	'section'     => 'slideout',
-	'default'     => '',
-	// 'priority'    => 100,
-	'multiple'    => 1,
-	'choices'     =>  Kirki_Helper::get_posts( array( 'posts_per_page' => 10, 'post_type' => 'fl-theme-layout' ) ),
-	'active_callback'  => array(
-		array(
-			'setting'  => 'slideout_menu_template_toggle',
-			'operator' => '==',
-			'value'    => 1,
-		),
-		array(
-			'setting'  => 'slideout_menu',
-			'operator' => '!=',
-			'value'    => 'disabled',
-		)
-	)
-) );
 
 // }
 

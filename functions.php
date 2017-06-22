@@ -78,7 +78,14 @@ add_action( 'after_setup_theme', 'engine_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function engine_scripts() {
-	wp_enqueue_style( 'engine-style', get_stylesheet_uri() );
+
+	$cssfile = get_template_directory() . "/style.css";
+	$turi = get_template_directory_uri();
+	if (file_exists($cssfile)) {
+			$cssuri2 = "$turi/style.css?v=101";
+	}
+
+	wp_enqueue_style( 'engine-style', $cssuri2 );
 
 	wp_enqueue_script( 'engine-script', get_template_directory_uri() . '/assets/js/script-dist.js', array('jquery'), '20151215', true );
 
@@ -99,8 +106,6 @@ function engine_custom_css() {
   $custom_css  = get_theme_mod( 'css_code', '');
   wp_add_inline_style( 'engine-style', $custom_css );
 } add_action( 'wp_enqueue_scripts', 'engine_custom_css' );
-
-
 
 
 /**
@@ -171,6 +176,14 @@ function engine_setup() {
 }
 add_action( 'after_setup_theme', 'engine_setup' );
 
+
+add_filter( 'woocommerce_enqueue_styles', 'jk_dequeue_styles' );
+function jk_dequeue_styles( $enqueue_styles ) {
+	// unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
+	// unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
+	unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
+	return $enqueue_styles;
+}
 
 
 

@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 // Buttions form
 
 engine_Kirki::add_field( 'engine_theme', array(
@@ -46,7 +43,7 @@ engine_Kirki::add_field( 'engine_theme', array(
 engine_Kirki::add_field( 'engine_theme', array(
 	'type'        => 'color',
 	'settings'    => 'button_text_color_hover',
-	'label'       => __( 'Text Color', 'engine' ),
+	'label'       => __( 'Text Color - Hover', 'engine' ),
 	'section'     => 'forms',
 	'default'     => '#ffffff',
 	// 'priority'    => 10,
@@ -70,7 +67,7 @@ engine_Kirki::add_field( 'engine_theme', array(
 engine_Kirki::add_field( 'engine_theme', array(
 	'type'        => 'color',
 	'settings'    => 'button_background_color_hover',
-	'label'       => __( 'Background Color', 'engine' ),
+	'label'       => __( 'Background Color - Hover', 'engine' ),
 	'section'     => 'forms',
 	'default'     => 'rgba(34, 121, 163, 1)',
 	// 'priority'    => 10,
@@ -85,7 +82,7 @@ engine_Kirki::add_field( 'engine_theme', array(
 	'label'       => esc_attr__( 'Button Font', 'engine' ),
 	'section'     => 'forms',
 	'default'     => array(
-		'font-family'    => 'select',
+		'font-family'    => 'Roboto',
 		'variant'        => '400',
 	),
 	'output' => array(
@@ -134,10 +131,43 @@ engine_Kirki::add_field( 'engine_theme', array(
 
 engine_Kirki::add_field( 'engine_theme', array(
 	'type'        => 'color',
+	'settings'    => 'field_text_color',
+	'label'       => __( 'Field Text', 'engine' ),
+	'section'     => 'forms',
+	'default'     => '#222222',
+	'choices'     => array(
+		'alpha' => true,
+	),
+) );
+
+engine_Kirki::add_field( 'engine_theme', array(
+	'type'        => 'color',
+	'settings'    => 'field_text_color_focus',
+	'label'       => __( 'Field Text - Focus', 'engine' ),
+	'section'     => 'forms',
+	'default'     => '#111111',
+	'choices'     => array(
+		'alpha' => true,
+	),
+) );
+
+engine_Kirki::add_field( 'engine_theme', array(
+	'type'        => 'color',
 	'settings'    => 'field_background_color',
 	'label'       => __( 'Field Background', 'engine' ),
 	'section'     => 'forms',
 	'default'     => 'rgba(240,240,240,1)',
+	'choices'     => array(
+		'alpha' => true,
+	),
+) );
+
+engine_Kirki::add_field( 'engine_theme', array(
+	'type'        => 'color',
+	'settings'    => 'field_background_color_focus',
+	'label'       => __( 'Field Background - Focus', 'engine' ),
+	'section'     => 'forms',
+	'default'     => 'rgba(245,245,245,1)',
 	'choices'     => array(
 		'alpha' => true,
 	),
