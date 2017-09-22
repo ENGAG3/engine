@@ -59,6 +59,8 @@ if ($boxed_layout == 1) {
     </header>
 
 
+
+
     <?php do_action( 'engine_after_header' ); ?>
 
       <!-- Check if raguler (not swipe) Menu is enabled -->
@@ -71,6 +73,6 @@ if ($boxed_layout == 1) {
     <?php do_action( 'engine_before_content' ); ?>
 
 
-	<div id="content-wrap" class="site-content-wrap">
+	<div id="content-wrap" class="site-content-wrap animsition">
 
 		<div id="content" class="site-content">

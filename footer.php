@@ -26,7 +26,6 @@
 		<div id="slideout-overlay" class="slideout-overlay"></div>
 
 
-
 		<?php do_action( 'engine_after_footer' ); ?>
 
 	<?php } ?>
