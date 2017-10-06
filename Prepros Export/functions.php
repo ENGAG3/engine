@@ -7,6 +7,7 @@
  * @package engine
  */
 if ( ! function_exists( 'engine_setup' ) ) :
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,6 +16,7 @@ if ( ! function_exists( 'engine_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function engine_setup() {
+
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -22,8 +24,10 @@ function engine_setup() {
 	 * to change 'engine' to the name of your theme in all the template files.
 	 */
 	load_theme_textdomain( 'engine', get_template_directory() . '/languages' );
+
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
+
 	/*
 	 * Let WordPress manage the document title.
 	 * By adding theme support, we declare that this theme does not use a
@@ -31,6 +35,7 @@ function engine_setup() {
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -42,6 +47,7 @@ function engine_setup() {
 		'primary' => esc_html__( 'Primary', 'engine' ),
 		'slideout' => esc_html__( 'Slideout Menu', 'engine' ),
 	) );
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -61,6 +67,7 @@ function engine_setup() {
 }
 endif;
 add_action( 'after_setup_theme', 'engine_setup' );
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -79,15 +86,13 @@ add_action( 'after_setup_theme', 'engine_content_width', 0 );
  */
 function engine_scripts() {
 
-	$cssfile = get_template_directory() . "/style.css";
-	$turi = get_template_directory_uri();
-	if (file_exists($cssfile)) {
-			$cssuri2 = "$turi/style.css?v=101";
-	}
-
-	wp_enqueue_style( 'engine-style', $cssuri2 );
+  wp_enqueue_style( 'engine-style',  get_template_directory_uri() . '/style.css?v=101' );
 
 	wp_enqueue_script( 'engine-script', get_template_directory_uri() . '/assets/js/script-dist.js', array('jquery'), '20151215', true );
+
+  wp_enqueue_style( 'animsition-style',  get_template_directory_uri() . '/assets/css/animsition.min.css?v=101' );
+
+	wp_enqueue_script( 'animsition-script', get_template_directory_uri() . '/assets/js/animsition.min.js', array('jquery'), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -144,20 +149,27 @@ require get_template_directory() . '/inc/beaverbuilder/beaverbuilder.php';
 /**
  * Load Jetpack compatibility file.
  */
+require get_template_directory() . '/inc/woocommerce/checkout.php';
+
+/**
+ * Load WooCommerce compatibility file.
+ */
 require get_template_directory() . '/inc/jetpack/jetpack.php';
 
 /**
  * Shortcodes
  */
 require get_template_directory() . '/inc/shortcodes.php';
+
 require get_template_directory() . '/inc/engine-template-hooks.php';
 require get_template_directory() . '/inc/engine-template-fonctions.php';
 
 // WooCommerce
-add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
+add_action( 'after_setup_theme', 'woocommerce_support' );
+
 function edit_upload_types($existing_mimes = array()) {
     // allow .woff
     $existing_mimes['woff'] = 'font/woff';
@@ -176,14 +188,12 @@ function engine_setup() {
 }
 add_action( 'after_setup_theme', 'engine_setup' );
 
-
-add_filter( 'woocommerce_enqueue_styles', 'jk_dequeue_styles' );
 function jk_dequeue_styles( $enqueue_styles ) {
 	// unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
 	// unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
 	unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
 	return $enqueue_styles;
-}
+} add_filter( 'woocommerce_enqueue_styles', 'jk_dequeue_styles' );
 
 
 
@@ -204,53 +214,3 @@ function engine_disable_comment_url($fields) {
     return $fields;
 }
 add_filter('comment_form_default_fields','engine_disable_comment_url');
-
-
-
-
-//
-//
-//
-// add_action("gform_user_registered", "autologin", 10, 4);
-// function autologin($user_id, $config, $entry, $password) {
-//         wp_set_auth_cookie($user_id, false, '');
-// }
-
-
-
-
-
-// Add Image Sizes
-// function my_image_sizes($sizes) {
-// $addsizes = array(
-// 	"blog_thumbnail" => __( "Blog Thumbnail"),
-// 	"blog_featured" => __( "Blog Featured")
-// );
-// $newsizes = array_merge($sizes, $addsizes);
-// 	return $newsizes;
-// }
-//
-//
-// // UAB
-// add_filter('uabb_blog_posts_featured_image_sizes', 'myfilter');
-//
-// function myfilter( $arr ){
-//     $arr['blog_thumbnail'] = __('Blog Thumbnail', 'uabb');
-//     return $arr;
-// }
-
-
-
-
-
-
-
-// BB Themer
-//
-// add_action( 'after_setup_theme', 'my_theme_header_footer_support' );
-//
-// function my_theme_header_footer_support() {
-// 	add_theme_support( 'fl-theme-builder-headers' );
-// 	add_theme_support( 'fl-theme-builder-footers' );
-// 	add_theme_support( 'fl-theme-builder-parts' );
-// }

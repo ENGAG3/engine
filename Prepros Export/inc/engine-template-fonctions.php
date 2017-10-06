@@ -157,128 +157,6 @@ if ( ! function_exists( 'engine_do_engag3_link' ) ) {
 }
 
 
-if ( ! function_exists( 'engine_get_tobar' ) ) {
-	/**
-	 * Display engine sidebar
-	 *
-	 * @uses get_sidebar()
-	 * @since 1.0.0
-	 */
-	function engine_get_tobar() {
-
-		$topbar_toggle 						= get_theme_mod( 'topbar_toggle', 0 );
-		$topbar_template_toggle 	= get_theme_mod( 'topbar_template_toggle', 0 );
-		$topbar_template 					= get_theme_mod( 'topbar_template' );
-		$topbar_content 					= get_theme_mod( 'topbar_content' );
-		$topbar_social 						= get_theme_mod( 'topbar_social', 1 );
-
-		$topbar_desktop 					= get_theme_mod( 'topbar_desktop', '1' );
-		$topbar_tablet 						= get_theme_mod( 'topbar_tablet', '1' );
-		$topbar_phone 						= get_theme_mod( 'topbar_phone', '1' );
-
-		if ( $topbar_desktop ) {
-			$topbar_desktop_display = "display-desktop";
-		}
-		if ( $topbar_tablet ) {
-			$topbar_tablet_display = "display-tablet";
-		}
-		if ( $topbar_phone ) {
-			$topbar_phone_display = "display-phone";
-		}
-
-		if ($topbar_template_toggle == 0 ) {
-			$topbar_class = "default-layout";
-		} else {
-			$topbar_class = "custom-layout";
-		}
-
-
-		if ( $topbar_toggle == 1) { ?>
-
-			<div class="topbar <?php echo $topbar_class . ' ' . $topbar_desktop_display . ' ' . $topbar_tablet_display . ' ' . $topbar_phone_display ?>">
-
-				<?php if ( $topbar_template_toggle  == 1 ) {
-
-
-				} else { ?>
-
-					<div class="container">
-
-						<div class="tapbar-content">
-							<?php echo $topbar_content; ?>
-						</div>
-
-						<?php if ($topbar_social == 1 ) { ?>
-
-							<div class="tapbar-icons">
-								<?php echo do_shortcode( "[social_links]" ); ?>
-							</div>
-
-						<?php } ?>
-
-					</div>
-
-				<?php } ?>
-
-			</div>
-
-		<?php }
-	}
-}
-
-
-
-
-
-if ( ! function_exists( 'engine_get_abar' ) ) {
-	/**
-	 * Display engine sidebar
-	 *
-	 * @uses get_sidebar()
-	 * @since 1.0.0
-	 */
-	function engine_get_abar () {
-		$abar_template_toggle	= get_theme_mod( 'abar_template_toggle', 0 );
-		$abar_template				= get_theme_mod( 'abar_template');
-		$abar_positon 		 		= get_theme_mod( 'abar_positon', 'top' );
-		$abar_link 				 		= get_theme_mod( 'abar_link' );
-		$abar_button_title 		= get_theme_mod( 'abar_button_title', "Shop Now" );
-		$abar_message 		 		= get_theme_mod( 'abar_message', 'Free Shipping on all orders over $00' );
-
-		if ( $abar_template_toggle == 0 ) {
-			$abar_template_status = "default";
-		} else {
-			$abar_template_status = "custom-template";
-		}
-
-		?>
-
-
-		<div id="abar" class="abar <?php echo $abar_positon . ' ' . $abar_template_status;?>">
-			<div class="abar-content-wrap">
-
-				<?php  if ( $abar_template_toggle == 0 ) {
-
-					echo $abar_message;
-
-					if ($abar_link != "") {
-						echo "<a class='abar-link button' href='" . $abar_link . "'>" . $abar_button_title . "</a>";
-					}
-
-				} else {
-
-					echo do_shortcode( "[fl_builder_insert_layout id=\"$abar_template\"]" );
-
-				} ?>
-
-			</div>
-		</div>
-
-	<?php }
-}
-
-
-
 
 
 
@@ -297,41 +175,11 @@ if ( ! function_exists( 'engine_get_slideout_menu' ) ) {
 
 			<div id="slideout-navigation" class="slideout-navigation" aria-expanded="false">
 
-				<?php do_action( 'engine_sidebar_before' ); ?>
-
 				<div class="slideout-inner">
 
 					<?php do_action( 'engine_sidebar' ); ?>
 
-					<?php // Check if slideout Menu is using template
-					if ( true == get_theme_mod( 'slideout_menu_template_toggle', false ) ) {
-
-						$template = get_theme_mod( 'slideout_menu_template', 'Select' );
-
-						echo do_shortcode( "[fl_builder_insert_layout id=\"$template\"]" );
-
-					} else { ?>
-
-						<div class="default-layout">
-							<button id="menu-close" class="menu-close">
-								Close Menu
-								<div class="menu-icon">
-									<span class="bar-1"></span>
-									<span class="bar-2"></span>
-									<span class="bar-3"></span>
-								</div>
-							</button>
-
-							<nav>
-								<?php wp_nav_menu( array( 'theme_location' => 'slideout', 'menu_id' => 'slideout-menu' ) ); ?>
-							</nav>
-						</div>
-
-					<?php } ?>
-
 				</div>
-
-				<?php do_action( 'engine_sidebar_after' ); ?>
 
 			</div>
 

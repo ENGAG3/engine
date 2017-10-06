@@ -35,7 +35,15 @@ function engine_field_styles() {
   	input[type='submit']:visited,
   	button:visited,
     .fl-builder-content a.fl-button,
-    .fl-builder-content a.fl-button:visited {
+    .fl-builder-content a.fl-button:visited,
+    html .woocommerce #respond input#submit.alt,
+    html .woocommerce a.button.alt,
+    html .woocommerce button.button.alt,
+    html .woocommerce input.button.alt,
+    html .woocommerce #respond input#submit,
+    html .woocommerce a.button,
+    html .woocommerce button.button,
+    html .woocommerce input.button {
   		color: {$button_text_color};
   		background-color: {$button_background_color};
   		border: solid {$button_border_size} {$button_border_color};
@@ -53,10 +61,20 @@ function engine_field_styles() {
   	input[type='reset']:hover,
   	input[type='submit']:hover,
   	button:hover,
-    .fl-builder-content a.fl-button:hover{
+    .fl-builder-content a.fl-button:hover,
+    html .woocommerce #respond input#submit.alt:hover,
+    html .woocommerce a.button.alt:hover,
+    html .woocommerce button.button.alt:hover,
+    html .woocommerce input.button.alt:hover,
+    html .woocommerce #payment #place_order,
+    html .woocommerce span.onsale {
   		color: {$button_text_color_hover};
   		background-color: {$button_background_color_hover};
   		border: solid {$button_border_size} {$button_background_color_hover};
+  	}
+
+    html .woocommerce span.onsale {
+  		color: {$button_text_color_hover} !important;
   	}
 
 

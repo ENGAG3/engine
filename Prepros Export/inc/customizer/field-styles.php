@@ -13,7 +13,11 @@ function engine_field_styles() {
   $button_border_color 	 	 				= get_theme_mod( 'button_border_color', 'rgba(0,0,0,1)');
   $button_padding 	 	 		 				= get_theme_mod( 'button_padding', 14);
 
+
+  $field_text_color 	 	 		      = get_theme_mod( 'field_text_color', '#222222');
+  $field_text_color_focus 	 	 		= get_theme_mod( 'field_text_color_focus', '#111111');
   $field_background_color 	 	 		= get_theme_mod( 'field_background_color', 'rgba(240,240,240,1)');
+  $field_background_color_focus 	= get_theme_mod( 'field_background_color_focus', 'rgba(245,245,245,1)');
 
   // Setup header font styles
 
@@ -79,7 +83,7 @@ function engine_field_styles() {
   	input[type='file'],
   	textarea,
   	.input {
-  		color: {$button_text_color};
+  		color: {$field_text_color};
   		background-color: {$field_background_color};
   		border: solid {$button_border_size}px {$button_border_color};
   		border-radius: {$button_border_radius}px;
@@ -105,7 +109,8 @@ function engine_field_styles() {
   	input[type='file']:focus,
   	textarea:focus,
   	.input:focus {
-  		color: {$button_text_color_hover};
+  		color: {$field_text_color_focus};
+      background-color: {$field_background_color_focus};
   	}
 
     .woocommerce #respond input#submit.alt.disabled, .woocommerce #respond input#submit.alt.disabled:hover, .woocommerce #respond input#submit.alt:disabled, .woocommerce #respond input#submit.alt:disabled:hover, .woocommerce #respond input#submit.alt:disabled[disabled], .woocommerce #respond input#submit.alt:disabled[disabled]:hover, .woocommerce a.button.alt.disabled, .woocommerce a.button.alt.disabled:hover, .woocommerce a.button.alt:disabled, .woocommerce a.button.alt:disabled:hover, .woocommerce a.button.alt:disabled[disabled], .woocommerce a.button.alt:disabled[disabled]:hover, .woocommerce button.button.alt.disabled, .woocommerce button.button.alt.disabled:hover, .woocommerce button.button.alt:disabled, .woocommerce button.button.alt:disabled:hover, .woocommerce button.button.alt:disabled[disabled], .woocommerce button.button.alt:disabled[disabled]:hover, .woocommerce input.button.alt.disabled, .woocommerce input.button.alt.disabled:hover, .woocommerce input.button.alt:disabled, .woocommerce input.button.alt:disabled:hover, .woocommerce input.button.alt:disabled[disabled], .woocommerce input.button.alt:disabled[disabled]:hover {

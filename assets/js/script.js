@@ -135,15 +135,13 @@ jQuery(document).ready(function( $ ) {
 	    overlayParentElement : 'body',
 	    transition: function(url){ window.location.href = url; }
 	  });
-});
+
 
 
 
 // Add classes to header on scrolldown
 
 jQuery(window).scroll(function( ) {
-
-
 	var scroll = jQuery(window).scrollTop();
 	 //console.log(scroll);
 	if (scroll >= 100) {

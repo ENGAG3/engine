@@ -1,0 +1,60 @@
+.woocommerce div.product form.cart .variations select {
+    width: 100%;
+    padding: .5rem;
+    border-radius: 0;
+}
+
+// Tabs
+html .woocommerce div.product .woocommerce-tabs ul.tabs {
+  margin-bottom: 0;
+}
+
+html .woocommerce div.product .woocommerce-tabs ul.tabs li {
+  position: relative;
+  margin-right: 8px;
+  border-radius: 0;
+  min-width: 160px;
+  text-align: center;
+  background-color: transparent;
+  border: 0;
+  transition: all .3s;
+  border-bottom: solid 3px transparent;
+  bottom: -1px;
+  // z-index: 1;
+}
+
+html .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+  border-bottom: solid 3px #000;
+}
+
+html .woocommerce div.product .woocommerce-tabs ul.tabs li::after,
+html .woocommerce div.product .woocommerce-tabs ul.tabs li::before {
+  display: none !important;
+}
+
+html .woocommerce div.product .woocommerce-tabs ul.tabs {
+  padding-left: 0;
+}
+
+html .woocommerce div.product .woocommerce-tabs .panel {
+  background-color: #fff;
+
+  min-height: 400px;
+  padding: 1rem;
+}
+
+html .woocommerce div.product .woocommerce-tabs .woocommerce-Tabs-panel--description {
+  strong,
+  span {
+    color: inherit !important;
+    font-weight: inherit !important;
+    font-family: inherit !important;
+  }
+}
+
+
+html .woocommerce div.product #respond {
+  display: inline-block;
+  max-width: 500px;
+  margin: auto;
+}

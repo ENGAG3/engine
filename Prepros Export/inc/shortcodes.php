@@ -87,11 +87,8 @@
 
 
 
-
-
-
-function engine_logo_image(){
-
-  the_custom_logo();
-
-} add_shortcode('site-logo', 'engine_logo_image');
+  function year_shortcode() {
+    $year = date('Y');
+    return $year;
+  }
+  add_shortcode('year', 'year_shortcode');
