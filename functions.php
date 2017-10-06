@@ -88,7 +88,7 @@ function engine_scripts() {
 
   wp_enqueue_style( 'engine-style',  get_template_directory_uri() . '/style.css?v=109' );
 
-	wp_enqueue_script( 'engine-script', get_template_directory_uri() . '/assets/js/script-dist.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'engine-script', get_template_directory_uri() . '/assets/js/script-dist.js?v=101', array('jquery'), '20151215', true );
 
   wp_enqueue_style( 'animsition-style',  get_template_directory_uri() . '/assets/css/animsition.min.css?v=101' );
 
