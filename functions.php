@@ -86,7 +86,7 @@ add_action( 'after_setup_theme', 'engine_content_width', 0 );
  */
 function engine_scripts() {
 
-  wp_enqueue_style( 'engine-style',  get_template_directory_uri() . '/style.css?v=109' );
+  wp_enqueue_style( 'engine-style',  get_template_directory_uri() . '/style.css?v=132' );
 
 	wp_enqueue_script( 'engine-script', get_template_directory_uri() . '/assets/js/script-dist.js?v=101', array('jquery'), '20151215', true );
 
@@ -182,6 +182,18 @@ require get_template_directory() . '/inc/shortcodes.php';
 require get_template_directory() . '/inc/engine-template-hooks.php';
 require get_template_directory() . '/inc/engine-template-fonctions.php';
 
+// rename the coupon field on the cart page
+function woocommerce_rename_coupon_field_on_cart( $translated_text, $text, $text_domain ) {
+	// bail if not modifying frontend woocommerce text
+	if ( is_admin() || 'woocommerce' !== $text_domain ) {
+		return $translated_text;
+	}
+	if ( 'Apply Coupon' === $text ) {
+		$translated_text = 'Apply Promo Code';
+	}
+	return $translated_text;
+}
+add_filter( 'gettext', 'woocommerce_rename_coupon_field_on_cart', 10, 3 );
 
 // Disable admin access to raguler users
 function engine_remove_admin_bar() {

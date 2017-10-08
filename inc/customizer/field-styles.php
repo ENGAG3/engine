@@ -67,11 +67,43 @@ function engine_field_styles() {
     html .woocommerce button.button.alt:hover,
     html .woocommerce input.button.alt:hover,
     html .woocommerce #payment #place_order,
-    html .woocommerce span.onsale {
+    html .woocommerce span.onsale,
+    html .woocommerce #respond input#submit:hover,
+    html .woocommerce a.button:hover,
+    html .woocommerce button.button:hover,
+    html .woocommerce input.button:hover,
+    .woocommerce #respond input#submit.disabled:hover,
+    .woocommerce #respond input#submit:disabled:hover,
+    .woocommerce #respond input#submit:disabled[disabled]:hover,
+    .woocommerce a.button.disabled:hover,
+    .woocommerce a.button:disabled:hover,
+    .woocommerce a.button:disabled[disabled]:hover,
+    .woocommerce button.button.disabled:hover,
+    .woocommerce button.button:disabled:hover,
+    .woocommerce button.button:disabled[disabled]:hover,
+    .woocommerce input.button.disabled:hover,
+    .woocommerce input.button:disabled:hover,
+    .woocommerce input.button:disabled[disabled]:hover {
   		color: {$button_text_color_hover};
   		background-color: {$button_background_color_hover};
   		border: solid {$button_border_size} {$button_background_color_hover};
   	}
+
+
+    .woocommerce #respond input#submit.disabled,
+    .woocommerce #respond input#submit:disabled,
+    .woocommerce #respond input#submit:disabled[disabled],
+    .woocommerce a.button.disabled,
+    .woocommerce a.button:disabled,
+    .woocommerce a.button:disabled[disabled],
+    .woocommerce button.button.disabled,
+    .woocommerce button.button:disabled,
+    .woocommerce button.button:disabled[disabled],
+    .woocommerce input.button.disabled,
+    .woocommerce input.button:disabled,
+    .woocommerce input.button:disabled[disabled] {
+      color: {$button_text_color};
+    }
 
     html .woocommerce span.onsale {
   		color: {$button_text_color_hover} !important;

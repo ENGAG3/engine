@@ -86,9 +86,9 @@ add_action( 'after_setup_theme', 'engine_content_width', 0 );
  */
 function engine_scripts() {
 
-  wp_enqueue_style( 'engine-style',  get_template_directory_uri() . '/style.css?v=101' );
+  wp_enqueue_style( 'engine-style',  get_template_directory_uri() . '/style.css?v=132' );
 
-	wp_enqueue_script( 'engine-script', get_template_directory_uri() . '/assets/js/script-dist.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'engine-script', get_template_directory_uri() . '/assets/js/script-dist.js?v=101', array('jquery'), '20151215', true );
 
   wp_enqueue_style( 'animsition-style',  get_template_directory_uri() . '/assets/css/animsition.min.css?v=101' );
 
@@ -147,12 +147,30 @@ require get_template_directory() . '/inc/customizer/classes.php';
 require get_template_directory() . '/inc/beaverbuilder/beaverbuilder.php';
 
 /**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/woocommerce/checkout.php';
-
-/**
  * Load WooCommerce compatibility file.
+ */
+ // WooCommerce
+ function woocommerce_support() {
+     add_theme_support( 'woocommerce' );
+ }
+ add_action( 'after_setup_theme', 'woocommerce_support' );
+
+ function engine_setup() {
+		 add_theme_support( 'wc-product-gallery-zoom' );
+		 add_theme_support( 'wc-product-gallery-lightbox' );
+		 add_theme_support( 'wc-product-gallery-slider' );
+ }
+ add_action( 'after_setup_theme', 'engine_setup' );
+
+
+ if ( class_exists( 'WooCommerce' ) ) {
+
+		require get_template_directory() . '/inc/woocommerce/woocommerce.php';
+		require get_template_directory() . '/inc/woocommerce/checkout.php';
+
+}
+/**
+ * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack/jetpack.php';
 
@@ -164,38 +182,18 @@ require get_template_directory() . '/inc/shortcodes.php';
 require get_template_directory() . '/inc/engine-template-hooks.php';
 require get_template_directory() . '/inc/engine-template-fonctions.php';
 
-// WooCommerce
-function woocommerce_support() {
-    add_theme_support( 'woocommerce' );
+// rename the coupon field on the cart page
+function woocommerce_rename_coupon_field_on_cart( $translated_text, $text, $text_domain ) {
+	// bail if not modifying frontend woocommerce text
+	if ( is_admin() || 'woocommerce' !== $text_domain ) {
+		return $translated_text;
+	}
+	if ( 'Apply Coupon' === $text ) {
+		$translated_text = 'Apply Promo Code';
+	}
+	return $translated_text;
 }
-add_action( 'after_setup_theme', 'woocommerce_support' );
-
-function edit_upload_types($existing_mimes = array()) {
-    // allow .woff
-    $existing_mimes['woff'] = 'font/woff';
-    // add as many as you want with the same syntax
-    // disallow .jpg files
-    // unset( $existing_mimes['jpg'] );
-    return $existing_mimes;
-}
-add_filter('upload_mimes', 'edit_upload_types');
-
-
-function engine_setup() {
-    add_theme_support( 'wc-product-gallery-zoom' );
-    add_theme_support( 'wc-product-gallery-lightbox' );
-    add_theme_support( 'wc-product-gallery-slider' );
-}
-add_action( 'after_setup_theme', 'engine_setup' );
-
-function jk_dequeue_styles( $enqueue_styles ) {
-	// unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
-	// unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
-	unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
-	return $enqueue_styles;
-} add_filter( 'woocommerce_enqueue_styles', 'jk_dequeue_styles' );
-
-
+add_filter( 'gettext', 'woocommerce_rename_coupon_field_on_cart', 10, 3 );
 
 // Disable admin access to raguler users
 function engine_remove_admin_bar() {

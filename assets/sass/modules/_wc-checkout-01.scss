@@ -418,3 +418,18 @@ html.small-device .woocommerce-checkout #payment div.payment_box::before {
 .woocommerce-info {
     display: none;
 }
+
+// /////////////
+
+.fl-woocommerce-checkout > .woocommerce > #order_review {
+  max-width: 500px;
+  margin: 1rem auto;
+}
+
+//////////
+
+
+.woocommerce-order {
+  max-width: 1000px;
+  margin: auto;
+}

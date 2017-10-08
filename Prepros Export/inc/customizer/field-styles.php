@@ -35,7 +35,15 @@ function engine_field_styles() {
   	input[type='submit']:visited,
   	button:visited,
     .fl-builder-content a.fl-button,
-    .fl-builder-content a.fl-button:visited {
+    .fl-builder-content a.fl-button:visited,
+    html .woocommerce #respond input#submit.alt,
+    html .woocommerce a.button.alt,
+    html .woocommerce button.button.alt,
+    html .woocommerce input.button.alt,
+    html .woocommerce #respond input#submit,
+    html .woocommerce a.button,
+    html .woocommerce button.button,
+    html .woocommerce input.button {
   		color: {$button_text_color};
   		background-color: {$button_background_color};
   		border: solid {$button_border_size} {$button_border_color};
@@ -53,10 +61,52 @@ function engine_field_styles() {
   	input[type='reset']:hover,
   	input[type='submit']:hover,
   	button:hover,
-    .fl-builder-content a.fl-button:hover{
+    .fl-builder-content a.fl-button:hover,
+    html .woocommerce #respond input#submit.alt:hover,
+    html .woocommerce a.button.alt:hover,
+    html .woocommerce button.button.alt:hover,
+    html .woocommerce input.button.alt:hover,
+    html .woocommerce #payment #place_order,
+    html .woocommerce span.onsale,
+    html .woocommerce #respond input#submit:hover,
+    html .woocommerce a.button:hover,
+    html .woocommerce button.button:hover,
+    html .woocommerce input.button:hover,
+    .woocommerce #respond input#submit.disabled:hover,
+    .woocommerce #respond input#submit:disabled:hover,
+    .woocommerce #respond input#submit:disabled[disabled]:hover,
+    .woocommerce a.button.disabled:hover,
+    .woocommerce a.button:disabled:hover,
+    .woocommerce a.button:disabled[disabled]:hover,
+    .woocommerce button.button.disabled:hover,
+    .woocommerce button.button:disabled:hover,
+    .woocommerce button.button:disabled[disabled]:hover,
+    .woocommerce input.button.disabled:hover,
+    .woocommerce input.button:disabled:hover,
+    .woocommerce input.button:disabled[disabled]:hover {
   		color: {$button_text_color_hover};
   		background-color: {$button_background_color_hover};
   		border: solid {$button_border_size} {$button_background_color_hover};
+  	}
+
+
+    .woocommerce #respond input#submit.disabled,
+    .woocommerce #respond input#submit:disabled,
+    .woocommerce #respond input#submit:disabled[disabled],
+    .woocommerce a.button.disabled,
+    .woocommerce a.button:disabled,
+    .woocommerce a.button:disabled[disabled],
+    .woocommerce button.button.disabled,
+    .woocommerce button.button:disabled,
+    .woocommerce button.button:disabled[disabled],
+    .woocommerce input.button.disabled,
+    .woocommerce input.button:disabled,
+    .woocommerce input.button:disabled[disabled] {
+      color: {$button_text_color};
+    }
+
+    html .woocommerce span.onsale {
+  		color: {$button_text_color_hover} !important;
   	}
 
 
