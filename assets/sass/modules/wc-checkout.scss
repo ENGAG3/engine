@@ -2,14 +2,6 @@
  * Layout
  */
 
-html .fl-woocommerce-checkout body #masthead {
-    position: relative !important;
-}
-
-html, .fl-woocommerce-checkout body, .site {
-    overflow: visible !important;
-}
-
 html.large-device .fl-woocommerce-checkout form.woocommerce-checkout {
     display: flex;
     flex-wrap: wrap;
@@ -36,7 +28,7 @@ html.large-device .fl-woocommerce-checkout form.woocommerce-checkout {
 .fl-woocommerce-checkout .engine-customer-fields-wrap,
 .fl-woocommerce-checkout .engine-order-review-wrap {
     position: relative;
-    padding: 15px;
+    padding: 2rem 1rem;
 }
 
 html.large-device.engine-customer-fields-wrap .fl-woocommerce-checkout,
@@ -44,8 +36,8 @@ html.large-device.engine-order-review-wrap .fl-woocommerce-checkout {
     padding: 45px 25px;
 }
 
-html.medium-device .fl-woocommerce-checkout .engine-customer-fields-wrap > div,
-html.medium-device .fl-woocommerce-checkout .engine-order-review-wrap > div {
+html:not(.large-device) .fl-woocommerce-checkout .engine-customer-fields-wrap > div,
+html:not(.large-device) .fl-woocommerce-checkout .engine-order-review-wrap > div {
     max-width: 500px;
     margin: auto;
 }
@@ -56,11 +48,11 @@ html.large-device .fl-woocommerce-checkout .engine-customer-fields-wrap {
     padding-right: 25px;
 }
 
-html:not(.small-device) .fl-woocommerce-checkout .engine-customer-fields-wrap {
+html.large-device .fl-woocommerce-checkout .engine-customer-fields-wrap {
     text-align: right;
 }
 
-html:not(.small-device) .fl-woocommerce-checkout .engine-customer-fields-wrap > div{
+html.large-device .fl-woocommerce-checkout .engine-customer-fields-wrap > div{
     display: inline-block;
 }
 
@@ -226,14 +218,15 @@ html.small-device .fl-woocommerce-checkout .engine-order-review-wrap {
      display: none;
  }
 
+
+.fl-woocommerce-checkout .cart_item {
+  position: relative;
+  background-color: #2d2d2d;
+}
+
 .fl-woocommerce-checkout .cart_item img {
     width:  75px;
     /*margin-right: 10px;*/
-}
-
-.fl-woocommerce-checkout .cart_item {
-    position: relative;
-   background-color: #2d2d2d;
 }
 
 .fl-woocommerce-checkout .cart_item > td {

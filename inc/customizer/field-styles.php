@@ -72,18 +72,19 @@ function engine_field_styles() {
     html .woocommerce a.button:hover,
     html .woocommerce button.button:hover,
     html .woocommerce input.button:hover,
-    .woocommerce #respond input#submit.disabled:hover,
-    .woocommerce #respond input#submit:disabled:hover,
-    .woocommerce #respond input#submit:disabled[disabled]:hover,
-    .woocommerce a.button.disabled:hover,
-    .woocommerce a.button:disabled:hover,
-    .woocommerce a.button:disabled[disabled]:hover,
-    .woocommerce button.button.disabled:hover,
-    .woocommerce button.button:disabled:hover,
-    .woocommerce button.button:disabled[disabled]:hover,
-    .woocommerce input.button.disabled:hover,
-    .woocommerce input.button:disabled:hover,
-    .woocommerce input.button:disabled[disabled]:hover {
+    html .woocommerce #respond input#submit.disabled:hover,
+    html .woocommerce #respond input#submit:disabled:hover,
+    html .woocommerce #respond input#submit:disabled[disabled]:hover,
+    html .woocommerce a.button.disabled:hover,
+    html .woocommerce a.button:disabled:hover,
+    html .woocommerce a.button:disabled[disabled]:hover,
+    html .woocommerce button.button.disabled:hover,
+    html .woocommerce button.button:disabled:hover,
+    html .woocommerce button.button:disabled[disabled]:hover,
+    html .woocommerce input.button.disabled:hover,
+    html .woocommerce input.button:disabled:hover,
+    html .woocommerce input.button:disabled[disabled]:hover,
+    html .woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
   		color: {$button_text_color_hover};
   		background-color: {$button_background_color_hover};
   		border: solid {$button_border_size} {$button_background_color_hover};

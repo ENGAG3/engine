@@ -4,57 +4,76 @@
     border-radius: 0;
 }
 
-// Tabs
-html .woocommerce div.product .woocommerce-tabs ul.tabs {
-  margin-bottom: 0;
-}
+html .woocommerce {
+  // Tabs
+  div.product .woocommerce-tabs ul.tabs {
+    margin-bottom: 0;
+  }
 
-html .woocommerce div.product .woocommerce-tabs ul.tabs li {
-  position: relative;
-  margin-right: 8px;
-  border-radius: 0;
-  min-width: 160px;
-  text-align: center;
-  background-color: transparent;
-  border: 0;
-  transition: all .3s;
-  border-bottom: solid 3px transparent;
-  bottom: -1px;
-  // z-index: 1;
-}
+  div.product .woocommerce-tabs ul.tabs li {
+    position: relative;
+    margin-right: 8px;
+    border-radius: 0;
+    min-width: 160px;
+    text-align: center;
+    background-color: transparent;
+    border: 0;
+    transition: all .3s;
+    border-bottom: solid 3px transparent;
+    bottom: -1px;
+    // z-index: 1;
+  }
 
-html .woocommerce div.product .woocommerce-tabs ul.tabs li.active {
-  border-bottom: solid 3px #000;
-}
+  div.product .woocommerce-tabs ul.tabs li.active {
+    border-bottom: solid 3px #000;
+  }
 
-html .woocommerce div.product .woocommerce-tabs ul.tabs li::after,
-html .woocommerce div.product .woocommerce-tabs ul.tabs li::before {
-  display: none !important;
-}
+  div.product .woocommerce-tabs ul.tabs li::after,
+  div.product .woocommerce-tabs ul.tabs li::before {
+    display: none !important;
+  }
 
-html .woocommerce div.product .woocommerce-tabs ul.tabs {
-  padding-left: 0;
-}
+  div.product .woocommerce-tabs ul.tabs {
+    padding-left: 0;
+  }
 
-html .woocommerce div.product .woocommerce-tabs .panel {
-  background-color: #fff;
+  div.product .woocommerce-tabs .panel {
+    background-color: #fff;
 
-  min-height: 400px;
-  padding: 1rem;
-}
+    min-height: 400px;
+    padding: 1rem;
+  }
 
-html .woocommerce div.product .woocommerce-tabs .woocommerce-Tabs-panel--description {
-  strong,
-  span {
-    color: inherit !important;
-    font-weight: inherit !important;
-    font-family: inherit !important;
+  div.product .woocommerce-tabs .woocommerce-Tabs-panel--description {
+    strong,
+    span {
+      color: inherit !important;
+      font-weight: inherit !important;
+      font-family: inherit !important;
+    }
+  }
+
+
+  div.product #respond {
+    display: inline-block;
+    max-width: 500px;
+    margin: auto;
   }
 }
 
 
-html .woocommerce div.product #respond {
-  display: inline-block;
-  max-width: 500px;
-  margin: auto;
+html.small-device .woocommerce {
+  .variations {
+    font-size: .8rem;
+    display: block;
+
+    tbody, tr, td, th {
+      display: block;
+    }
+  }
+
+  .woocommerce-breadcrumb,
+  .wc-deposits-option {
+    font-size: .8rem;
+  }
 }
