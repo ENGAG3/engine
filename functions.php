@@ -86,7 +86,7 @@ add_action( 'after_setup_theme', 'engine_content_width', 0 );
  */
 function engine_scripts() {
 
-  wp_enqueue_style( 'engine-style',  get_template_directory_uri() . '/style.css?v=139' );
+  wp_enqueue_style( 'engine-style',  get_template_directory_uri() . '/style.css?v=140' );
 
 	wp_enqueue_script( 'engine-script', get_template_directory_uri() . '/assets/js/script-dist.js?v=101', array('jquery'), '20151215', true );
 
