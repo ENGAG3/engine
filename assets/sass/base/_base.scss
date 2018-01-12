@@ -223,6 +223,14 @@
 }
 
 @media screen and (max-width: 782px) {
+
+	html.small-device {
+		margin-top: 0 !important;
+	}
+
+	body {
+		padding-top: 46px !important;
+	}
 	#wpadminbar {
 		top: -46px !important;
 	}

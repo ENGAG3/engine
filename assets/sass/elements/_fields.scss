@@ -38,3 +38,7 @@ select {
 textarea {
 	width: 100%;
 }
+
+.quantity input[type=number] {
+    -moz-appearance:textfield;
+}
