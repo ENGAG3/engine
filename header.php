@@ -76,3 +76,5 @@ if ($boxed_layout == 1) {
 	<div id="content-wrap" class="site-content-wrap animsition">
 
 		<div id="content" class="site-content">
+
+      <?php do_action( 'engine_before_page_content' ); ?>

@@ -11,6 +11,8 @@
 
 ?>
 
+<?php do_action( 'engine_after_page_content' ); ?>
+
 	</div><!-- #content -->
 
   <?php if ( !is_page_template( 'templates/blank.php' ) ) { ?>

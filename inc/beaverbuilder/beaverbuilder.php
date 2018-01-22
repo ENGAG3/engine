@@ -57,6 +57,14 @@ if ( class_exists( 'flbuilder' )) {
 				)
 			),
 			array(
+				'label' => 'Page',
+				'hooks' => array(
+					'engine_before_page_content' => 'Before Page Content',
+					// 'engine_footer' => 'Footer',
+					'engine_after_page_content'  => 'After Page Content',
+				)
+			),
+			array(
 				'label' => 'Footer',
 				'hooks' => array(
 					'engine_before_footer' => 'Before Footer',
