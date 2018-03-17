@@ -2,40 +2,50 @@
 function engine_font_styles() {
 
   // Get typography settings
-  $body_font_size 	= get_theme_mod( 'body_font_size', 15 );
-  $body_line_height = get_theme_mod( 'body_line_height', 1.7 );
+  $body_font_size 	  = get_theme_mod( 'body_font_size', 16 );
+  $body_font_size_m 	= get_theme_mod( 'body_font_size_tablet', 16 );
+  $body_font_size_s 	= get_theme_mod( 'body_font_size_mobile', 16 );
+
+  $body_line_height   = get_theme_mod( 'body_line_height', 1.8 );
+  $body_line_height_m = get_theme_mod( 'body_line_height_tablet', 1.8 );
+  $body_line_height_s = get_theme_mod( 'body_line_height_mobile', 1.8 );
 
 
   // Get the font sizing for the main h1 tag
-  $h1_font_size	      = get_theme_mod( 'header_font_size', 32 );
-  $header_line_height = get_theme_mod( 'header_line_height', 2.5 );
+  $h1_font_size	        = get_theme_mod( 'header_font_size', 38 );
+  $h1_font_size_m	      = get_theme_mod( 'header_font_size_tablet', 34 );
+  $h1_font_size_s       = get_theme_mod( 'header_font_size_mobile', 32 );
+
+  $header_line_height   = get_theme_mod( 'header_line_height', 2.5 );
+  $header_line_height_m = get_theme_mod( 'header_line_height_tablet', 2.3 );
+  $header_line_height_s = get_theme_mod( 'header_line_height_mobile', 2.0 );
 
 
   // Desktop Font Sizes
   // Generate font sizes for all headings bassed of of h1 size
-  $h2_font_size = round($h1_font_size * ((80-$amount) / 100), 0);
-  $h3_font_size = round($h1_font_size * ((60-$amount) / 100), 0);
-  $h4_font_size = round($h1_font_size * ((45-$amount) / 100), 0);
-  $h5_font_size = round($h1_font_size * ((35-$amount) / 100), 0);
-  $h6_font_size = round($h1_font_size * ((28-$amount) / 100), 0);
+  $h2_font_size = round($h1_font_size * ((72-$amount) / 100), 0);
+  $h3_font_size = round($h1_font_size * ((54-$amount) / 100), 0);
+  $h4_font_size = round($h1_font_size * ((44-$amount) / 100), 0);
+  $h5_font_size = round($h1_font_size * ((38-$amount) / 100), 0);
+  $h6_font_size = round($h1_font_size * ((34-$amount) / 100), 0);
 
   // Tablet Font Sizes
   // Generate font sizes for all headings bassed of of h1 size
-  $h1_font_size_m = round($h1_font_size * ((90-$amount) / 100), 0);
-  $h2_font_size_m = round($h2_font_size * ((90-$amount) / 100), 0);
-  $h3_font_size_m = round($h3_font_size * ((90-$amount) / 100), 0);
-  $h4_font_size_m = round($h4_font_size * ((90-$amount) / 100), 0);
-  $h5_font_size_m = round($h5_font_size * ((90-$amount) / 100), 0);
-  $h6_font_size_m = round($h6_font_size * ((90-$amount) / 100), 0);
+  $h2_font_size_m = round($h1_font_size_m * ((72-$amount) / 100), 0);
+  $h3_font_size_m = round($h1_font_size_m * ((54-$amount) / 100), 0);
+  $h4_font_size_m = round($h1_font_size_m * ((44-$amount) / 100), 0);
+  $h5_font_size_m = round($h1_font_size_m * ((38-$amount) / 100), 0);
+  $h6_font_size_m = round($h1_font_size_m * ((34-$amount) / 100), 0);
+
 
   // Phone Font Sizes
   // Generate font sizes for all headings bassed of of h1 size
-  $h1_font_size_s = round($h1_font_size * ((70-$amount) / 100), 0);
-  $h2_font_size_s = round($h2_font_size * ((75-$amount) / 100), 0);
-  $h3_font_size_s = round($h3_font_size * ((80-$amount) / 100), 0);
-  $h4_font_size_s = round($h4_font_size * ((85-$amount) / 100), 0);
-  $h5_font_size_s = round($h5_font_size * ((90-$amount) / 100), 0);
-  $h6_font_size_s = round($h6_font_size * ((95-$amount) / 100), 0);
+  $h2_font_size_s = round($h1_font_size_s * ((82-$amount) / 100), 0);
+  $h3_font_size_s = round($h1_font_size_s * ((68-$amount) / 100), 0);
+  $h4_font_size_s = round($h1_font_size_s * ((60-$amount) / 100), 0);
+  $h5_font_size_s = round($h1_font_size_s * ((54-$amount) / 100), 0);
+  $h6_font_size_s = round($h1_font_size_s * ((44-$amount) / 100), 0);
+
 
 
 
@@ -54,21 +64,21 @@ function engine_font_styles() {
 
     // Tablet Font Sizes
     // Generate font sizes for all headings bassed of of h1 size
-    $h1_line_height_m = ($header_line_height * 50 / 100);
-    $h2_line_height_m = ($header_line_height * 50 / 100);
-    $h3_line_height_m = ($header_line_height * 50 / 100);
-    $h4_line_height_m = ($header_line_height * 50 / 100);
-    $h5_line_height_m = ($header_line_height * 50 / 100);
-    $h6_line_height_m = ($header_line_height * 50 / 100);
+    $h1_line_height_m = ($header_line_height_m * 50 / 100);
+    $h2_line_height_m = ($header_line_height_m * 50 / 100);
+    $h3_line_height_m = ($header_line_height_m * 50 / 100);
+    $h4_line_height_m = ($header_line_height_m * 50 / 100);
+    $h5_line_height_m = ($header_line_height_m * 50 / 100);
+    $h6_line_height_m = ($header_line_height_m * 50 / 100);
 
     // Phone Font Sizes
     // Generate font sizes for all headings bassed of of h1 size
-    $h1_line_height_s = ($header_line_height * 50 / 100);
-    $h2_line_height_s = ($header_line_height * 50 / 100);
-    $h3_line_height_s = ($header_line_height * 50 / 100);
-    $h4_line_height_s = ($header_line_height * 50 / 100);
-    $h5_line_height_s = ($header_line_height * 50 / 100);
-    $h6_line_height_s = ($header_line_height * 50 / 100);
+    $h1_line_height_s = ($header_line_height_s * 50 / 100);
+    $h2_line_height_s = ($header_line_height_s * 50 / 100);
+    $h3_line_height_s = ($header_line_height_s * 50 / 100);
+    $h4_line_height_s = ($header_line_height_s * 50 / 100);
+    $h5_line_height_s = ($header_line_height_s * 50 / 100);
+    $h6_line_height_s = ($header_line_height_s * 50 / 100);
 
 
 
@@ -90,6 +100,7 @@ function engine_font_styles() {
 
     body {
       font-size: {$body_font_size_s}px;
+      line-height: {$body_line_height_m}rem;
     }
 
     h1, .h1 {
@@ -121,7 +132,7 @@ function engine_font_styles() {
 
   		body {
   			font-size: {$body_font_size_m}px;
-  			line-height: {$body_line_height}rem;
+  			line-height: {$body_line_height_m}rem;
   		}
 
   		h1, .h1 {

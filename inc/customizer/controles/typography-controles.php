@@ -1,12 +1,16 @@
 <?php
+
+
 // Typography
 
+
+// Body font size
 engine_Kirki::add_field( 'engine_theme', array(
 	'type'        => 'slider',
 	'settings'    => 'body_font_size',
 	'label'       => esc_attr__( 'Body Font Size', 'engine' ),
 	'section'     => 'Typography',
-	'default'     => 15,
+	'default'     => 16,
 	'choices'     => array(
 		'min'  => '8',
 		'max'  => '32',
@@ -16,10 +20,39 @@ engine_Kirki::add_field( 'engine_theme', array(
 
 engine_Kirki::add_field( 'engine_theme', array(
 	'type'        => 'slider',
+	'settings'    => 'body_font_size_tablet',
+	'label'       => esc_attr__( 'Body Font Size Tablet', 'engine' ),
+	'section'     => 'Typography',
+	'default'     => 16,
+	'choices'     => array(
+		'min'  => '8',
+		'max'  => '32',
+		'step' => '1',
+	),
+) );
+
+engine_Kirki::add_field( 'engine_theme', array(
+	'type'        => 'slider',
+	'settings'    => 'body_font_size_mobile',
+	'label'       => esc_attr__( 'Body Font Size Mobile', 'engine' ),
+	'section'     => 'Typography',
+	'default'     => 16,
+	'choices'     => array(
+		'min'  => '8',
+		'max'  => '32',
+		'step' => '1',
+	),
+) );
+
+
+// Body lineheight
+
+engine_Kirki::add_field( 'engine_theme', array(
+	'type'        => 'slider',
 	'settings'    => 'body_line_height',
 	'label'       => esc_attr__( 'Body Line Height', 'engine' ),
 	'section'     => 'Typography',
-	'default'     => 1.7,
+	'default'     => 1.8,
 	'choices'     => array(
 		'min'  => '0.8',
 		'max'  => '3',
@@ -29,10 +62,37 @@ engine_Kirki::add_field( 'engine_theme', array(
 
 engine_Kirki::add_field( 'engine_theme', array(
 	'type'        => 'slider',
+	'settings'    => 'body_line_height_tablet',
+	'label'       => esc_attr__( 'Body Line Height Tablet', 'engine' ),
+	'section'     => 'Typography',
+	'default'     => 1.8,
+	'choices'     => array(
+		'min'  => '0.8',
+		'max'  => '3',
+		'step' => '0.1',
+	),
+) );
+
+engine_Kirki::add_field( 'engine_theme', array(
+	'type'        => 'slider',
+	'settings'    => 'body_line_height_mobile',
+	'label'       => esc_attr__( 'Body Line Height Mobile', 'engine' ),
+	'section'     => 'Typography',
+	'default'     => 1.8,
+	'choices'     => array(
+		'min'  => '0.8',
+		'max'  => '3',
+		'step' => '0.1',
+	),
+) );
+
+// header font size
+engine_Kirki::add_field( 'engine_theme', array(
+	'type'        => 'slider',
 	'settings'    => 'header_font_size',
 	'label'       => esc_attr__( 'Header Font Size', 'engine' ),
 	'section'     => 'Typography',
-	'default'     => 32,
+	'default'     => 38,
 	'choices'     => array(
 		'min'  => '22',
 		'max'  => '72',
@@ -42,16 +102,32 @@ engine_Kirki::add_field( 'engine_theme', array(
 
 engine_Kirki::add_field( 'engine_theme', array(
 	'type'        => 'slider',
-	'settings'    => 'header_letter_spacing',
-	'label'       => esc_attr__( 'Header Letter Spacing', 'engine' ),
+	'settings'    => 'header_font_size_tablet',
+	'label'       => esc_attr__( 'Header Font Size Tablet', 'engine' ),
 	'section'     => 'Typography',
-	'default'     => 0,
+	'default'     => 34,
 	'choices'     => array(
-		'min'  => '-4',
-		'max'  => '12',
+		'min'  => '22',
+		'max'  => '72',
 		'step' => '1',
 	),
 ) );
+
+engine_Kirki::add_field( 'engine_theme', array(
+	'type'        => 'slider',
+	'settings'    => 'header_font_size_mobile',
+	'label'       => esc_attr__( 'Header Font Size Mobile', 'engine' ),
+	'section'     => 'Typography',
+	'default'     => 32,
+	'choices'     => array(
+		'min'  => '22',
+		'max'  => '72',
+		'step' => '1',
+	),
+) );
+
+// Header linehight
+
 
 engine_Kirki::add_field( 'engine_theme', array(
 	'type'        => 'slider',
@@ -66,6 +142,63 @@ engine_Kirki::add_field( 'engine_theme', array(
 	),
 ) );
 
+engine_Kirki::add_field( 'engine_theme', array(
+	'type'        => 'slider',
+	'settings'    => 'header_line_height_tablet',
+	'label'       => esc_attr__( 'Header Line Height Tablet', 'engine' ),
+	'section'     => 'Typography',
+	'default'     => 2.5,
+	'choices'     => array(
+		'min'  => '0.8',
+		'max'  => '3',
+		'step' => '0.1',
+	),
+) );
+
+engine_Kirki::add_field( 'engine_theme', array(
+	'type'        => 'slider',
+	'settings'    => 'header_line_height_mobile',
+	'label'       => esc_attr__( 'Header Line Height Mobile', 'engine' ),
+	'section'     => 'Typography',
+	'default'     => 2.5,
+	'choices'     => array(
+		'min'  => '0.8',
+		'max'  => '3',
+		'step' => '0.1',
+	),
+) );
+
+
+
+// Body letter spacing
+
+engine_Kirki::add_field( 'engine_theme', array(
+	'type'        => 'slider',
+	'settings'    => 'body_letter_spacing',
+	'label'       => esc_attr__( 'Body Letter Spacing', 'engine' ),
+	'section'     => 'Typography',
+	'default'     => 0,
+	'choices'     => array(
+		'min'  => '0',
+		'max'  => '5',
+		'step' => '1',
+	),
+) );
+
+// Header letter spacing
+
+engine_Kirki::add_field( 'engine_theme', array(
+	'type'        => 'slider',
+	'settings'    => 'header_letter_spacing',
+	'label'       => esc_attr__( 'Header Letter Spacing', 'engine' ),
+	'section'     => 'Typography',
+	'default'     => 0,
+	'choices'     => array(
+		'min'  => '-4',
+		'max'  => '12',
+		'step' => '1',
+	),
+) );
 
 
 // engine_Kirki::add_field( 'engine_theme', array(

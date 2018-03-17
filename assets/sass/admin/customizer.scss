@@ -1,3 +1,7 @@
+#theme-builder-header-footer-message {
+  display: none !important;
+}
+
  .wp-full-overlay {
   background-color: #161616;
 }
@@ -609,5 +613,107 @@
 
   input:checked + label {
     filter: saturate(1);
+  }
+}
+
+
+
+// Typeography
+
+#customize-control-body_font_size,
+#customize-control-body_font_size_tablet,
+#customize-control-body_font_size_mobile,
+#customize-control-body_line_height,
+#customize-control-body_line_height_tablet,
+#customize-control-body_line_height_mobile,
+// Header
+#customize-control-header_font_size,
+#customize-control-header_font_size_tablet,
+#customize-control-header_font_size_mobile,
+#customize-control-header_line_height,
+#customize-control-header_line_height_tablet,
+#customize-control-header_line_height_mobile,
+// Button
+#customize-control-button_font_size,
+#customize-control-button_font_size_tablet,
+#customize-control-button_font_size_mobile,
+#customize-control-button_padding,
+#customize-control-button_padding_tablet,
+#customize-control-button_padding_mobile {
+  .wrapper {
+    position: relative;
+    padding-left: 2.5rem;
+  }
+
+  .wrapper::before {
+    width: 30px;
+    text-align: center;
+    position: absolute;
+    font-family: fontawesome;
+    top: 0;
+    left: 0;
+    transform: translateY(75%);
+    opacity: .5;
+  }
+}
+
+#customize-control-body_font_size_tablet,
+#customize-control-body_font_size_mobile,
+#customize-control-body_line_height_tablet,
+#customize-control-body_line_height_mobile,
+// Header
+#customize-control-header_font_size_tablet,
+#customize-control-header_font_size_mobile,
+#customize-control-header_line_height_tablet,
+#customize-control-header_line_height_mobile,
+// Button
+#customize-control-button_font_size_tablet,
+#customize-control-button_font_size_mobile,
+#customize-control-button_padding_tablet,
+#customize-control-button_padding_mobile {
+  .customize-control-title {
+    display: none;
+  }
+}
+
+#customize-control-body_line_height,
+#customize-control-body_font_size,
+// Header
+#customize-control-header_line_height,
+#customize-control-header_font_size,
+// Button
+#customize-control-button_font_size,
+#customize-control-button_padding {
+  .wrapper::before {
+    content: "\f108";
+    font-size: 23px;
+  }
+}
+
+#customize-control-body_line_height_tablet,
+#customize-control-body_font_size_tablet,
+// Header
+#customize-control-header_line_height_tablet,
+#customize-control-header_font_size_tablet,
+// Button
+#customize-control-button_font_size_tablet,
+#customize-control-button_padding_tablet {
+  .wrapper::before {
+    content: "\f10a";
+    font-size: 30px;
+  }
+}
+
+#customize-control-body_line_height_mobile,
+#customize-control-body_font_size_mobile,
+// Header
+#customize-control-header_line_height_mobile,
+#customize-control-header_font_size_mobile,
+// Button
+#customize-control-button_font_size_mobile,
+#customize-control-button_padding_mobile {
+  .wrapper::before {
+    content: "\f10b";
+    font-size: 34px;
   }
 }

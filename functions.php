@@ -86,7 +86,7 @@ add_action( 'after_setup_theme', 'engine_content_width', 0 );
  */
 function engine_scripts() {
 
-  wp_enqueue_style( 'engine-style',  get_template_directory_uri() . '/style.css?v=141' );
+  wp_enqueue_style( 'engine-style',  get_template_directory_uri() . '/style.css?v=142' );
 
 	wp_enqueue_script( 'engine-script', get_template_directory_uri() . '/assets/js/script-dist.js?v=101', array('jquery'), '20151215', true );
 
@@ -147,42 +147,46 @@ require get_template_directory() . '/inc/customizer/classes.php';
 require get_template_directory() . '/inc/beaverbuilder/beaverbuilder.php';
 
 
-/**
- * Load WooCommerce compatibility file.
- */
- // WooCommerce
- function woocommerce_support() {
-     add_theme_support( 'woocommerce' );
- }
- add_action( 'after_setup_theme', 'woocommerce_support' );
+
+if ( class_exists( 'WooCommerce' ) ) {
+		/**
+		 * Load WooCommerce compatibility file.
+		 */
+		 // WooCommerce
+		 function woocommerce_support() {
+		     add_theme_support( 'woocommerce' );
+		 }
+		 add_action( 'after_setup_theme', 'woocommerce_support' );
 
 
 
- function engine_setup() {
-		 add_theme_support( 'wc-product-gallery-zoom' );
-		 add_theme_support( 'wc-product-gallery-lightbox' );
-		 add_theme_support( 'wc-product-gallery-slider' );
- }
- add_action( 'after_setup_theme', 'engine_setup' );
+		 function engine_woo_gallery_support() {
+				 add_theme_support( 'wc-product-gallery-zoom' );
+				 add_theme_support( 'wc-product-gallery-lightbox' );
+				 add_theme_support( 'wc-product-gallery-slider' );
+		 }
+		 add_action( 'after_setup_theme', 'engine_woo_gallery_support' );
 
 
- if ( class_exists( 'WooCommerce' ) ) {
+		 if ( class_exists( 'WooCommerce' ) ) {
 
-	require get_template_directory() . '/inc/woocommerce/woocommerce.php';
-	require get_template_directory() . '/inc/woocommerce/checkout.php';
+			require get_template_directory() . '/inc/woocommerce/woocommerce.php';
+			require get_template_directory() . '/inc/woocommerce/checkout.php';
 
-	function engine_woo_styles() {
+			function engine_woo_styles() {
 
-		if ( is_cart() ) {
-			wp_enqueue_style( 'engine-cart-style',  get_template_directory_uri() . '/assets/css/modules/wc-cart.css?v=001' );
+				if ( is_cart() ) {
+					wp_enqueue_style( 'engine-cart-style',  get_template_directory_uri() . '/assets/css/modules/wc-cart.css?v=001' );
+				}
+
+				if ( is_checkout() ) {
+					wp_enqueue_style( 'engine-checkout-style',  get_template_directory_uri() . '/assets/css/modules/wc-checkout.css?v=001' );
+				}
+
+			}
+			add_action( 'wp_enqueue_scripts', 'engine_woo_styles' );
+
 		}
-
-		if ( is_checkout() ) {
-			wp_enqueue_style( 'engine-checkout-style',  get_template_directory_uri() . '/assets/css/modules/wc-checkout.css?v=001' );
-		}
-
-	}
-	add_action( 'wp_enqueue_scripts', 'engine_woo_styles' );
 
 }
 /**

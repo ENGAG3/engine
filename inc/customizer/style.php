@@ -8,6 +8,7 @@ $content_width 		 	 	 = get_theme_mod( 'content_width', 1140 );
 // Get typography settings
 $body_font_size 		 	 = get_theme_mod( 'body_font_size', 15 );
 $body_line_height 		 = get_theme_mod( 'body_line_height', 1.7 );
+$body_letter_spacing   = get_theme_mod( 'body_letter_spacing', 0 );
 
 $h1_font_size		 			 = get_theme_mod( 'header_font_size', 32 );
 $header_letter_spacing = get_theme_mod( 'header_letter_spacing', 0 );
@@ -97,7 +98,11 @@ $medium_breakpoint = $medium_breakpoint_value . "px";
 				background-repeat: <?php echo $body_background_repeat;?>;
 			<?php } ?>
 		<?php } ?>
-		background-attachment: <?php echo $body_background_style;?>;
+
+	}
+
+	body p {
+		letter-spacing: <?php echo $body_letter_spacing;?>px;
 	}
 
 	.site {

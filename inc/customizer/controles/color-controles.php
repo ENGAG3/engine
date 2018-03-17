@@ -2,6 +2,8 @@
 
 // Buttions form
 
+
+// Font size
 engine_Kirki::add_field( 'engine_theme', array(
 	'type'        => 'slider',
 	'settings'    => 'button_font_size',
@@ -17,6 +19,34 @@ engine_Kirki::add_field( 'engine_theme', array(
 
 engine_Kirki::add_field( 'engine_theme', array(
 	'type'        => 'slider',
+	'settings'    => 'button_font_size_tablet',
+	'label'       => esc_attr__( 'Text Size Tablet', 'engine' ),
+	'section'     => 'forms',
+	'default'     => 16,
+	'choices'     => array(
+		'min'  => '5',
+		'max'  => '32',
+		'step' => '1',
+	),
+) );
+
+engine_Kirki::add_field( 'engine_theme', array(
+	'type'        => 'slider',
+	'settings'    => 'button_font_size_mobile',
+	'label'       => esc_attr__( 'Text Size Mobile', 'engine' ),
+	'section'     => 'forms',
+	'default'     => 16,
+	'choices'     => array(
+		'min'  => '5',
+		'max'  => '32',
+		'step' => '1',
+	),
+) );
+
+// Button padding
+
+engine_Kirki::add_field( 'engine_theme', array(
+	'type'        => 'slider',
 	'settings'    => 'button_padding',
 	'label'       => esc_attr__( 'Padding', 'engine' ),
 	'section'     => 'forms',
@@ -27,6 +57,34 @@ engine_Kirki::add_field( 'engine_theme', array(
 		'step' => '1',
 	),
 ) );
+
+engine_Kirki::add_field( 'engine_theme', array(
+	'type'        => 'slider',
+	'settings'    => 'button_padding_tablet',
+	'label'       => esc_attr__( 'Padding Tablet', 'engine' ),
+	'section'     => 'forms',
+	'default'     => 14,
+	'choices'     => array(
+		'min'  => '8',
+		'max'  => '50',
+		'step' => '1',
+	),
+) );
+
+engine_Kirki::add_field( 'engine_theme', array(
+	'type'        => 'slider',
+	'settings'    => 'button_padding_mobile',
+	'label'       => esc_attr__( 'Padding Mobile', 'engine' ),
+	'section'     => 'forms',
+	'default'     => 14,
+	'choices'     => array(
+		'min'  => '8',
+		'max'  => '50',
+		'step' => '1',
+	),
+) );
+
+// Button color
 
 engine_Kirki::add_field( 'engine_theme', array(
 	'type'        => 'color',

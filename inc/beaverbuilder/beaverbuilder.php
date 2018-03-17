@@ -76,6 +76,9 @@ if ( class_exists( 'flbuilder' )) {
 				'label' => 'WooCommerce',
 				'hooks' => array(
 					'woocommerce_account_dashboard' => 'Account Dashboard',
+					'woocommerce_before_account_orders' => 'Account Orders',
+					'woocommerce_before_account_subscriptions' => 'Account Subscriptions',
+					'woocommerce_before_account_payment_methods' => 'Account Payment methods',
 				)
 			)
 		);

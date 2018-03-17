@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ENGINE Styleguide</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" href="./style.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./assets/js/script-dist.js"></script>
+<script src="./assets/js/animsition.min.js"></script>
+<script src="./assets/js/jquery.sticky.js"></script>
+
+<script>
+
+  var viewportWidth = $(window).width();
+  if (viewportWidth < 768) {
+          $("html").removeClass("medium-device large-device").addClass("small-device");
+  }
+  if (viewportWidth > 768){
+          $("html").removeClass("small-device large-device").addClass("medium-device");
+  }
+  if (viewportWidth > 1140){
+          $("html").removeClass("small-device medium-device").addClass("large-device");
+  }
+
+$(window).resize(function () {
+    var viewportWidth = $(window).width();
+    if (viewportWidth < 768) {
+            $("html").removeClass("medium-device large-device").addClass("small-device");
+    }
+    if (viewportWidth > 768){
+            $("html").removeClass("small-device large-device").addClass("medium-device");
+    }
+    if (viewportWidth > 1140){
+            $("html").removeClass("small-device medium-device").addClass("large-device");
+    }
+});
+</script>
+
+</head>
+
+<body>
+
+<section>
+  <h1>Heading H1</h1>
+  <h2>Heading H2</h2>
+  <h3>Heading H3</h3>
+  <h4>Heading H4</h4>
+  <h5>Heading H5</h5>
+  <h6>Heading H6</h6>
+</section>
+
+
+
+</body>
+
+</html>

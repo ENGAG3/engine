@@ -25,3 +25,28 @@ body.fl-builder {
 .uppercase.fl-module .fl-module-content {
   text-transform: uppercase;
 }
+
+
+// Overflow bgs
+
+.bg-overflow-left,
+.bg-overflow-right {
+
+  &.fl-col-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10000px;
+    height: 100%;
+    background-color: inherit;
+  }
+}
+
+.bg-overflow-left .fl-col-content::before {
+  right: 0;
+}
+
+.bg-overflow-right .fl-col-content::before {
+  left: 0;
+}
