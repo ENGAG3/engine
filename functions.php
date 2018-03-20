@@ -86,7 +86,7 @@ add_action( 'after_setup_theme', 'engine_content_width', 0 );
  */
 function engine_scripts() {
 
-  wp_enqueue_style( 'engine-style',  get_template_directory_uri() . '/style.css?v=142' );
+  wp_enqueue_style( 'engine-style',  get_template_directory_uri() . '/style.css?v=143' );
 
 	wp_enqueue_script( 'engine-script', get_template_directory_uri() . '/assets/js/script-dist.js?v=101', array('jquery'), '20151215', true );
 
@@ -187,12 +187,12 @@ if ( class_exists( 'WooCommerce' ) ) {
 			add_action( 'wp_enqueue_scripts', 'engine_woo_styles' );
 
 		}
-
 }
 /**
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack/jetpack.php';
+
 
 /**
  * Shortcodes

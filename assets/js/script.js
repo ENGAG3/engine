@@ -97,6 +97,22 @@ jQuery(document).ready(function( $ ) {
   });
 
 
+	// Woocommerce tabed login
+	$('.tabbed-login .col-1').addClass("is-active"); //you can list several class names
+
+	$('.tabbed-login .col-1 h2').on('click', function(e) {
+      $('.tabbed-login .col-1').addClass("is-active"); //you can list several class names
+      $('.tabbed-login .col-2').removeClass("is-active"); //you can list several class names
+      e.preventDefault();
+  });
+
+	$('.tabbed-login .col-2 h2').on('click', function(e) {
+      $('.tabbed-login .col-1').removeClass("is-active"); //you can list several class names
+      $('.tabbed-login .col-2').addClass("is-active"); //you can list several class names
+      e.preventDefault();
+  });
+
+
 		// Make top header sticky
 		$(".header-top #masthead").sticky({topSpacing:0});
 		// simple as this!
@@ -135,6 +151,7 @@ jQuery(document).ready(function( $ ) {
 	    overlayParentElement : 'body',
 	    transition: function(url){ window.location.href = url; }
 	  });
+  });
 
 
 

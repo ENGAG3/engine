@@ -39,3 +39,12 @@ function engine_infinite_scroll_render() {
 		endif;
 	}
 }
+
+// Hide related posts on all custom post types
+function winwar_no_related_posts( $options ) {
+		if ( !is_singular( 'post' ) ) {
+				$options['enabled'] = false;
+		}
+		return $options;
+}
+add_filter( 'jetpack_relatedposts_filter_options', 'winwar_no_related_posts' );
